@@ -60,6 +60,10 @@ TODO: Add long description of the pod here.
   
   #-----------------------
   s.subspec 'Tool' do |ss|
+      ss.ios.dependency 'PoporUI/IToast'
+      ss.ios.dependency 'PoporUI/BlockView'
+      ss.ios.dependency 'PoporFoundation/NSString'
+      
       ss.source_files = 'PoporUI/Classes/Tool/*.{h,m}'
   end
   
