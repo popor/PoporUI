@@ -1,9 +1,9 @@
 //
 //  UITableView+AllowPanGR.m
-//  AppStore
+//  PoporUI
 //
-//  Created by VRSEEN on 2017/7/28.
-//  Copyright © 2017年 VRSeen. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import "UITableView+AllowPanGR.h"

@@ -1,11 +1,10 @@
 //
 //  UIDevice+SaveImage.m
-//  linRunShengPi
+//  PoporUI
 //
-//  Created by apple on 2018/3/5.
-//  Copyright © 2018年 艾慧勇. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
-
 #import "UIDevice+SaveImage.h"
 
 #import <AssetsLibrary/AssetsLibrary.h>

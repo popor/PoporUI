@@ -1,9 +1,9 @@
 //
 //  PasteImageTextView.m
-//  WanziTG
+//  PoporUI
 //
-//  Created by 王凯庆 on 2016/12/23.
-//  Copyright © 2016年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import "UIPasteImageTextView.h"

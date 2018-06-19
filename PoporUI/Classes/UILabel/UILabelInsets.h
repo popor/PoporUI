@@ -1,9 +1,9 @@
 //
 //  UIUIInsetsLabel.h
-//  Wanzi
+//  PoporUI
 //
-//  Created by 王凯庆 on 2017/1/6.
-//  Copyright © 2017年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

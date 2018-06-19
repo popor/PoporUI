@@ -1,11 +1,10 @@
 //
 //  UIButton+UIEdgeInsets.m
-//  Wanzi
+//  PoporUI
 //
-//  Created by Bingo on 16/11/23.
-//  Copyright © 2016年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
-
 #import "UIButton+UIEdgeInsets.h"
 
 #import "UIView+Extension.h"

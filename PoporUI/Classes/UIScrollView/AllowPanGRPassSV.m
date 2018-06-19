@@ -1,9 +1,9 @@
 //
 //  UIScrollView+AllowPanGRPass.m
-//  WanziTG
+//  PoporUI
 //
-//  Created by popor on 16/3/28.
-//  Copyright © 2016年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import "AllowPanGRPassSV.h"

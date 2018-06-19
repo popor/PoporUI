@@ -1,9 +1,9 @@
 //
 //  IToast.m
-//  WanziTG
+//  PoporUI
 //
-//  Created by TaeYoona on 14-7-22.
-//  Copyright (c) 2014年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import "IToast.h"

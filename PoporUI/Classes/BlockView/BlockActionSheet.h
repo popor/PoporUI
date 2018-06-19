@@ -1,9 +1,9 @@
 //
 //  BlockActionSheet.h
-//  WanziTG
+//  PoporUI
 //
-//  Created by popor on 15/9/8.
-//  Copyright (c) 2015年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

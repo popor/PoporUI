@@ -1,9 +1,9 @@
 //
 //  SimpleWebVC.m
-//  Wanzi
+//  PoporUI
 //
-//  Created by popor on 16/1/12.
-//  Copyright © 2016年 wanzi. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import "SimpleWKWebVC.h"

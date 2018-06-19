@@ -1,9 +1,9 @@
 //
 //  UIView+Extension.m
-//  ARefreshExample
+//  PoporUI
 //
-//  Created by A Lee on 14-5-28.
-//  Copyright (c) 2014年 itcast. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import "UIView+Extension.h"

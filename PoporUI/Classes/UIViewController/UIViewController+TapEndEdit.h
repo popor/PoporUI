@@ -1,9 +1,9 @@
 //
 //  UIViewController+TapEndEdit.h
-//  linRunShengPi
+//  PoporUI
 //
-//  Created by 王凯庆 on 2018/1/7.
-//  Copyright © 2018年 艾慧勇. All rights reserved.
+//  Created by popor on 2018/6/19.
+//  Copyright © 2018年 popor. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
