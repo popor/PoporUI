@@ -1,0 +1,46 @@
+PODS:
+  - PoporUI (0.0.1):
+    - PoporUI/BlockView (= 0.0.1)
+    - PoporUI/IToast (= 0.0.1)
+    - PoporUI/KeyBoard (= 0.0.1)
+    - PoporUI/Response (= 0.0.1)
+    - PoporUI/SimpleWKWebVC (= 0.0.1)
+    - PoporUI/Tool (= 0.0.1)
+    - PoporUI/UIButton (= 0.0.1)
+    - PoporUI/UIImage (= 0.0.1)
+    - PoporUI/UILabel (= 0.0.1)
+    - PoporUI/UIScrollView (= 0.0.1)
+    - PoporUI/UITableView (= 0.0.1)
+    - PoporUI/UITextField (= 0.0.1)
+    - PoporUI/UITextView (= 0.0.1)
+    - PoporUI/UIView (= 0.0.1)
+    - PoporUI/UIViewController (= 0.0.1)
+  - PoporUI/BlockView (0.0.1)
+  - PoporUI/IToast (0.0.1)
+  - PoporUI/KeyBoard (0.0.1)
+  - PoporUI/Response (0.0.1)
+  - PoporUI/SimpleWKWebVC (0.0.1)
+  - PoporUI/Tool (0.0.1)
+  - PoporUI/UIButton (0.0.1)
+  - PoporUI/UIImage (0.0.1)
+  - PoporUI/UILabel (0.0.1)
+  - PoporUI/UIScrollView (0.0.1)
+  - PoporUI/UITableView (0.0.1)
+  - PoporUI/UITextField (0.0.1)
+  - PoporUI/UITextView (0.0.1)
+  - PoporUI/UIView (0.0.1)
+  - PoporUI/UIViewController (0.0.1)
+
+DEPENDENCIES:
+  - PoporUI (from `../`)
+
+EXTERNAL SOURCES:
+  PoporUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PoporUI: 23e8a66861dcc2ab1d4abf631ff9f17579119a7b
+
+PODFILE CHECKSUM: 6b3903f3dc3c71c05f60161cb627ebf619c5a2c9
+
+COCOAPODS: 1.5.3

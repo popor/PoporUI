@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PoporUI_Example' do
+  pod 'PoporUI', :path => '../'
+
+  target 'PoporUI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
