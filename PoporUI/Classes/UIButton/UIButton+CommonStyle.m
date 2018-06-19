@@ -8,6 +8,10 @@
 
 #import "UIButton+CommonStyle.h"
 
+#import "UIImage+Tool.h"
+#import <PoporFoundation/FontPrefix.h>
+#import <PoporFoundation/ColorPrefix.h>
+
 @implementation UIButton (CommonStyle)
 
 

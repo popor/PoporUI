@@ -100,5 +100,8 @@ TODO: Add long description of the pod here.
   
   s.platform     = :ios, "8.0"
   
+  s.dependency 'PoporFoundation'
+  s.dependency 'ReactiveObjC'
+  s.dependency 'Masonry'
   
 end

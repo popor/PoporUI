@@ -2,8 +2,6 @@
 
 #import <UIKit/UIKit.h>
 
-#define NCBarTitleColor  RGBA(60, 60, 60, 1)           // NCbartitle 颜色
-
 @interface UIViewController (LeeBase)
 - (UIBarButtonItem *)loadLeftItemWithImage:(UIImage *)image target:(id)target action:(SEL)action;
 - (UIBarButtonItem *)loadRightItemWithImage:(UIImage *)image target:(id)target action:(SEL)action;

@@ -8,6 +8,8 @@
 
 #import "UIButton+UIEdgeInsets.h"
 
+#import "UIView+Extension.h"
+
 @implementation UIButton (UIEdgeInsets)
 
 -(void)setEdgeInsetType:(EdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap{

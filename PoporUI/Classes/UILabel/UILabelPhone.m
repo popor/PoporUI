@@ -8,6 +8,7 @@
 //
 
 #import "UILabelPhone.h"
+#import <PoporFoundation/NSString+Tool.h>
 
 @implementation UILabelPhone
 

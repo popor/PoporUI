@@ -2,6 +2,11 @@
 
 #import "UIViewController+LeeBase.h"
 
+#import <PoporFoundation/NSString+Size.h>
+
+// NCbartitle 颜色
+#define NCBarTitleColor   [UIColor colorWithRed:60.0/255.0f green:60.0/255.0f blue:60.0/255.0f alpha:1]
+
 @implementation UIViewController (LeeBase)
 
 - (UIBarButtonItem *)loadLeftItemWithImage:(UIImage *)image target:(id)target action:(SEL)action {

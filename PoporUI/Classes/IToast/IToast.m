@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "IToastKeyboard.h"
 
+#import <PoporFoundation/NSString+Size.h>
+
 enum iToastDuration {
     iToastDurationLong = 10000,
     iToastDurationShort = 1000,

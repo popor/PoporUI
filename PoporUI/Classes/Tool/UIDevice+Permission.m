@@ -14,6 +14,7 @@
 
 #import "UIDevice+Tool.h"
 #import "BlockAlertView.h"
+#import <PoporFoundation/NSString+Tool.h>
 
 static NSString * AlertSysPermissionAlbum__  = @"请在iPhone的“设置-隐私-照片”选项中，允许__访问您的照片。";
 static NSString * AlertSysPermissionCamera__ = @"请在iPhone的“设置-隐私-相机”选项中，允许__访问您的相机。";

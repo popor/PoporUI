@@ -19,6 +19,17 @@
     "ios": "8.0"
   },
   "source_files": "PoporUI/Classes/PoporUI.h",
+  "dependencies": {
+    "PoporFoundation": [
+
+    ],
+    "ReactiveObjC": [
+
+    ],
+    "Masonry": [
+
+    ]
+  },
   "subspecs": [
     {
       "name": "BlockView",

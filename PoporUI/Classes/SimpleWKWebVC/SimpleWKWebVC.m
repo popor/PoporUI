@@ -9,6 +9,8 @@
 #import "SimpleWKWebVC.h"
 
 #import <WebKit/WebKit.h>
+#import <Masonry/Masonry.h>
+#import "IToastKeyboard.h"
 
 @interface SimpleWKWebVC ()<WKUIDelegate, WKNavigationDelegate>
 
@@ -45,7 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = ColorLineLightGray;
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
     [self addWebView];
     //[self addNCBT];

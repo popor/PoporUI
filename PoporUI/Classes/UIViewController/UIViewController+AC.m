@@ -9,7 +9,8 @@
 #import "UIViewController+AC.h"
 
 #import <objc/runtime.h>
-#import "NSObject+Swizzling.h"
+#import <PoporFoundation/NSObject+Swizzling.h>
+#import <PoporFoundation/FunctionPrefix.h>
 
 @implementation UIViewController (AC)
 

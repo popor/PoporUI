@@ -11,6 +11,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 #import <Photos/Photos.h>
 #import "UIDevice+Tool.h"
+#import "IToastKeyboard.h"
 
 @implementation UIDevice (SaveImage)
 
