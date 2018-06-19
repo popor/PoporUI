@@ -9,7 +9,10 @@
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
   s.version          = '0.0.1'
-  s.summary          = 'A short description of PoporUI.'
+  s.summary          = 'Contain Itoast;
+  UIButton,UILabel,UITextView,UITextField extention;
+  
+  '
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +20,9 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+#  s.description      = <<-DESC
+#TODO: Add long description of the pod here.
+#                       DESC
 
   s.homepage         = 'https://github.com/popor/PoporUI'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -70,6 +73,7 @@ TODO: Add long description of the pod here.
   s.subspec 'UIButton' do |ss|
       ss.ios.dependency 'PoporFoundation/prefix'
       ss.ios.dependency 'PoporUI/UIView'
+      ss.ios.dependency 'PoporUI/UIImage'
       
       ss.source_files = 'PoporUI/Classes/UIButton/*.{h,m}'
   end
