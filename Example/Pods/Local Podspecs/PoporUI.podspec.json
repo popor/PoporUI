@@ -40,10 +40,6 @@
       "source_files": "PoporUI/Classes/IToast/*.{h,m}"
     },
     {
-      "name": "KeyBoard",
-      "source_files": "PoporUI/Classes/KeyBoard/*.{h,m}"
-    },
-    {
       "name": "Response",
       "source_files": "PoporUI/Classes/Response/*.{h,m}"
     },

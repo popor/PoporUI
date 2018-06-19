@@ -42,15 +42,18 @@ TODO: Add long description of the pod here.
       ss.source_files = 'PoporUI/Classes/IToast/*.{h,m}'
   end
   
-  s.subspec 'KeyBoard' do |ss|
-      ss.source_files = 'PoporUI/Classes/KeyBoard/*.{h,m}'
-  end
+  #  s.subspec 'KeyBoard' do |ss|
+  #      ss.source_files = 'PoporUI/Classes/KeyBoard/*.{h,m}'
+  #  end
   
   s.subspec 'Response' do |ss|
       ss.source_files = 'PoporUI/Classes/Response/*.{h,m}'
   end
   
   s.subspec 'SimpleWKWebVC' do |ss|
+      ss.ios.dependency 'PoporUI/IToast'
+      ss.ios.dependency 'Masonry'
+      
       ss.source_files = 'PoporUI/Classes/SimpleWKWebVC/*.{h,m}'
   end
   
@@ -61,6 +64,9 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'UIButton' do |ss|
+      ss.ios.dependency 'PoporFoundation/prefix'
+      ss.ios.dependency 'PoporUI/UIView'
+      
       ss.source_files = 'PoporUI/Classes/UIButton/*.{h,m}'
   end
   
@@ -69,6 +75,9 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'UILabel' do |ss|
+      ss.ios.dependency 'PoporFoundation/NSString'
+      ss.ios.dependency 'PoporUI/UIView'
+      
       ss.source_files = 'PoporUI/Classes/UILabel/*.{h,m}'
   end
   
@@ -82,6 +91,8 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'UITextField' do |ss|
+      ss.ios.dependency 'ReactiveObjC'
+      
       ss.source_files = 'PoporUI/Classes/UITextField/*.{h,m}'
   end
   
@@ -94,6 +105,10 @@ TODO: Add long description of the pod here.
   end
   
   s.subspec 'UIViewController' do |ss|
+      ss.ios.dependency 'PoporFoundation/prefix'
+      ss.ios.dependency 'PoporFoundation/NSObject'
+      ss.ios.dependency 'PoporFoundation/NSString'
+      
       ss.source_files = 'PoporUI/Classes/UIViewController/*.{h,m}'
   end
   #-----------------------

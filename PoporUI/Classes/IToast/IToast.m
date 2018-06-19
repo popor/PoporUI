@@ -36,6 +36,7 @@ static iToastSettings *sharedSettings = nil;
 @interface IToast ()
 
 @property (nonatomic, weak  ) IToastKeyboard * iToastKeyboard;
+@property (nonatomic, weak  ) UIView         * view;
 
 @end
 
@@ -227,7 +228,7 @@ static iToastSettings *sharedSettings = nil;
     showBT.alpha = 1;
     [UIView commitAnimations];
     
-    view = showBT;
+    self.view = showBT;
     
     [showBT addTarget:self action:@selector(hideToast) forControlEvents:UIControlEventTouchDown];
 }
@@ -276,9 +277,10 @@ static iToastSettings *sharedSettings = nil;
 }
 
 - (void) hideToast {
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [UIView animateWithDuration:0.1 animations:^{
-            view.alpha = 0;
+            weakSelf.view.alpha = 0;
         } completion:^(BOOL finished) {
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 [IToast destroyObject:self];
@@ -292,7 +294,7 @@ static iToastSettings *sharedSettings = nil;
 }
 
 - (void) removeToast:(NSTimer*)theTimer{
-    [view removeFromSuperview];
+    [self.view removeFromSuperview];
 }
 
 

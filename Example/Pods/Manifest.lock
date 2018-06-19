@@ -34,7 +34,6 @@ PODS:
     - PoporFoundation
     - PoporUI/BlockView (= 0.0.1)
     - PoporUI/IToast (= 0.0.1)
-    - PoporUI/KeyBoard (= 0.0.1)
     - PoporUI/Response (= 0.0.1)
     - PoporUI/SimpleWKWebVC (= 0.0.1)
     - PoporUI/Tool (= 0.0.1)
@@ -53,10 +52,6 @@ PODS:
     - PoporFoundation
     - ReactiveObjC
   - PoporUI/IToast (0.0.1):
-    - Masonry
-    - PoporFoundation
-    - ReactiveObjC
-  - PoporUI/KeyBoard (0.0.1):
     - Masonry
     - PoporFoundation
     - ReactiveObjC
@@ -126,7 +121,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 286a81ac282014e13b1b874840de7f1f1d852d5e
-  PoporUI: d46e39dae371abfcd5453ae6d4790f405909826f
+  PoporUI: 3e500c74bc60d37b9c6d74894fcaef05bd66e221
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
 
 PODFILE CHECKSUM: 6fd9dcb794450056994659285c6a76c4698cc680

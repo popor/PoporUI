@@ -40,7 +40,6 @@ typedef enum {
     
 	NSTimer *timer;
     
-	UIView *view;
 	NSString *text;
 }
 
