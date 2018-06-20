@@ -42,6 +42,8 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'IToast' do |ss|
+      ss.ios.dependency 'PoporFoundation/NSString'
+      
       ss.source_files = 'PoporUI/Classes/IToast/*.{h,m}'
   end
   
