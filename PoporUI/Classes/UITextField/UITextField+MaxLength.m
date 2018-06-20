@@ -7,18 +7,17 @@
 //
 
 #import "UITextField+MaxLength.h"
-#import <ReactiveObjC/ReactiveObjC.h>
 
 @implementation UITextField (MaxLength)
 
-// 这个不需要手动移除,但是需要RAC支持
-- (void)addRacMaxLength:(int)maxLength Block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock {
-    __weak typeof(self) weakSelf = self;
-    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:UITextFieldTextDidChangeNotification object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
-        NSLog(@"TF 最大文字 %@", x);
-        [weakSelf textFieldMaxLength:maxLength block:textFieldBlock];
-    }];
-}
+//// 这个不需要手动移除,但是需要RAC支持
+//- (void)addRacMaxLength:(int)maxLength Block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock {
+//    __weak typeof(self) weakSelf = self;
+//    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:UITextFieldTextDidChangeNotification object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification * _Nullable x) {
+//        NSLog(@"TF 最大文字 %@", x);
+//        [weakSelf textFieldMaxLength:maxLength block:textFieldBlock];
+//    }];
+//}
 
 // 这个需要手动移除
 + (void)addNormalDidChangeNCTarget:(id)target action:(SEL)action

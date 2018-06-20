@@ -1,5 +1,4 @@
 PODS:
-  - Masonry (1.1.0)
   - PoporFoundation (0.0.2):
     - PoporFoundation/NSArray (= 0.0.2)
     - PoporFoundation/NSAssistant (= 0.0.2)
@@ -30,7 +29,6 @@ PODS:
   - PoporFoundation/prefix (0.0.2)
   - PoporFoundation/ScreenCommonSize (0.0.2)
   - PoporUI (0.0.1):
-    - Masonry
     - PoporFoundation
     - PoporUI/BlockView (= 0.0.1)
     - PoporUI/IToast (= 0.0.1)
@@ -46,83 +44,61 @@ PODS:
     - PoporUI/UITextView (= 0.0.1)
     - PoporUI/UIView (= 0.0.1)
     - PoporUI/UIViewController (= 0.0.1)
-    - ReactiveObjC
   - PoporUI/BlockView (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/IToast (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/Response (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/SimpleWKWebVC (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
+    - PoporUI/IToast
   - PoporUI/Tool (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
+    - PoporFoundation/NSString
+    - PoporUI/BlockView
+    - PoporUI/IToast
   - PoporUI/UIButton (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
+    - PoporFoundation/prefix
+    - PoporUI/UIImage
+    - PoporUI/UIView
   - PoporUI/UIImage (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/UILabel (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
+    - PoporFoundation/NSString
+    - PoporUI/UIView
   - PoporUI/UIScrollView (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/UITableView (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/UITextField (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/UITextView (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/UIView (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
   - PoporUI/UIViewController (0.0.1):
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
-  - ReactiveObjC (3.1.0)
+    - PoporFoundation/NSObject
+    - PoporFoundation/NSString
+    - PoporFoundation/prefix
 
 DEPENDENCIES:
   - PoporUI (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - Masonry
     - PoporFoundation
-    - ReactiveObjC
 
 EXTERNAL SOURCES:
   PoporUI:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 286a81ac282014e13b1b874840de7f1f1d852d5e
-  PoporUI: 3e500c74bc60d37b9c6d74894fcaef05bd66e221
-  ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  PoporUI: bbe08607a6ffc9602e5f5d8533d26b50f2749337
 
 PODFILE CHECKSUM: 6fd9dcb794450056994659285c6a76c4698cc680
 

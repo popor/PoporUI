@@ -10,8 +10,8 @@
 
 @interface UITextField (MaxLength)
 
-// 这个不需要手动移除,但是需要RAC支持
-- (void)addRacMaxLength:(int)maxLength Block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock;
+//// 这个不需要手动移除,但是需要RAC支持
+//- (void)addRacMaxLength:(int)maxLength Block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock;
 
 // 这个需要手动移除
 + (void)addNormalDidChangeNCTarget:(id)target action:(SEL)action;

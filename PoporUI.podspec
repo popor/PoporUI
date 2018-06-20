@@ -55,7 +55,6 @@ Pod::Spec.new do |s|
   
   s.subspec 'SimpleWKWebVC' do |ss|
       ss.ios.dependency 'PoporUI/IToast'
-      ss.ios.dependency 'Masonry'
       
       ss.source_files = 'PoporUI/Classes/SimpleWKWebVC/*.{h,m}'
   end
@@ -99,7 +98,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UITextField' do |ss|
-      ss.ios.dependency 'ReactiveObjC'
+      #ss.ios.dependency 'ReactiveObjC'
       
       ss.source_files = 'PoporUI/Classes/UITextField/*.{h,m}'
   end
@@ -124,7 +123,5 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "8.0"
   
   s.dependency 'PoporFoundation'
-  s.dependency 'ReactiveObjC'
-  s.dependency 'Masonry'
   
 end

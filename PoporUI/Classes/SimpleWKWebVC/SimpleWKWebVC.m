@@ -9,7 +9,6 @@
 #import "SimpleWKWebVC.h"
 
 #import <WebKit/WebKit.h>
-#import <Masonry/Masonry.h>
 #import "IToastKeyboard.h"
 
 @interface SimpleWKWebVC ()<WKUIDelegate, WKNavigationDelegate>
@@ -115,9 +114,7 @@
         
         [self.view addSubview:self.infoWV];
         
-        [self.infoWV mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_offset(UIEdgeInsetsMake(0, 0, 0, 0));
-        }];
+        self.infoWV.frame = self.view.bounds;
         if (@available(iOS 11, *)) {
             self.infoWV.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
         }
