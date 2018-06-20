@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/popor/PoporUI'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'wangkq' => '908891024@qq.com' }
+  s.author           = { 'popor' => '908891024@qq.com' }
   s.source           = { :git => 'https://github.com/popor/PoporUI.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
@@ -98,8 +98,6 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UITextField' do |ss|
-      #ss.ios.dependency 'ReactiveObjC'
-      
       ss.source_files = 'PoporUI/Classes/UITextField/*.{h,m}'
   end
   
