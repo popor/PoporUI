@@ -70,5 +70,4 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 // UIViewController
 //#import "UIViewController+AC.h"
 #import "UIViewController+LeeBase.h"
-#import "UIViewController+ncBar.h"
 #import "UIViewController+TapEndEdit.h"

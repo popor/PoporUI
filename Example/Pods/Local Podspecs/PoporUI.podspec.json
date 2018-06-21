@@ -1,6 +1,6 @@
 {
   "name": "PoporUI",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "Contain Itoast;\n  UIButton,UILabel,UITextView,UITextField extention;",
   "homepage": "https://github.com/popor/PoporUI",
   "license": {
@@ -8,21 +8,16 @@
     "file": "LICENSE"
   },
   "authors": {
-    "wangkq": "908891024@qq.com"
+    "popor": "908891024@qq.com"
   },
   "source": {
     "git": "https://github.com/popor/PoporUI.git",
-    "tag": "0.0.1"
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "PoporUI/Classes/PoporUI.h",
-  "dependencies": {
-    "PoporFoundation": [
-
-    ]
-  },
   "subspecs": [
     {
       "name": "BlockView",
@@ -30,6 +25,13 @@
     },
     {
       "name": "IToast",
+      "ios": {
+        "dependencies": {
+          "PoporFoundation/NSString": [
+
+          ]
+        }
+      },
       "source_files": "PoporUI/Classes/IToast/*.{h,m}"
     },
     {
