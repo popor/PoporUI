@@ -6,6 +6,7 @@ PODS:
   - PoporUI (0.0.5):
     - PoporUI/BlockView (= 0.0.5)
     - PoporUI/IToast (= 0.0.5)
+    - PoporUI/ProgressView (= 0.0.5)
     - PoporUI/Response (= 0.0.5)
     - PoporUI/SimpleWKWebVC (= 0.0.5)
     - PoporUI/Tool (= 0.0.5)
@@ -21,6 +22,7 @@ PODS:
   - PoporUI/BlockView (0.0.5)
   - PoporUI/IToast (0.0.5):
     - PoporFoundation/NSString
+  - PoporUI/ProgressView (0.0.5)
   - PoporUI/Response (0.0.5)
   - PoporUI/SimpleWKWebVC (0.0.5):
     - PoporUI/IToast
@@ -59,7 +61,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   PoporFoundation: 286a81ac282014e13b1b874840de7f1f1d852d5e
-  PoporUI: c2ac2031948fe1e03d9fae74227173d06b2d6a71
+  PoporUI: 925cf0c1d92a5525587673fcfcddc1300741b584
 
 PODFILE CHECKSUM: 6fd9dcb794450056994659285c6a76c4698cc680
 

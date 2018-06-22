@@ -137,6 +137,10 @@
         }
       },
       "source_files": "PoporUI/Classes/UIViewController/*.{h,m}"
+    },
+    {
+      "name": "ProgressView",
+      "source_files": "PoporUI/Classes/ProgressView/*.{h,m}"
     }
   ]
 }
