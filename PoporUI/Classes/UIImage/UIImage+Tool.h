@@ -33,6 +33,7 @@
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 + (UIImage *)imageFromImage:(UIImage *)image changecolor:(UIColor *)color;
++ (UIImage *)imageFromImage:(UIImage *)image bgColor:(UIColor *)color;
 
 #pragma mark - 图片排列
 + (UIImage *)imageFromImageArray:(NSArray *)imageArray horizon:(BOOL)isHorizon;

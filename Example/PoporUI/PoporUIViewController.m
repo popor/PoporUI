@@ -18,6 +18,8 @@
 
 #import "IToastKeyboard.h"
 
+#import "UIImage+Tool.h"
+
 @interface PoporUIViewController ()
 
 @end
@@ -27,7 +29,29 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    {
+        UIImage * image = [UIImage imageFromImage:[UIImage imageNamed:@"icon180"] changecolor:[UIColor redColor]];
+        
+        UIImageView * oneIV = [[UIImageView alloc] initWithImage:image];
+        oneIV.frame = CGRectMake(100, 100, image.size.height/2, image.size.height/2);
+        
+        [self.view addSubview:oneIV];
+        
+    }
+    
+    {
+        UIImage * image = [UIImage imageFromImage:[UIImage imageNamed:@"icon180"] bgColor:[UIColor yellowColor]];
+        
+        UIImageView * oneIV = [[UIImageView alloc] initWithImage:image];
+        oneIV.frame = CGRectMake(100, 200, image.size.height/2, image.size.height/2);
+        
+        [self.view addSubview:oneIV];
+        
+    }
+    NSLog(@"1");
+    
 }
 
 - (void)didReceiveMemoryWarning
