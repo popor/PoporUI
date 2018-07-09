@@ -111,7 +111,7 @@
 }
 
 //@{ NSFontAttributeName :[ UIFont fontWithName : @"Arial-BoldMT" size : 30 ], NSForegroundColorAttributeName :[ UIColor whiteColor ] }
-+ (UIImage *)image:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic
++ (UIImage *)imageFromImage:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic
 {
     CGSize size= CGSizeMake(image.size.width, image.size.height ); // 画布大小
     

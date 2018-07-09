@@ -19,7 +19,7 @@
 
 //@{ NSFontAttributeName :[ UIFont fontWithName : @"Arial-BoldMT" size : 30 ], NSForegroundColorAttributeName :[ UIColor whiteColor ] }
 // 文字在图片中间
-+ (UIImage *)image:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic;
++ (UIImage *)imageFromImage:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic;
 
 //  CGSize strSize = [str sizeWithAttributes:dic];
 //+ (UIImage *)imageInSize:(CGSize)size image:(UIImage *)image imagePoint:(CGPoint)imagePoint text:(NSString *)text textPoint:(CGPoint)textPoint;
