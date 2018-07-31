@@ -9,9 +9,11 @@
 #import "NSString+format.h"
 #import <CoreText/CoreText.h>
 
+//#pragma mark - iOS
+//#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_WATCH
 @implementation NSString (format)
 
-+ (NSMutableAttributedString *)underLineAttString:(NSString *)string font:(UIFont *)font color:(UIColor *)color
++ (NSMutableAttributedString *)underLineAttString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color
 {
     NSRange range = (NSRange){0, string.length};
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:string];
@@ -30,17 +32,17 @@
 
 @implementation NSMutableAttributedString (format)
 
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color
 {
     [self addString:string font:font color:color underline:NO];
 }
 
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color underline:(BOOL)isUnderLine
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color underline:(BOOL)isUnderLine
 {
     [self addString:string font:font color:color bgColor:nil underline:isUnderLine];
 }
 
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color bgColor:(UIColor *)bgColor underline:(BOOL)isUnderLine
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color bgColor:(COLOR_CLASS *)bgColor underline:(BOOL)isUnderLine
 {
     if (!string) {
         return;
@@ -64,7 +66,7 @@
     [self appendAttributedString:attString];
 }
 
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color bgColor:(UIColor *)bgColor underline:(BOOL)isUnderLine lineSpacing:(float)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color bgColor:(COLOR_CLASS *)bgColor underline:(BOOL)isUnderLine lineSpacing:(float)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     if (!string) {
         return;
@@ -109,9 +111,24 @@
 }
 
 #pragma mark - Size Department
-- (CGSize)sizeWithWidth:(CGFloat)width
-{
+- (CGSize)sizeWithWidth:(CGFloat)width {
+    // UI系列
+#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_WATCH
     return [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine context:nil].size;
+    
+    // NS系列
+#elif TARGET_OS_MAC
+    if (@available(macOS 10.11, *)) {
+        return [self boundingRectWithSize:CGSizeMake(width, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading |NSStringDrawingTruncatesLastVisibleLine context:nil].size;
+    } else {
+        NSLog(@"10.11之前的系统不支持该方法: %s", __func__);
+        return CGSizeZero;
+    }
+    
+#endif
+
 }
 
 @end
+
+

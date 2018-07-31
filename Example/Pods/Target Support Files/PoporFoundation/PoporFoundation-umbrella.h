@@ -11,18 +11,18 @@
 #endif
 
 #import "NSObject+Swizzling.h"
-#import "NSObject+WMSafeKVO.h"
 #import "NSString+email.h"
 #import "NSString+format.h"
 #import "NSString+IDCard.h"
 #import "NSString+MD5.h"
 #import "NSString+Size.h"
 #import "NSString+Tool.h"
-#import "BlockMacroDefines.h"
-#import "ColorPrefix.h"
-#import "FontPrefix.h"
-#import "FunctionPrefix.h"
-#import "SizePrefix.h"
+#import "PrefixBlock.h"
+#import "PrefixColor.h"
+#import "PrefixFont.h"
+#import "PrefixFun.h"
+#import "PrefixSize.h"
+#import "PrefixOs.h"
 
 FOUNDATION_EXPORT double PoporFoundationVersionNumber;
 FOUNDATION_EXPORT const unsigned char PoporFoundationVersionString[];

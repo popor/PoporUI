@@ -8,13 +8,13 @@
 
 #import "PoporUIViewController.h"
 
-#import <PoporFoundation/FontPrefix.h>
-#import <PoporFoundation/ColorPrefix.h>
+#import <PoporFoundation/PrefixFont.h>
+#import <PoporFoundation/PrefixColor.h>
 //#import "UIView+Extension.h"
 #import <PoporFoundation/NSString+Tool.h>
 #import <PoporFoundation/NSString+Size.h>
 
-#import <PoporFoundation/FunctionPrefix.h>
+#import <PoporFoundation/PrefixFun.h>
 
 #import "IToastKeyboard.h"
 
@@ -29,8 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    //UIImage * clearImage = [UIImage imageFromColor:[UIColor clearColor] size:CGSizeMake(1, 1)];
     
+    return;
     {
         UIImage * image = [UIImage imageFromImage:[UIImage imageNamed:@"icon180"] changecolor:[UIColor redColor]];
         

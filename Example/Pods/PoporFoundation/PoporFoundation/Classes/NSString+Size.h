@@ -7,13 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+
+#import "PrefixOs.h"
 
 @interface NSString (Size)
 
-- (CGSize)sizeInFont:(UIFont *)font;
+- (CGSize)sizeInFont:(FONT_CLASS *)font;
 
-- (CGSize)sizeInFont:(UIFont *)font width:(float)width;
+- (CGSize)sizeInFont:(FONT_CLASS *)font width:(float)width;
 
-- (CGSize)sizeAttrSpace:(CGFloat)lineSpeace withFont:(UIFont*)font withWidth:(CGFloat)width;
+- (CGSize)sizeAttrSpace:(CGFloat)lineSpeace withFont:(FONT_CLASS*)font withWidth:(CGFloat)width;
 @end
+
+
+
+

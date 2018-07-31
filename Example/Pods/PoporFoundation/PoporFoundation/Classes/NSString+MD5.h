@@ -21,4 +21,10 @@
 //计算大文件的MD5值
 +(NSString*)getFileMD5WithPath:(NSString*)path;
 
+- (NSString *)sha1;
+
+// 下面两个的区别没有比较过.
+- (NSString *)md5;
++ (NSString *)encryptByMd5:(NSString *)str;
+
 @end

@@ -8,17 +8,6 @@
 
 #import "NSString+Tool.h"
 
-// ---- 原因https://blog.csdn.net/wxs0124/article/details/50148873
-//自定义的打印日志宏 如：
-//＃define TWLOGPRINT(xx, …) NSLog(@”%s(%d): ” xx, PRETTY_FUNCTION, LINE, ##VA_ARGS)
-//这个宏定义放在了 A.h 中 在B.m文件中使用的时候没有＃import “A.h”
-//
-//解决办法：
-//＃import ”宏定义所在的文件“
-//#import "NSString+Tool.h"
-//#import "FunctionPrefix.h"
-#import "ColorPrefix.h"
-
 @implementation NSString (Tool)
 
 #pragma mark - 判断空字符串
@@ -151,25 +140,25 @@
 }
 
 #pragma mark - 10-16转换
-+ (NSString *)stringToHexWithInt:(int)theNumber
-{
++ (NSString *)stringToHexWithInt:(int)theNumber {
     return [NSString stringWithFormat:@"%x", (unsigned int) theNumber];
 }
 
-+ (NSString *)stringToDecimalWithString:(NSString *)theNumber
-{
++ (NSString *)stringToDecimalWithString:(NSString *)theNumber {
     return [NSString stringWithFormat:@"%i", (int)strtoul([theNumber UTF8String], 0, 16)];
 }
 
-- (UIColor *)toColor
-{
-    if (self.length == 6) {
-        int red   = (int)strtoul([[self substringWithRange:(NSRange){0, 2}] UTF8String], 0, 16);
-        int green = (int)strtoul([[self substringWithRange:(NSRange){2, 2}] UTF8String], 0, 16);
-        int blue  = (int)strtoul([[self substringWithRange:(NSRange){4, 2}] UTF8String], 0, 16);
-        return RGBA(red, green, blue, 1);
+- (NSDictionary *)toDic {
+    if (self.length == 0) {
+        return nil;
+    }
+    
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[self dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingAllowFragments error:&err];
+    if(err) {
+        return nil;
     }else{
-        return [UIColor clearColor];
+        return dic;
     }
 }
 
@@ -189,7 +178,8 @@
 }
 
 - (NSString *)toUtf8Encode {
-    return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    return self.stringByRemovingPercentEncoding;
+    //return [self stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
 - (NSString *)toHumanizePhoneString {
@@ -218,4 +208,21 @@
 - (NSData *)toData {
     return [self dataUsingEncoding:NSUTF8StringEncoding];
 }
+
+- (NSInteger)countOccurencesOfString:(NSString*)searchString {
+    NSInteger strCount = [self length] - [[self stringByReplacingOccurrencesOfString:searchString withString:@""] length];
+    return strCount / [searchString length];
+}
+
+- (COLOR_CLASS *)toColor {
+    if (self.length == 6) {
+        int red   = (int)strtoul([[self substringWithRange:(NSRange){0, 2}] UTF8String], 0, 16);
+        int green = (int)strtoul([[self substringWithRange:(NSRange){2, 2}] UTF8String], 0, 16);
+        int blue  = (int)strtoul([[self substringWithRange:(NSRange){4, 2}] UTF8String], 0, 16);
+        return [COLOR_CLASS colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1];
+    }else{
+        return [COLOR_CLASS clearColor];
+    }
+}
+
 @end

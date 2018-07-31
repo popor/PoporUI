@@ -7,22 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <UIKit/UIKit.h>
+#import "PrefixOs.h"
 
 @interface NSString (format)
 
-+ (NSMutableAttributedString *)underLineAttString:(NSString *)string font:(UIFont *)font color:(UIColor *)color;
++ (NSMutableAttributedString *)underLineAttString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color;
 
 @end
 
 
 @interface NSMutableAttributedString (format)
 
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color;
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color underline:(BOOL)isUnderLine;
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color bgColor:(UIColor *)bgColor underline:(BOOL)isUnderLine;
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color;
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color underline:(BOOL)isUnderLine;
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color bgColor:(COLOR_CLASS *)bgColor underline:(BOOL)isUnderLine;
 
-- (void)addString:(NSString *)string font:(UIFont *)font color:(UIColor *)color bgColor:(UIColor *)bgColor underline:(BOOL)isUnderLine lineSpacing:(float)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
+- (void)addString:(NSString *)string font:(FONT_CLASS *)font color:(COLOR_CLASS *)color bgColor:(COLOR_CLASS *)bgColor underline:(BOOL)isUnderLine lineSpacing:(float)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
 // 用于纠正不同字体之间的文字,不会行居中的问题
 - (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range;
@@ -32,3 +32,4 @@
 - (CGSize)sizeWithWidth:(CGFloat)width;
 
 @end
+

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   
@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UIButton' do |ss|
-      ss.ios.dependency 'PoporFoundation/prefix'
+      ss.ios.dependency 'PoporFoundation/PrefixCore'
       ss.ios.dependency 'PoporUI/UIView'
       ss.ios.dependency 'PoporUI/UIImage'
       
@@ -112,7 +112,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UIViewController' do |ss|
-      ss.ios.dependency 'PoporFoundation/prefix'
+      ss.ios.dependency 'PoporFoundation/PrefixCore'
       ss.ios.dependency 'PoporFoundation/NSObject'
       ss.ios.dependency 'PoporFoundation/NSString'
       

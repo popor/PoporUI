@@ -10,7 +10,7 @@
 
 #import <objc/runtime.h>
 #import <PoporFoundation/NSObject+Swizzling.h>
-#import <PoporFoundation/FunctionPrefix.h>
+#import <PoporFoundation/prefixFun.h>
 
 @implementation UIViewController (AC)
 
