@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.8'
+  s.version          = '0.0.9'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   
@@ -55,11 +55,11 @@ Pod::Spec.new do |s|
       ss.source_files = 'PoporUI/Classes/Response/*.{h,m}'
   end
   
-  s.subspec 'SimpleWKWebVC' do |ss|
-      ss.ios.dependency 'PoporUI/IToast'
-      
-      ss.source_files = 'PoporUI/Classes/SimpleWKWebVC/*.{h,m}'
-  end
+  #  s.subspec 'SimpleWKWebVC' do |ss|
+  #      ss.ios.dependency 'PoporUI/IToast'
+  #
+  #      ss.source_files = 'PoporUI/Classes/SimpleWKWebVC/*.{h,m}'
+  #  end
   
   
   #-----------------------
