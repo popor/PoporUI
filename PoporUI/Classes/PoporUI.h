@@ -26,9 +26,6 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 // Responder
 #import "UIResponder+Router.h"
 
-// SimpleWKWebVC
-#import "SimpleWKWebVC.h"
-
 // Tool
 #import "DeviceDisk.h"
 #import "NSFileManager+Tool.h"
