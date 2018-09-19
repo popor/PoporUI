@@ -30,6 +30,7 @@
 #import "UILabel+Size.h"
 #import "UILabelInsets.h"
 #import "UILabelPhone.h"
+#import "UINavigationController+remove.h"
 #import "AllowPanGRPassSV.h"
 #import "UIScrollView+tool.h"
 #import "UITableView+AllowPanGR.h"

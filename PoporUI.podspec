@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.11'
+  s.version          = '0.0.12'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   
@@ -117,6 +117,10 @@ Pod::Spec.new do |s|
       ss.ios.dependency 'PoporFoundation/NSString'
       
       ss.source_files = 'PoporUI/Classes/UIViewController/*.{h,m}'
+  end
+  
+  s.subspec 'UINavigationController' do |ss|
+      ss.source_files = 'PoporUI/Classes/UINavigationController/*.{h,m}'
   end
   
   s.subspec 'ProgressView' do |ss|
