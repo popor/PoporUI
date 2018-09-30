@@ -28,7 +28,6 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
 // Tool
 #import "DeviceDisk.h"
-#import "NSFileManager+Tool.h"
 #import "UIDevice+Permission.h"
 #import "UIDevice+SaveImage.h"
 #import "UIDevice+Tool.h"
