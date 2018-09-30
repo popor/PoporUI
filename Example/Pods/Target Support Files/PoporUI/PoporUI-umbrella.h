@@ -19,7 +19,6 @@
 #import "UIResponder+Router.h"
 #import "DeviceDisk.h"
 #import "DispatchTool.h"
-#import "NSFileManager+Tool.h"
 #import "UIDevice+Permission.h"
 #import "UIDevice+SaveImage.h"
 #import "UIDevice+Tool.h"

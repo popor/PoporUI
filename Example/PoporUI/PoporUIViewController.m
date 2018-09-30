@@ -29,8 +29,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //UIImage * clearImage = [UIImage imageFromColor:[UIColor clearColor] size:CGSizeMake(1, 1)];
     
+    //UIImage * clearImage = [UIImage imageFromColor:[UIColor clearColor] size:CGSizeMake(1, 1)];
+    //    {
+    //        UIImageView * iv = [UIImageView new];
+    //        iv.backgroundColor = [UIColor whiteColor];
+    //        iv.image = [UIImage imageNamed:@"foot"];
+    //        iv.contentMode = UIViewContentModeScaleAspectFit;
+    //        iv.frame = CGRectMake(0, 0, 1024, 1024);
+    //        iv.layer.cornerRadius = 250;
+    //        iv.clipsToBounds = YES;
+    //        UIImage * i = [UIImage imageFromView:iv];
+    //        NSLog(@"1");
+    //    }
     return;
     {
         UIImage * image = [UIImage imageFromImage:[UIImage imageNamed:@"icon180"] changecolor:[UIColor redColor]];

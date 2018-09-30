@@ -5,46 +5,46 @@ PODS:
   - PoporFoundation/PrefixCore (0.0.15):
     - PoporFoundation/PrefixOs
   - PoporFoundation/PrefixOs (0.0.15)
-  - PoporUI (0.0.12):
-    - PoporUI/BlockView (= 0.0.12)
-    - PoporUI/IToast (= 0.0.12)
-    - PoporUI/ProgressView (= 0.0.12)
-    - PoporUI/Response (= 0.0.12)
-    - PoporUI/Tool (= 0.0.12)
-    - PoporUI/UIButton (= 0.0.12)
-    - PoporUI/UIImage (= 0.0.12)
-    - PoporUI/UILabel (= 0.0.12)
-    - PoporUI/UINavigationController (= 0.0.12)
-    - PoporUI/UIScrollView (= 0.0.12)
-    - PoporUI/UITableView (= 0.0.12)
-    - PoporUI/UITextField (= 0.0.12)
-    - PoporUI/UITextView (= 0.0.12)
-    - PoporUI/UIView (= 0.0.12)
-    - PoporUI/UIViewController (= 0.0.12)
-  - PoporUI/BlockView (0.0.12)
-  - PoporUI/IToast (0.0.12):
+  - PoporUI (0.0.13):
+    - PoporUI/BlockView (= 0.0.13)
+    - PoporUI/IToast (= 0.0.13)
+    - PoporUI/ProgressView (= 0.0.13)
+    - PoporUI/Response (= 0.0.13)
+    - PoporUI/Tool (= 0.0.13)
+    - PoporUI/UIButton (= 0.0.13)
+    - PoporUI/UIImage (= 0.0.13)
+    - PoporUI/UILabel (= 0.0.13)
+    - PoporUI/UINavigationController (= 0.0.13)
+    - PoporUI/UIScrollView (= 0.0.13)
+    - PoporUI/UITableView (= 0.0.13)
+    - PoporUI/UITextField (= 0.0.13)
+    - PoporUI/UITextView (= 0.0.13)
+    - PoporUI/UIView (= 0.0.13)
+    - PoporUI/UIViewController (= 0.0.13)
+  - PoporUI/BlockView (0.0.13)
+  - PoporUI/IToast (0.0.13):
     - PoporFoundation/NSString
-  - PoporUI/ProgressView (0.0.12)
-  - PoporUI/Response (0.0.12)
-  - PoporUI/Tool (0.0.12):
+  - PoporUI/ProgressView (0.0.13)
+  - PoporUI/Response (0.0.13)
+  - PoporUI/Tool (0.0.13):
     - PoporFoundation/NSString
     - PoporUI/BlockView
     - PoporUI/IToast
-  - PoporUI/UIButton (0.0.12):
+  - PoporUI/UIButton (0.0.13):
     - PoporFoundation/PrefixCore
     - PoporUI/UIImage
     - PoporUI/UIView
-  - PoporUI/UIImage (0.0.12)
-  - PoporUI/UILabel (0.0.12):
+  - PoporUI/UIImage (0.0.13)
+  - PoporUI/UILabel (0.0.13):
     - PoporFoundation/NSString
     - PoporUI/UIView
-  - PoporUI/UINavigationController (0.0.12)
-  - PoporUI/UIScrollView (0.0.12)
-  - PoporUI/UITableView (0.0.12)
-  - PoporUI/UITextField (0.0.12)
-  - PoporUI/UITextView (0.0.12)
-  - PoporUI/UIView (0.0.12)
-  - PoporUI/UIViewController (0.0.12):
+  - PoporUI/UINavigationController (0.0.13)
+  - PoporUI/UIScrollView (0.0.13)
+  - PoporUI/UITableView (0.0.13)
+  - PoporUI/UITextField (0.0.13)
+  - PoporUI/UITextView (0.0.13)
+  - PoporUI/UIView (0.0.13)
+  - PoporUI/UIViewController (0.0.13):
     - PoporFoundation/NSObject
     - PoporFoundation/NSString
     - PoporFoundation/PrefixCore
@@ -62,8 +62,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   PoporFoundation: 0293bddbd32f0c12b80c6149105e2804ae79b16c
-  PoporUI: d3ae07101aef8c066d1ad1c609d8f5dd4fcfbc58
+  PoporUI: 0dc1df0c2817465c041e9bcc6eec3b918755df88
 
 PODFILE CHECKSUM: 6fd9dcb794450056994659285c6a76c4698cc680
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0.beta.1
