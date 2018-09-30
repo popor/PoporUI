@@ -8,9 +8,10 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.13'
+  s.version          = '0.0.14'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
+  '
   
   s.homepage         = 'https://github.com/popor/PoporUI'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

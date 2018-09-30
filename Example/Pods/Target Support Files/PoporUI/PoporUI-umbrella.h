@@ -25,6 +25,7 @@
 #import "UIPasteImageTextView.h"
 #import "UIButton+CommonStyle.h"
 #import "UIButton+UIEdgeInsets.h"
+#import "UIButtonLayoutCustom.h"
 #import "UIImage+Tool.h"
 #import "UILabel+Size.h"
 #import "UILabelInsets.h"
@@ -43,6 +44,7 @@
 #import "UIView+Tool.h"
 #import "UIViewController+AC.h"
 #import "UIViewController+LeeBase.h"
+#import "UIViewController+ncBar.h"
 #import "UIViewController+TapEndEdit.h"
 
 FOUNDATION_EXPORT double PoporUIVersionNumber;
