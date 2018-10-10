@@ -16,6 +16,8 @@
 
 #import <PoporFoundation/PrefixFun.h>
 
+#import "UIDeviceScreen.h"
+
 #import "IToastKeyboard.h"
 
 #import "UIImage+Tool.h"
@@ -30,6 +32,7 @@
 {
     [super viewDidLoad];
     
+    NSLog(@"safeTopMargin: %f, safeBottomMargin: %f", [UIDeviceScreen safeTopMargin:self.navigationController], [UIDeviceScreen safeBottomMargin]);
     //UIImage * clearImage = [UIImage imageFromColor:[UIColor clearColor] size:CGSizeMake(1, 1)];
     //    {
     //        UIImageView * iv = [UIImageView new];

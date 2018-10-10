@@ -1,6 +1,6 @@
 {
   "name": "PoporUI",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "summary": "Contain Itoast;\n  UIButton,UILabel,UITextView,UITextField extention;",
   "homepage": "https://github.com/popor/PoporUI",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporUI.git",
-    "tag": "0.0.17"
+    "tag": "0.0.18"
   },
   "platforms": {
     "ios": "8.0"
@@ -134,6 +134,10 @@
     {
       "name": "ProgressView",
       "source_files": "PoporUI/Classes/ProgressView/*.{h,m}"
+    },
+    {
+      "name": "UIDeviceScreen",
+      "source_files": "PoporUI/Classes/UIDeviceScreen/*.{h,m}"
     }
   ]
 }

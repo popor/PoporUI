@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.17'
+  s.version          = '0.0.18'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   '
@@ -112,6 +112,10 @@ Pod::Spec.new do |s|
   
   s.subspec 'ProgressView' do |ss|
       ss.source_files = 'PoporUI/Classes/ProgressView/*.{h,m}'
+  end
+  
+  s.subspec 'UIDeviceScreen' do |ss|
+      ss.source_files = 'PoporUI/Classes/UIDeviceScreen/*.{h,m}'
   end
   
   

@@ -25,6 +25,7 @@
 #import "UIButton+CommonStyle.h"
 #import "UIButton+UIEdgeInsets.h"
 #import "UIButtonLayoutCustom.h"
+#import "UIDeviceScreen.h"
 #import "UIImage+Tool.h"
 #import "UILabel+Size.h"
 #import "UILabelInsets.h"
