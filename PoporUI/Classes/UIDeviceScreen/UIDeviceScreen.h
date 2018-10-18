@@ -15,9 +15,6 @@
 // 是否是刘海屏幕,通过安全区域取值
 + (BOOL)isIphoneXScreen;
 
-/** 导航栏的高度，包含状态栏 */
-+ (CGFloat)safeTopMargin:(UINavigationController *)nc;
-
 /** iphoneX 底部安全距离 */
 + (CGFloat)safeBottomMargin;
 

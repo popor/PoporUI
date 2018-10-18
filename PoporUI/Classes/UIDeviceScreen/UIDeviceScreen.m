@@ -24,20 +24,11 @@
     return iPhoneX;
 }
 
-+ (CGFloat)safeTopMargin:(UINavigationController *)nc {
-    CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];//标题栏
-    CGRect NavRect    = nc.navigationBar.frame;//然后将高度相加，便可以动态计算顶部高度。
-    CGFloat height    = StatusRect.size.height + NavRect.size.height;
-    
-    return height;
-}
-
 + (CGFloat)safeBottomMargin {
-    CGRect StatusRect = [[UIApplication sharedApplication] statusBarFrame];//标题栏
-    if (StatusRect.size.height == 0 || StatusRect.size.height == 20) {
-        return 0;
-    }else{
+    if ([self isIphoneXScreen]) {
         return 34;
+    }else{
+        return 0;
     }
 }
 
