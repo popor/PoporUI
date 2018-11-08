@@ -13,7 +13,7 @@
 // 不继承最全的函数,是为了省资源
 + (UIImage *)imageFromColor:(UIColor*)color size:(CGSize)size
 {
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1.0);
     
     [color set];
     UIRectFill(CGRectMake(0, 0, size.width, size.height));
@@ -29,7 +29,7 @@
 {
     CGFloat w = size.width;
     CGFloat h = size.height;
-    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat scale = 1.0f;
     // 防止圆角半径小于0，或者大于宽/高中较小值的一半。
     if (corner < 0){
         corner = 0;
@@ -114,7 +114,7 @@
 {
     CGSize size= CGSizeMake(image.size.width, image.size.height ); // 画布大小
     
-    UIGraphicsBeginImageContextWithOptions (size, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions (size, NO, 1.0f);
     
     [image drawAtPoint:CGPointMake (0 ,0)];
     
@@ -162,7 +162,7 @@
     for(UIColor *c in colors) {
         [ar addObject:(id)c.CGColor];
     }
-    UIGraphicsBeginImageContextWithOptions(bounds.size, YES, 1);
+    UIGraphicsBeginImageContextWithOptions(bounds.size, YES, 1.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors lastObject] CGColor]);
@@ -224,7 +224,7 @@
 
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
 {
-    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat scale = 1.0;
     CGRect drawRect;
     {
         // 图片要居中显示
@@ -282,7 +282,7 @@
 + (UIImage *)imageFromImage:(UIImage *)image bgColor:(UIColor *)color {
     CGSize size= CGSizeMake(image.size.width, image.size.height ); // 画布大小
     
-    UIGraphicsBeginImageContextWithOptions (size, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions (size, NO, 1.0f);
     
     // 设置背景色
     [color set];
@@ -319,7 +319,7 @@
     }else{
         return nil;
     }
-    CGFloat scale = [UIScreen mainScreen].scale;
+    CGFloat scale = 1.0f;
     UIGraphicsBeginImageContextWithOptions(drawRect.size, NO, scale);
     for (int i=0; i<imageArray.count; i++) {
         UIImage * oneImage = imageArray[i];
@@ -341,7 +341,7 @@
 #pragma mark - 从View上截图
 + (UIImage *)imageFromView:(UIView *)view
 {
-    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 1.0);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     if ([view respondsToSelector:@selector(drawViewHierarchyInRect:afterScreenUpdates:)]) {
         [view drawViewHierarchyInRect:view.bounds afterScreenUpdates:NO];
@@ -431,7 +431,7 @@
     if (CGSizeEqualToSize(originSize, size)) {
         return self;
     }
-    UIGraphicsBeginImageContextWithOptions(size, NO, 0);            //[UIScreen mainScreen].scale
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1.0f);
     CGContextRef context = UIGraphicsGetCurrentContext();
     /**
      *  设置CGContext集插值质量
