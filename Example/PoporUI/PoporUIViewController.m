@@ -32,7 +32,6 @@
 {
     [super viewDidLoad];
     
-    NSLog(@"safeTopMargin: %f, safeBottomMargin: %f", [UIDeviceScreen safeTopMargin:self.navigationController], [UIDeviceScreen safeBottomMargin]);
     //UIImage * clearImage = [UIImage imageFromColor:[UIColor clearColor] size:CGSizeMake(1, 1)];
     //    {
     //        UIImageView * iv = [UIImageView new];
