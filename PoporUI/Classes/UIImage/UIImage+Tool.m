@@ -86,11 +86,10 @@
     CGRect rect;
     
     // UIEdgeInsetsZero的情况
-    // rect = CGRectMake(borderWidth, borderWidth, w - borderWidth*2, h - borderWidth*2);
-    rect = CGRectMake(  borderWidth + inset.left // 加上左边的set
-                      , borderWidth + inset.top  // 加上上面的set
-                      , w - borderWidth*2 - inset.left - inset.right   // 减去左边右边的set
-                      , h - borderWidth*2 - inset.top  - inset.bottom);// 减去上边下边的set
+    rect = CGRectMake( borderWidth*0.5 + inset.left, // 加上左边的set
+                      borderWidth*0.5 + inset.top,  // 加上上面的set
+                      w - borderWidth*1 - inset.left - inset.right,   // 减去左边右边的set
+                      h - borderWidth*1 - inset.top  - inset.bottom);// 减去上边下边的set
     
     float radii = corner-borderWidth;
     path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
@@ -168,7 +167,7 @@
     CGContextSaveGState(context);
     CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors lastObject] CGColor]);
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)ar, NULL);
-
+    
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     CGGradientRelease(gradient);
@@ -454,11 +453,11 @@
 }
 
 /*
-作者：ITCodeShare
-链接：https://www.jianshu.com/p/99c3e6a6c033
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
-*/
+ 作者：ITCodeShare
+ 链接：https://www.jianshu.com/p/99c3e6a6c033
+ 來源：简书
+ 简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
+ */
 #pragma mark - 图片压缩
 - (NSData *)compressWithMaxLength:(NSUInteger)maxLength {
     // Compress by quality
