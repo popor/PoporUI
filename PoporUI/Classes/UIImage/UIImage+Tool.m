@@ -66,12 +66,12 @@
     return [UIImage imageFromColor:color size:size inset:UIEdgeInsetsZero corner:corner corners:corners borderWidth:borderWidth borderColor:borderColor];
 }
 
-#pragma mark - 制定圆角, 移动
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size inset:(UIEdgeInsets)inset corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
-{
+// 以后图片的scale变为1.0, 尺寸有size决定, 不再自作主张.
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size inset:(UIEdgeInsets)inset corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    
     CGFloat w = size.width;
     CGFloat h = size.height;
-    CGFloat scale = [UIScreen mainScreen].scale;
+    //CGFloat scale = [UIScreen mainScreen].scale;
     // 防止圆角半径小于0，或者大于宽/高中较小值的一半。
     if (corner < 0){
         corner = 0;
@@ -79,7 +79,7 @@
         corner = MIN(w, h) / 2.0;
     }
     
-    UIGraphicsBeginImageContextWithOptions(size, NO, scale);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1.0);
     
     UIBezierPath *path;// = [UIBezierPath bezierPath];
     // 添加圆到path
