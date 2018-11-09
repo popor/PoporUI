@@ -175,6 +175,10 @@
 
 #pragma mark - 修改图片
 // 更改图片色系
++ (UIImage *)imageFromImage:(UIImage *)image changecolor:(UIColor *)color {
+    return [UIImage imageFromImage:image changecolor:color scale:-1];
+}
+
 + (UIImage *)imageFromImage:(UIImage *)image changecolor:(UIColor *)color scale:(CGFloat)scale {
     if (scale <= 0) {
         scale = [UIScreen mainScreen].scale;
@@ -195,6 +199,10 @@
 }
 
 // 更改图片背景色
++ (UIImage *)imageFromImage:(UIImage *)image bgColor:(UIColor *)color {
+    return [UIImage imageFromImage:image bgColor:color scale:-1];
+}
+
 + (UIImage *)imageFromImage:(UIImage *)image bgColor:(UIColor *)color scale:(CGFloat)scale {
     if (scale <= 0) {
         scale = [UIScreen mainScreen].scale;
@@ -219,6 +227,10 @@
 }
 
 #pragma mark - 根据图片叠加图片
++ (UIImage *)imageFromBaseImage:(UIImage *)baseImage addImage:(UIImage *)addImage size:(CGSize)size {
+    return [UIImage imageFromBaseImage:baseImage addImage:addImage size:size scale:-1];
+}
+
 + (UIImage *)imageFromBaseImage:(UIImage *)baseImage addImage:(UIImage *)addImage size:(CGSize)size scale:(CGFloat)scale {
     if (scale <= 0) {
         scale = [UIScreen mainScreen].scale;
@@ -267,6 +279,10 @@
 }
 
 #pragma mark - 图片压缩
+- (UIImage *)scaleWidth:(CGFloat)width {
+    return [self scaleWidthScale:(width/self.size.width) scale:-1];
+}
+
 - (UIImage *)scaleWidth:(CGFloat)width scale:(CGFloat)scale {
     return [self scaleWidthScale:(width/self.size.width) scale:scale];
 }
