@@ -12,14 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (create)
 
 #pragma mark - 生成:根据颜色
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size scale:(CGFloat)scale;
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size;
 
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner scale:(CGFloat)scale;
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner;
 
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor scale:(CGFloat)scale;
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
 #pragma mark - 制定圆角
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor scale:(CGFloat)scale;
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor;
 
 + (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor borderInset:(UIEdgeInsets)borderInset scale:(CGFloat)scale;
 /*
@@ -38,11 +38,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (UIImage *)imageFromImage:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic scale:(CGFloat)scale;
 
 #pragma mark - 生成:根据图片
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size scale:(CGFloat)scale;
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner scale:(CGFloat)scale;
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size;
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner;
 
 // 图片+边界线, 如果imageDrawRect==CGRectZero,则居中铺满
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor scale:(CGFloat)scale;
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor;
 
 // 图片+背景色+边界线
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect bgColor:(UIColor * _Nullable)bgColor corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor scale:(CGFloat)scale;

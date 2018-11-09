@@ -11,21 +11,21 @@
 
 #pragma mark - 生成:根据颜色
 // 不继承最全的函数,是为了省资源
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size scale:(CGFloat)scale {
-    return [UIImage imageFromColor:color size:size corner:0 corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderInset:UIEdgeInsetsZero scale:scale];
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size {
+    return [UIImage imageFromColor:color size:size corner:0 corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderInset:UIEdgeInsetsZero scale:-1];
 }
 
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner scale:(CGFloat)scale {
-    return [UIImage imageFromColor:color size:size corner:corner corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderInset:UIEdgeInsetsZero scale:scale];
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner {
+    return [UIImage imageFromColor:color size:size corner:corner corners:UIRectCornerAllCorners borderWidth:0 borderColor:nil borderInset:UIEdgeInsetsZero scale:-1];
 }
 
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor scale:(CGFloat)scale {
- return [UIImage imageFromColor:color size:size corner:corner corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:nil borderInset:UIEdgeInsetsZero scale:scale];
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    return [UIImage imageFromColor:color size:size corner:corner corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:nil borderInset:UIEdgeInsetsZero scale:-1];
 }
 
 #pragma mark - 制定圆角
-+ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor scale:(CGFloat)scale {
-    return [UIImage imageFromColor:color size:size corner:corner corners:corners borderWidth:borderWidth borderColor:borderColor borderInset:UIEdgeInsetsZero scale:scale];
++ (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner corners:(UIRectCorner)corners borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor {
+    return [UIImage imageFromColor:color size:size corner:corner corners:corners borderWidth:borderWidth borderColor:borderColor borderInset:UIEdgeInsetsZero scale:-1];
 }
 
 // 以后图片的scale变为1.0, 尺寸有size决定, 不再自作主张.
@@ -102,15 +102,23 @@
 }
 
 #pragma mark - 生成:根据图片
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size scale:(CGFloat)scale {
-    return [self imageFromImage:image size:size imageDrawRect:CGRectZero bgColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil scale:scale];
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size {
+    return [self imageFromImage:image size:size imageDrawRect:CGRectZero bgColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil scale:-1];
 }
 
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner scale:(CGFloat)scale {
-    return [self imageFromImage:image size:size imageDrawRect:CGRectZero bgColor:[UIColor clearColor] corner:corner borderWidth:0 borderColor:nil scale:scale];
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner {
+    return [self imageFromImage:image size:size imageDrawRect:CGRectZero bgColor:[UIColor clearColor] corner:corner borderWidth:0 borderColor:nil scale:-1];
 }
 
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor scale:(CGFloat)scale {
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor {
+    return [self imageFromImage:image size:size imageDrawRect:imageDrawRect bgColor:[UIColor clearColor] corner:corner borderWidth:borderWidth borderColor:borderColor scale:-1];
+}
+
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect bgColor:(UIColor * _Nullable)bgColor corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *_Nullable)borderColor scale:(CGFloat)scale {
+    
+    if (scale <= 0) {
+        scale = [UIScreen mainScreen].scale;
+    }
     
     if (CGRectEqualToRect(imageDrawRect, CGRectZero)) {
         // 图片要居中显示
@@ -122,14 +130,6 @@
         float ImageSH = ImageOH/ImageMinScale;
         
         imageDrawRect = CGRectMake(-(ImageSW-size.width)/2, -(ImageSH-size.height)/2, ImageSW, ImageSH);
-    }
-    return [self imageFromImage:image size:size imageDrawRect:imageDrawRect bgColor:[UIColor clearColor] corner:corner borderWidth:borderWidth borderColor:borderColor scale:scale];
-}
-
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect bgColor:(UIColor * _Nullable)bgColor corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *_Nullable)borderColor scale:(CGFloat)scale {
-    
-    if (scale <= 0) {
-        scale = [UIScreen mainScreen].scale;
     }
     
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);

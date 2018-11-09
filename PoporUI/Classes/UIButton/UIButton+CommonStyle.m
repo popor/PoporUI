@@ -25,13 +25,13 @@
     [btn setTitleColor:[[UIColor whiteColor] colorWithAlphaComponent:0.3] forState:UIControlStateDisabled];
     
     if (normalColor) {
-        [btn setBackgroundImage:[UIImage imageFromColor:normalColor size:CGSizeMake(1, 1) scale:0] forState:UIControlStateNormal];
+        [btn setBackgroundImage:[UIImage imageFromColor:normalColor size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
     }
     if (highlightedColor) {
-        [btn setBackgroundImage:[UIImage imageFromColor:highlightedColor size:CGSizeMake(1, 1) scale:0] forState:UIControlStateHighlighted];
+        [btn setBackgroundImage:[UIImage imageFromColor:highlightedColor size:CGSizeMake(1, 1)] forState:UIControlStateHighlighted];
     }
     if (disabledColor) {
-        [btn setBackgroundImage:[UIImage imageFromColor:disabledColor size:CGSizeMake(1, 1) scale:0] forState:UIControlStateDisabled];
+        [btn setBackgroundImage:[UIImage imageFromColor:disabledColor size:CGSizeMake(1, 1)] forState:UIControlStateDisabled];
     }
     //btn.enabled = NO; //显示禁用状态
     
