@@ -38,6 +38,10 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 #import "UIButton+UIEdgeInsets.h"
 
 // UIImage
+#import "UIImage+create.h"
+#import "UIImage+gradient.h"
+#import "UIImage+read.h"
+#import "UIImage+save.h"
 #import "UIImage+Tool.h"
 
 // UILabel
