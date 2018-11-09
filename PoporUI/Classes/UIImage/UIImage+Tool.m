@@ -88,8 +88,8 @@
     // UIEdgeInsetsZero的情况
     rect = CGRectMake( borderWidth*0.5 + inset.left, // 加上左边的set
                       borderWidth*0.5 + inset.top,  // 加上上面的set
-                      w - borderWidth*1 - inset.left - inset.right,   // 减去左边右边的set
-                      h - borderWidth*1 - inset.top  - inset.bottom);// 减去上边下边的set
+                      w - borderWidth - inset.left - inset.right,   // 减去左边右边的set
+                      h - borderWidth - inset.top  - inset.bottom);// 减去上边下边的set
     
     float radii = corner-borderWidth;
     path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
@@ -222,10 +222,9 @@
     return [UIImage imageFromImage:image size:size corner:corner borderWidth:0 borderColor:nil];
 }
 
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor
-{
-    CGFloat scale = 1.0;
-    CGRect drawRect;
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    
+    CGRect imageDrawRect;
     {
         // 图片要居中显示
         float ImageOW = image.size.width;
@@ -235,23 +234,41 @@
         float ImageSW = ImageOW/ImageMinScale;
         float ImageSH = ImageOH/ImageMinScale;
         
-        drawRect = CGRectMake(-(ImageSW-size.width)/2, -(ImageSH-size.height)/2, ImageSW, ImageSH);
+        imageDrawRect = CGRectMake(-(ImageSW-size.width)/2, -(ImageSH-size.height)/2, ImageSW, ImageSH);
     }
-    UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     
-    UIBezierPath * path;// = [UIBezierPath bezierPath];
+    return [self imageFromImage:image size:size imageDrawRect:imageDrawRect corner:corner borderWidth:borderWidth borderColor:borderColor];
+}
+
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    
+    return [self imageFromImage:image size:size imageDrawRect:imageDrawRect bgColor:[UIColor clearColor] corner:corner borderWidth:borderWidth borderColor:borderColor];
+}
+
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect bgColor:(UIColor *)bgColor corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
+    
+    UIGraphicsBeginImageContextWithOptions(size, NO, 1.0);
+    
+    UIBezierPath * path;
     if (corner>0) {
         // 添加圆到path
-        path = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(borderWidth, borderWidth, size.width - borderWidth*2, size.height - borderWidth*2) cornerRadius:corner-borderWidth];
+        //CGRect pathRect = CGRectMake(borderWidth*0.5, borderWidth*0.5, size.width - borderWidth, size.height - borderWidth);
+        CGRect pathRect = CGRectMake(0, 0, size.width, size.height);
+        path = [UIBezierPath bezierPathWithRoundedRect:pathRect cornerRadius:corner-borderWidth];
         [path addClip]; // 超出边界的,都会被忽略掉
     }else{
         path = [UIBezierPath bezierPath];
     }
     
-    [image drawInRect:drawRect];
     if (borderWidth>0) {
         // 设置描边宽度（为了让描边看上去更清楚）
         [path setLineWidth:borderWidth];
+        
+        [bgColor setFill];
+        [path fill];
+        
+        [image drawInRect:imageDrawRect];
+        
         //设置颜色（颜色设置也可以放在最上面，只要在绘制前都可以）
         [borderColor setStroke]; // 描边
         [path stroke];           // 描边
@@ -297,6 +314,35 @@
     UIGraphicsEndImageContext ();
     
     return newImage;
+}
+
+#pragma mark - 根据图片叠加图片
++ (UIImage *)imageFromBaseImage:(UIImage *)baseImage addImage:(UIImage *)addImage size:(CGSize)size {
+    
+    CGFloat scale = 1.0;
+    CGRect drawRect;
+    {
+        // 图片要居中显示
+        float ImageOW = baseImage.size.width;
+        float ImageOH = baseImage.size.height;
+        float ImageMinScale = MIN(ImageOW/size.width, ImageOH/size.height);
+        
+        float ImageSW = ImageOW/ImageMinScale;
+        float ImageSH = ImageOH/ImageMinScale;
+        
+        drawRect = CGRectMake(-(ImageSW-size.width)/2, -(ImageSH-size.height)/2, ImageSW, ImageSH);
+    }
+    UIGraphicsBeginImageContextWithOptions(size, NO, scale);
+    
+    [baseImage drawInRect:drawRect];
+    
+    CGRect addImageRect = CGRectMake((baseImage.size.width - addImage.size.width)/2, (baseImage.size.height - addImage.size.height)/2, addImage.size.width, addImage.size.height);
+    [addImage drawInRect:addImageRect];
+    
+    baseImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return baseImage;
 }
 
 #pragma mark - 图片排列

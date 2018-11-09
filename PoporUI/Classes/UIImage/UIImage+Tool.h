@@ -34,8 +34,15 @@
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner;
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
 
+// 自定义image.frame
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect bgColor:(UIColor *)bgColor corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor;
+
 + (UIImage *)imageFromImage:(UIImage *)image changecolor:(UIColor *)color;
 + (UIImage *)imageFromImage:(UIImage *)image bgColor:(UIColor *)color;
+
+#pragma mark - 根据图片叠加图片
++ (UIImage *)imageFromBaseImage:(UIImage *)baseImage addImage:(UIImage *)addImage size:(CGSize)size;
 
 #pragma mark - 图片排列
 + (UIImage *)imageFromImageArray:(NSArray *)imageArray horizon:(BOOL)isHorizon;
