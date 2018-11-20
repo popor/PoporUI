@@ -6,20 +6,21 @@
 //  Copyright © 2018年 popor. All rights reserved.
 //
 #import "UIButton+UIEdgeInsets.h"
-
+#import <PoporFoundation/NSString+Size.h>
 #import "UIView+Extension.h"
 
 @implementation UIButton (UIEdgeInsets)
 
 -(void)setEdgeInsetType:(EdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap{
 
-    CGFloat space  =  spaceGap;
+    CGFloat space = spaceGap;
     
     CGFloat imageWith   = self.imageView.frame.size.width;
     CGFloat imageHeight = self.imageView.frame.size.height;
 
-    CGFloat labelWidth  = self.titleLabel.width;
-    CGFloat labelHeight = self.titleLabel.height;
+    CGSize size = [self.titleLabel.text sizeInFont:self.titleLabel.font width:self.frame.size.width];
+    CGFloat labelWidth  = MAX(self.titleLabel.frame.size.width, size.width) + 2;
+    CGFloat labelHeight = MAX(self.titleLabel.frame.size.height, size.height) + 2;
     
     UIEdgeInsets imageEdgeInsets = UIEdgeInsetsZero;
     UIEdgeInsets labelEdgeInsets = UIEdgeInsetsZero;
