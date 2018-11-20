@@ -1,6 +1,6 @@
 {
   "name": "PoporUI",
-  "version": "0.0.30",
+  "version": "0.0.31",
   "summary": "Contain Itoast;\n  UIButton,UILabel,UITextView,UITextField extention;",
   "homepage": "https://github.com/popor/PoporUI",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporUI.git",
-    "tag": "0.0.30"
+    "tag": "0.0.31"
   },
   "platforms": {
     "ios": "8.0"
@@ -59,6 +59,9 @@
       "name": "UIButton",
       "ios": {
         "dependencies": {
+          "PoporFoundation/NSString": [
+
+          ],
           "PoporFoundation/PrefixCore": [
 
           ],
