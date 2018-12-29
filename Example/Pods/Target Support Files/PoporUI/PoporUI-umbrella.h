@@ -37,7 +37,7 @@
 #import "UINavigationController+remove.h"
 #import "AllowPanGRPassSV.h"
 #import "UIScrollView+tool.h"
-#import "UITableView+AllowPanGR.h"
+#import "UITableView+transitionCoordinator.h"
 #import "UITableViewCell+SetSeparatorType.h"
 #import "UIInsetsTextField.h"
 #import "UITextField+MaxLength.h"
