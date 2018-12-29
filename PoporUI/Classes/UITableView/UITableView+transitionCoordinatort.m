@@ -10,7 +10,7 @@
 
 @implementation UITableView (transitionCoordinator)
 
-- (void)transitionCoordinator:(id <UIViewControllerTransitionCoordinator>)transitionCoordinator Animated:(BOOL)animated {
+- (void)transitionCoordinator:(id <UIViewControllerTransitionCoordinator>)transitionCoordinator animated:(BOOL)animated {
     
     NSIndexPath * ip = [self indexPathForSelectedRow];
     if (!ip) {

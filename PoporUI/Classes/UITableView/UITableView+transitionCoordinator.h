@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
  https://github.com/popor/DeselectRowTheBestWay
  
 //*/
-- (void)transitionCoordinator:(id <UIViewControllerTransitionCoordinator>)transitionCoordinator Animated:(BOOL)animated;
+- (void)transitionCoordinator:(id <UIViewControllerTransitionCoordinator>)transitionCoordinator animated:(BOOL)animated;
 
 @end
 
