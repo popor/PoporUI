@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.35'
+  s.version          = '0.0.36'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   '
@@ -77,6 +77,8 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UITextField' do |ss|
+    ss.ios.dependency 'PoporFoundation/NSString'
+    
     ss.source_files = 'PoporUI/Classes/UITextField/*.{h,m}'
   end
   
