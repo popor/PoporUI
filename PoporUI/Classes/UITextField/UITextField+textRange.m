@@ -1,14 +1,14 @@
 //
-//  UITextField+selection.m
+//  UITextField+textRange.m
 //  PoporUI
 //
 //  Created by popor on 01/03/2019.
 //  Copyright (c) 2019 popor. All rights reserved.
 //
 
-#import "UITextField+selection.h"
+#import "UITextField+textRange.h"
 
-@implementation UITextField (selection)
+@implementation UITextField (textRange)
 
 - (NSRange)selectedRange {
     UITextPosition* beginning      = self.beginningOfDocument;

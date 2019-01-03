@@ -1,5 +1,5 @@
 //
-//  UITextField+selection.h
+//  UITextField+textRange.h
 //  PoporUI
 //
 //  Created by popor on 01/03/2019.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UITextField (selection)
+@interface UITextField (textRange)
 
 - (NSRange)selectedRange;
 - (void)setSelectedRange:(NSRange) range;

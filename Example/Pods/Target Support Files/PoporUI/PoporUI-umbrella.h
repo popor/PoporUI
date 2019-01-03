@@ -42,7 +42,7 @@
 #import "UIInsetsTextField.h"
 #import "UITextField+format.h"
 #import "UITextField+MaxLength.h"
-#import "UITextField+selection.h"
+#import "UITextField+textRange.h"
 #import "UIPasteImageTextView.h"
 #import "UIPlaceHolderTextView.h"
 #import "UITextView+MaxLength.h"
