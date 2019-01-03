@@ -7,7 +7,7 @@
 //
 
 #import "UITextField+format.h"
-#import "UITextField+selection.h"
+#import "UITextField+textRange.h"
 #import <CoreText/CoreText.h>
 #import <PoporFoundation/NSString+Tool.h>
 
