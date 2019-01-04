@@ -15,7 +15,18 @@
 
 // 中国的电话
 - (void)formatChinaPhone {
+    [self formatChinaPhoneGapWidth:6];
+}
+
+- (void)formatChinaPhoneGapWidth:(int)gapWidth {
     UITextField * textField = self;
+    if (textField.text.length == 0) {
+        return;
+    }
+    if (gapWidth < 0) {
+        gapWidth = 0;
+    }
+    
     UITextRange *selectedTextRange = textField.selectedTextRange;
     
     NSString * text = textField.text;
@@ -23,7 +34,7 @@
     {
         attributedString = [[NSMutableAttributedString alloc] initWithString:text];
         {
-            long number = 6; // gap宽度
+            long number = gapWidth; // gap宽度
             int length = 1;
             CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
             if (text.length > 3) {
@@ -46,13 +57,22 @@
 
 // money
 - (void)formatMoneyUnit:(int)unit {
-    if (unit <= 0) {
-        return;
-    }
+    [self formatMoneyUnit:unit gapWitdh:6];
+}
+
+- (void)formatMoneyUnit:(int)unit gapWitdh:(int)gapWidth {
     UITextField * textField = self;
     if (textField.text.length == 0) {
         return;
     }
+    if (unit < 0) {
+        return;
+    }
+    if (gapWidth < 0) {
+        gapWidth = 0;
+    }
+    
+    
     if ([textField.text hasPrefix:@"0"] && textField.text.length != 1){
         NSString * text = [textField.text replaceWithREG:@"^0+" newString:@""];
         if (text.length == 0) {
@@ -72,7 +92,7 @@
     NSMutableAttributedString * attributedString;
     {
         attributedString = [[NSMutableAttributedString alloc] initWithString:text];
-        long number      = 6; // gap宽度
+        long number      = gapWidth; // gap宽度
         int length       = 1;
         //int unit         = 4;
         CFNumberRef num  = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
@@ -90,6 +110,46 @@
         }
         
         CFRelease(num);
+        [textField setAttributedText:attributedString];
+    }
+    
+    [textField setSelectedTextRange:selectedTextRange];
+}
+
+- (void)formatBankUnit:(int)unit {
+    [self formatBankUnit:unit gapWitdh:6];
+}
+
+- (void)formatBankUnit:(int)unit gapWitdh:(int)gapWidth {
+    UITextField * textField = self;
+    if (textField.text.length == 0) {
+        return;
+    }
+    if (unit < 0) {
+        return;
+    }
+    if (gapWidth < 0) {
+        gapWidth = 0;
+    }
+    
+    UITextRange *selectedTextRange = textField.selectedTextRange;
+    
+    NSString * text = textField.text;
+    NSMutableAttributedString * attributedString;
+    {
+        attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+        {
+            long number      = gapWidth; // gap宽度
+            int length       = 1;
+            CFNumberRef num  = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
+            int loopCountInt = (int)(textField.text.length-1)/(unit);
+            
+            for (int i = 0; i<loopCountInt; i++) {
+                [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(unit*(i+1)-1, length)];
+            }
+            
+            CFRelease(num);
+        }
         [textField setAttributedText:attributedString];
     }
     
