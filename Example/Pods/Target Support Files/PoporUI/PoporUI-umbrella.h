@@ -31,6 +31,7 @@
 #import "UIImage+read.h"
 #import "UIImage+save.h"
 #import "UIImage+Tool.h"
+#import "UILabel+format.h"
 #import "UILabel+Size.h"
 #import "UILabelInsets.h"
 #import "UILabelPhone.h"
