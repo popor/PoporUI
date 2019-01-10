@@ -224,7 +224,7 @@ static iToastSettings *sharedSettings = nil;
     
     showBT.alpha = 0;
     [window addSubview:showBT];
-    [window bringSubviewToFront:showBT];
+    //[window bringSubviewToFront:showBT];
     
     [UIView beginAnimations:nil context:nil];
     showBT.alpha = 1;
