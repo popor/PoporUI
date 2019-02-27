@@ -6,10 +6,12 @@
 //
 
 #import "UINavigationController+Size.h"
+#import <objc/runtime.h>
 
 @implementation UINavigationController (Size)
+@dynamic topMargin;
 
-- (int)viewTopMarginGap {
+- (int)getTopMargin {
     if (self.navigationBar.translucent) {
         //self.navigationItem.
         if (@available(iOS 11.0, *)) {
@@ -26,6 +28,15 @@
     }else{
         return 0;
     }
+}
+
+- (void)setTopMargin:(int)topMargin {
+    objc_setAssociatedObject(self, @"topMargin", @(topMargin), OBJC_ASSOCIATION_RETAIN);
+}
+
+- (int)topMargin {
+    NSNumber * n = objc_getAssociatedObject(self, @"topMargin");
+    return n.intValue;
 }
 
 @end
