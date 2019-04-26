@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 // 针对 navigationBar.translucent 获取view 的 subview.y 的起始值.
 - (int)getTopMargin;
 
+// 获取 系统statusBar Height
++ (int)statusBarHeight;
+
 @end
 
 NS_ASSUME_NONNULL_END

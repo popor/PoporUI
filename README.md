@@ -49,6 +49,10 @@ UIViewController : UIViewController (AC: iPad弹出UIAlertControl sheet 模式�
 -   UIViewController (TapEndEdit: 点击空白处关闭键盘，键盘高度变化接口)。
 
 ```
+#### 0.0.46
+UINavigationController 增加静态方法 statusBarHeight
+
+
 
 ## Author
 
