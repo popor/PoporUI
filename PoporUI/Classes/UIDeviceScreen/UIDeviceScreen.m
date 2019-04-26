@@ -24,6 +24,15 @@
     return iPhoneX;
 }
 
++ (int)statusBarHeight {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        return mainWindow.safeAreaInsets.top;
+    }else{
+        return 20;
+    }
+}
+
 + (CGFloat)safeBottomMargin {
     if ([self isIphoneXScreen]) {
         return 34;

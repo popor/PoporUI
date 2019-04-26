@@ -30,15 +30,6 @@
     }
 }
 
-+ (int)statusBarHeight {
-    if (@available(iOS 11.0, *)) {
-        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
-        return mainWindow.safeAreaInsets.top;
-    }else{
-        return 20;
-    }
-}
-
 - (void)setTopMargin:(int)topMargin {
     objc_setAssociatedObject(self, @"topMargin", @(topMargin), OBJC_ASSOCIATION_RETAIN);
 }
