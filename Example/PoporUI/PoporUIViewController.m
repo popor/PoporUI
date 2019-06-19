@@ -22,6 +22,8 @@
 
 #import "UIImage+Tool.h"
 
+#import "PoporUI.h"
+
 @interface PoporUIViewController ()
 
 @end
@@ -30,7 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    NSLog(@"top margin: %i", self.navigationController.topMargin);
+    NSLog(@"top margin: %i", self.navigationController.topMargin);
+    NSLog(@"top margin: %i", self.navigationController.topMargin);
 }
 
 

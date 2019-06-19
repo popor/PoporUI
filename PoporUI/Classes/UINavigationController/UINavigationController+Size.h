@@ -13,8 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) int topMargin;// 隐藏导航栏的视图
 
-// 针对 navigationBar.translucent 获取view 的 subview.y 的起始值.
-- (int)getTopMargin;
+@property (nonatomic) BOOL _initTopMargin; // 内部使用
 
 @end
 
