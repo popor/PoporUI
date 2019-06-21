@@ -26,9 +26,10 @@
 - (void)phoneTapGRAction {
     if (self.text.length > 0) {
         NSString * phone = [self.text replaceWithREG:@"-" newString:@""];
-        phone = [NSString stringWithFormat:@"tel://%@", phone];
+        // tel: 这个打完电话会留在电话APP
+        // telprompt: 这个打完电话会返回自己APP
+        phone = [NSString stringWithFormat:@"telprompt://%@", phone];
         
-        //NSString * phone = [NSString stringWithFormat:@"tel://%@", self.text];
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
     }
 }

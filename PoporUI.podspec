@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.48'
+  s.version          = '0.0.49'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   '
