@@ -45,7 +45,10 @@
 - (void)tapEndEditGR_keyboardWillShow:(NSNotification *)notification {
     CGRect endRect      = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     float animationTime = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    [self keyboardFrameChanged:endRect duration:animationTime show:YES];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self keyboardFrameChanged:endRect duration:animationTime show:YES];
+    });
 }
 
 - (void)tapEndEditGR_keyboardDidShow:(NSNotification *)notification {
@@ -54,7 +57,9 @@
 
 - (void)tapEndEditGR_keyboardWillHide:(NSNotification *)notification {
     float animationTime = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
-    [self keyboardFrameChanged:CGRectZero duration:animationTime show:NO];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self keyboardFrameChanged:CGRectZero duration:animationTime show:NO];
+    });
     [self.view becomeFirstResponder];
 }
 
