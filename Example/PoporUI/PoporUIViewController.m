@@ -24,7 +24,30 @@
 
 #import "PoporUI.h"
 
+#if __has_include(<PoporFFmpegCompress/PoporFFmpegCompress.h>)
+
+#define HasFFmpeg 1
+#import <PoporFFmpegCompress/PoporFFmpegCompress.h>
+
+#else
+#define HasFFmpeg 0
+
+#endif
+
+#if __has_include(<UIKit/UIKit.h>)
+
+#define HasUI YES
+
+#else
+#define HasUI NO
+
+#endif
+
 @interface PoporUIViewController ()
+
+#if HasFFmpeg == 1
+@property (nonatomic, strong) NSString * has;
+#endif
 
 @end
 
@@ -32,9 +55,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"top margin: %i", self.navigationController.topMargin);
-    NSLog(@"top margin: %i", self.navigationController.topMargin);
-    NSLog(@"top margin: %i", self.navigationController.topMargin);
+    //NSLog(@"top margin: %i", self.navigationController.topMargin);
+    NSLog(@"HasFFmpeg: %i", HasFFmpeg);
+    
+#if HasFFmpeg == 0
+    NSLog(@"HasFFmpeg 0 __ : %i", HasFFmpeg);
+#endif
+    
+#if HasFFmpeg == 1
+    NSLog(@"HasFFmpeg 1 __ : %i", HasFFmpeg);
+#endif
+    
+#if (HasUI == YES)
+    NSLog(@"HasUI 0 __ : %i", HasUI);
+#endif
+    
+    
 }
 
 
