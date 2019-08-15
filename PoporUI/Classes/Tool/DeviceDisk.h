@@ -16,7 +16,7 @@
 /**
  * 获取当前可用内存
  */
-+(long long)getAvailableMemorySize;
++ (long long)getAvailableMemorySize;
 
 #pragma mark 【获取人性化容量】
 + (NSString *)getHumanSize:(float)fileSizeFloat;

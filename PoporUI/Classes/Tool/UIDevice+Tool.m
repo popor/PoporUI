@@ -16,8 +16,7 @@
 @implementation UIDevice (Tool)
 
 #pragma mark [获取设备 Retina 信息]
-+ (BOOL)isRetinaScreen
-{
++ (BOOL)isRetinaScreen {
     BOOL isRetina = NO;
     if ([UIScreen instancesRespondToSelector:@selector(currentMode)]) {// iOS 3.2
         // 你的Base SDK应 不小于 iOS 3.2
@@ -34,8 +33,7 @@
     return isRetina;
 }
 
-+ (NSString *)getAppName
-{
++ (NSString *)getAppName {
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app名称
     NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
@@ -44,8 +42,7 @@
 }
 
 #pragma mark - 推送开关是否打开
-+ (BOOL)pushNotificationsEnabled
-{
++ (BOOL)pushNotificationsEnabled {
     // ios8代码
     UIUserNotificationType types = [[[UIApplication sharedApplication] currentUserNotificationSettings] types];
     return (types & UIUserNotificationTypeAlert);
@@ -62,8 +59,7 @@
 /**
  * 获取ios设备状态栏网络状态，检测2G、3G、4G、wifi都是正常的。
  */
-+ (NSString *)getIOSStatusBarNetWorkTypeStr
-{
++ (NSString *)getIOSStatusBarNetWorkTypeStr {
     UIApplication *app = [UIApplication sharedApplication];
     NSArray *children  = [[[app valueForKeyPath:@"statusBar"] valueForKeyPath:@"foregroundView"] subviews];
     NSString *state    = @"无网络";
@@ -106,8 +102,7 @@
     return state;
 }
 
-+ (int)getIOSStatusBarNetWorkTypeInt
-{
++ (NetStatusType)getIOSStatusBarNetWorkTypeInt {
     UIApplication *app = [UIApplication sharedApplication];
     NSArray *children  = [[[app valueForKeyPath:@"statusBar"] valueForKeyPath:@"foregroundView"] subviews];
     int state    = NetStatusType_nil;
@@ -154,21 +149,18 @@
 /**
  *  对外版本号
  */
-+ (NSString *)getAppVersion_short
-{
++ (NSString *)getAppVersion_short {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
 /**
  *  对内build号
  */
-+ (NSString *)getAppVersion_build
-{
++ (NSString *)getAppVersion_build {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleVersionKey];
 }
 
-+ (NSString*)devicePlatform
-{
++ (NSString*)devicePlatform {
     // 需要#import "sys/utsname.h"
     struct utsname systemInfo;
     uname(&systemInfo);
@@ -226,6 +218,8 @@
             //macIp = [dict valueForKey:@"BSSID"];//Mac地址
         }
         CFRelease(myArray);
+    } else {
+        NSLog(@"\n❗️❗️❗️ \n❗️❗️❗️ \n异常:\n1.虚拟机无法获取WIFI名字\n2.设置 Targets > Capablities > Access Wifi Information > 打开开关 \n❗️❗️❗️  \n❗️❗️❗️ ");
     }
     
     return ssid;

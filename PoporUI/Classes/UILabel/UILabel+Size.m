@@ -11,23 +11,19 @@
 
 @implementation UILabel (Size)
 
-- (void)updateSize
-{
+- (void)updateSize {
     [self setSizeStr:self.text font:self.font width:self.frame.size.width];
 }
 
-- (void)setSizeStr:(NSString *)text;
-{
+- (void)setSizeStr:(NSString *)text {
     [self setSizeStr:text font:self.font width:self.frame.size.width];
 }
 
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font
-{
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font {
     [self setSizeStr:text font:font width:self.frame.size.width];
 }
 
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font width:(float)width
-{
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font width:(float)width {
     if (!text) {
         return;
     }
@@ -38,8 +34,7 @@
     self.font   = font;
 }
 
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font color:(UIColor *)color lineSpacing:(float)lineSpacing width:(float)width
-{
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font color:(UIColor *)color lineSpacing:(float)lineSpacing width:(float)width {
     if (!text) {
         return;
     }
@@ -66,13 +61,11 @@
     [self setSizeATT:att width:width];
 }
 
-- (void)setSizeATT:(NSMutableAttributedString *)att
-{
+- (void)setSizeATT:(NSMutableAttributedString *)att {
     [self setSizeATT:att width:self.frame.size.width];
 }
 
-- (void)setSizeATT:(NSMutableAttributedString *)att width:(float)width
-{
+- (void)setSizeATT:(NSMutableAttributedString *)att width:(float)width {
     self.numberOfLines=0;
     [self setAttributedText:att];
     self.lineBreakMode = NSLineBreakByCharWrapping;

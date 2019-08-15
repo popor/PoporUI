@@ -10,19 +10,15 @@
 
 @implementation AllowPanGRPassSV
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
+- (id)initWithFrame:(CGRect)frame {
+    if (self = [super initWithFrame:frame]) {
         self.directionalLockEnabled = YES;
     }
     return self;
 }
 
-- (id)init
-{
-    self = [super init];
-    if (self) {
+- (id)init {
+    if (self = [super init]) {
         self.directionalLockEnabled = YES;
     }
     return self;

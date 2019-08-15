@@ -10,21 +10,9 @@
 @implementation UIImage (Tool)
 
 #pragma mark - 或许模仿苹果聊天的背景图片
-+ (UIImage *)stretchableImage:(NSString *)imageName withOrient:(UIImageOrientation)direction withPoint:(CGPoint)thePoint
-{
-    UIImage * oneI;
-    if (imageName==nil) {
-        oneI=[UIImage imageNamed:@"chat.png"];
-    }else {
-        oneI=[UIImage imageNamed:imageName];
-    }
-    {
-        UIImage * twoI=[UIImage imageWithCGImage:oneI.CGImage
-                                           scale:1.0
-                                     orientation:direction];
-        return [twoI stretchableImageWithLeftCapWidth:thePoint.x
-                                         topCapHeight:thePoint.y];
-    }
++ (UIImage *)stretchableImage:(UIImage *)image orient:(UIImageOrientation)direction point:(CGPoint)point {
+    UIImage * twoI=[UIImage imageWithCGImage:image.CGImage scale:1.0 orientation:direction];
+    return [twoI stretchableImageWithLeftCapWidth:point.x topCapHeight:point.y];
     //    if (leftOrRight) {
     //        return [oneI stretchableImageWithLeftCapWidth:thePoint.x
     //                                         topCapHeight:thePoint.y];
@@ -36,14 +24,15 @@
     //    }
 }
 
-+ (NSString *)getAppLaunchImage
-{
-    NSDictionary * dic = @{
-                           @"320x480" : @"LaunchImage-700",
-                           @"320x568" : @"LaunchImage-700-568h",
-                           @"375x667" : @"LaunchImage-800-667h",
-                           @"414x736" : @"LaunchImage-800-Portrait-736h"
-                           };
++ (NSString *)getAppLaunchImage {
+    NSDictionary * dic =
+    @{
+      @"320x480" : @"LaunchImage-700",
+      @"320x568" : @"LaunchImage-700-568h",
+      @"375x667" : @"LaunchImage-800-667h",
+      @"414x736" : @"LaunchImage-800-Portrait-736h"
+      };
+    
     NSString * key = [NSString stringWithFormat:@"%dx%d", (int)[UIScreen mainScreen].bounds.size.width, (int)[UIScreen mainScreen].bounds.size.height];
     return [dic objectForKey:key];
 }

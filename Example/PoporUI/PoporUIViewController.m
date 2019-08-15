@@ -70,7 +70,12 @@
     NSLog(@"HasUI 0 __ : %i", HasUI);
 #endif
     
-    
+    [self testWifiName];
+}
+
+- (void)testWifiName {
+    NSString * name = [UIDevice getWifiName];
+    NSLog(@"name: %@", name);
 }
 
 

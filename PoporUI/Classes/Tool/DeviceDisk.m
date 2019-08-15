@@ -17,8 +17,7 @@
 @implementation DeviceDisk
 
 #pragma mark [获取设备版本号]
-+ (NSString *)getDeviceNormalPlatform
-{
++ (NSString *)getDeviceNormalPlatform {
     size_t size;
     sysctlbyname("hw.machine", NULL, &size, NULL, 0);
     char *machine = malloc(size);
@@ -28,8 +27,7 @@
     return platform;
 }
 
-+ (long long)getAvailableMemorySize
-{
++ (long long)getAvailableMemorySize {
     struct statfs buf;
     unsigned long long freeSpace = -1;
     if (statfs("/var", &buf) >= 0)

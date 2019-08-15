@@ -10,7 +10,7 @@
 @interface UIImage (Tool)
 
 #pragma mark - 或许模仿苹果聊天的背景图片
-+ (UIImage *)stretchableImage:(NSString *)imageName withOrient:(UIImageOrientation)direction withPoint:(CGPoint)thePoint;
++ (UIImage *)stretchableImage:(UIImage *)image orient:(UIImageOrientation)direction point:(CGPoint)point;
 
 + (NSString *)getAppLaunchImage;
 
