@@ -1,6 +1,6 @@
 //
-//  UIDeviceScreen.h
-//  linRunShengPi
+//  UIDevice+ScreenSize.h
+//  PoporUI
 //
 //  Created by popor on 2018/3/27.
 //  Copyright © 2018年 popor. All rights reserved.
@@ -10,7 +10,7 @@
 #pragma mark - iOS
 #if TARGET_OS_IOS || TARGET_OS_WATCH
 
-@interface UIDeviceScreen : NSObject
+@interface UIDevice (ScreenSize)
 
 // 是否是刘海屏幕,通过安全区域取值
 + (BOOL)isIphoneXScreen;

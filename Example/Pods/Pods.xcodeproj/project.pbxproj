@@ -14,7 +14,7 @@
 		0B4AFE9B88FCD21A2F8BB4C5F44DE312 /* NSString+MD5.h in Headers */ = {isa = PBXBuildFile; fileRef = 11005B814FD266611AA4F660A93B7B41 /* NSString+MD5.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0D52313992B9B3B91D066BE4C62D0F30 /* NSString+IDCard.h in Headers */ = {isa = PBXBuildFile; fileRef = 34BA455C6B787789D80C3EB85053649F /* NSString+IDCard.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0E25009741CBF9B003697E60C142EA42 /* Pods-PoporUI_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB16822B89B7E783CDC7051DF491289 /* Pods-PoporUI_Example-dummy.m */; };
-		10D14F8FC77C4576FFF8938512FD158F /* UIDeviceScreen.h in Headers */ = {isa = PBXBuildFile; fileRef = 3832D65949DD5D852D128CD857A80928 /* UIDeviceScreen.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		10D14F8FC77C4576FFF8938512FD158F /* UIDevice+ScreenSize.h in Headers */ = {isa = PBXBuildFile; fileRef = 3832D65949DD5D852D128CD857A80928 /* UIDevice+ScreenSize.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		123087E77C11C324DC6184378558B81C /* NSString+Tool.h in Headers */ = {isa = PBXBuildFile; fileRef = A67B87175630EBD738F2B300B4FC2FD6 /* NSString+Tool.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		193FC71709881E15D133B979F9F58B60 /* UITextField+format.h in Headers */ = {isa = PBXBuildFile; fileRef = FFA0880D5BA75C20C8FC802B03A6554D /* UITextField+format.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CA1F98AB14595BE573CD61808B19D30 /* UIView+Extension.h in Headers */ = {isa = PBXBuildFile; fileRef = 39E4A9E40CA567E4E686FC071021C846 /* UIView+Extension.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +31,7 @@
 		3330A0B87610B1C04781484549709E7E /* PoporUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D10D39ED7251716B59FF450E315596FB /* PoporUI-dummy.m */; };
 		344EDD5AE92712F4D5ABE1C13723EEEB /* UIDevice+Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7F8D1BF1E2C1369C23A8AC007ED0E47E /* UIDevice+Tool.m */; };
 		35C1D667263A7D52E4766F6BB03BCE77 /* UILabelPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E593B0BCBC54A0C7EC3D5452A65377 /* UILabelPhone.m */; };
-		362A048586A71C6B711041746ABDCE86 /* UIDeviceScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5EB5130E4DCD684134B1B9DA372642 /* UIDeviceScreen.m */; };
+		362A048586A71C6B711041746ABDCE86 /* UIDevice+ScreenSize.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5EB5130E4DCD684134B1B9DA372642 /* UIDevice+ScreenSize.m */; };
 		3734FB34EC5FB43D36C4B85F17C1A885 /* UIViewController+AC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5957ED1C76CFC7655091C4B9729EA8F6 /* UIViewController+AC.m */; };
 		39BE3EF0FB79005D1FA013160A1DDB98 /* AllowPanGRPassSV.h in Headers */ = {isa = PBXBuildFile; fileRef = 04CF7F742C16C1693ACB7078735EF6CA /* AllowPanGRPassSV.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3A929408DDA5B8628311F907F990934D /* BlockActionSheet.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A739CCF04B3D79C8D1E4C10A5A3971B /* BlockActionSheet.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -185,7 +185,7 @@
 		34BA455C6B787789D80C3EB85053649F /* NSString+IDCard.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+IDCard.h"; path = "PoporFoundation/Classes/NSString+IDCard.h"; sourceTree = "<group>"; };
 		352E2666E31D5E7DF54E52066206C2F6 /* UITableView+transitionCoordinatort.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITableView+transitionCoordinatort.m"; path = "PoporUI/Classes/UITableView/UITableView+transitionCoordinatort.m"; sourceTree = "<group>"; };
 		37212B60D3BBE22B814CAAB72C4A81BF /* UIButtonLayoutCustom.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIButtonLayoutCustom.m; path = PoporUI/Classes/UIButton/UIButtonLayoutCustom.m; sourceTree = "<group>"; };
-		3832D65949DD5D852D128CD857A80928 /* UIDeviceScreen.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UIDeviceScreen.h; path = PoporUI/Classes/UIDeviceScreen/UIDeviceScreen.h; sourceTree = "<group>"; };
+		3832D65949DD5D852D128CD857A80928 /* UIDevice+ScreenSize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+ScreenSize.h"; path = "PoporUI/Classes/UIDeviceScreen/UIDevice+ScreenSize.h"; sourceTree = "<group>"; };
 		39B541335DEDFAE41EEB2D70CC88CF38 /* UIViewController+LeeBase.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+LeeBase.m"; path = "PoporUI/Classes/UIViewController/UIViewController+LeeBase.m"; sourceTree = "<group>"; };
 		39E4A9E40CA567E4E686FC071021C846 /* UIView+Extension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Extension.h"; path = "PoporUI/Classes/UIView/UIView+Extension.h"; sourceTree = "<group>"; };
 		3A2FA3C0747E1D5BE0635EF7F681E212 /* PoporFoundation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PoporFoundation-prefix.pch"; sourceTree = "<group>"; };
@@ -268,7 +268,7 @@
 		B8DB6D7EB5BF7B061B679363A17F5638 /* UIViewController+AC.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AC.h"; path = "PoporUI/Classes/UIViewController/UIViewController+AC.h"; sourceTree = "<group>"; };
 		BABC2E573F12EF1188BD1CE3C756FE69 /* AllowPanGRPassSV.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AllowPanGRPassSV.m; path = PoporUI/Classes/UIScrollView/AllowPanGRPassSV.m; sourceTree = "<group>"; };
 		BC023670A0593DDB238037EE6AB89218 /* UIPlaceHolderTextView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIPlaceHolderTextView.m; path = PoporUI/Classes/UITextView/UIPlaceHolderTextView.m; sourceTree = "<group>"; };
-		BD5EB5130E4DCD684134B1B9DA372642 /* UIDeviceScreen.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UIDeviceScreen.m; path = PoporUI/Classes/UIDeviceScreen/UIDeviceScreen.m; sourceTree = "<group>"; };
+		BD5EB5130E4DCD684134B1B9DA372642 /* UIDevice+ScreenSize.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+ScreenSize.m"; path = "PoporUI/Classes/UIDeviceScreen/UIDevice+ScreenSize.m"; sourceTree = "<group>"; };
 		BD801942C0B0CA56BAC17CE831D9F04B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BEB97F7E295306E69EC9D166C7747247 /* UIView+Tool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+Tool.h"; path = "PoporUI/Classes/UIView/UIView+Tool.h"; sourceTree = "<group>"; };
 		C0C9A4673CE1952C362BEBC9E1B161E7 /* UILabelInsets.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UILabelInsets.h; path = PoporUI/Classes/UILabel/UILabelInsets.h; sourceTree = "<group>"; };
@@ -433,6 +433,8 @@
 				CBC19E72EF4E09ABF68A4B032094BD6D /* UIDevice+SaveImage.m */,
 				7EA3C5EC5FF8186F4CA9E97A1B0699AC /* UIDevice+Tool.h */,
 				7F8D1BF1E2C1369C23A8AC007ED0E47E /* UIDevice+Tool.m */,
+				3832D65949DD5D852D128CD857A80928 /* UIDevice+ScreenSize.h */,
+				BD5EB5130E4DCD684134B1B9DA372642 /* UIDevice+ScreenSize.m */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -617,8 +619,6 @@
 		C41E9B0CB956205460E62B58C1CBC028 /* UIDeviceScreen */ = {
 			isa = PBXGroup;
 			children = (
-				3832D65949DD5D852D128CD857A80928 /* UIDeviceScreen.h */,
-				BD5EB5130E4DCD684134B1B9DA372642 /* UIDeviceScreen.m */,
 			);
 			name = UIDeviceScreen;
 			sourceTree = "<group>";
@@ -830,7 +830,7 @@
 				B23DAE737BBB149D76840284800A0CCF /* UIDevice+Permission.h in Headers */,
 				270B1C2F71EB9CAC24750C89A779B7CF /* UIDevice+SaveImage.h in Headers */,
 				CB3801E97B668EF23D9A5962D86834E5 /* UIDevice+Tool.h in Headers */,
-				10D14F8FC77C4576FFF8938512FD158F /* UIDeviceScreen.h in Headers */,
+				10D14F8FC77C4576FFF8938512FD158F /* UIDevice+ScreenSize.h in Headers */,
 				4E1F8D6A336462129BFE561E7FE33755 /* UIImage+create.h in Headers */,
 				751119A781E4E24CF7B3D0A073A7DC3D /* UIImage+gradient.h in Headers */,
 				66622D94A20F7995C9E632F819230D4F /* UIImage+read.h in Headers */,
@@ -1044,7 +1044,7 @@
 				1F2ECB8B67A832EDCFBDA3F7FC77C4A2 /* UIDevice+Permission.m in Sources */,
 				C09E306352FEDCDF0A8B69604D025BD0 /* UIDevice+SaveImage.m in Sources */,
 				344EDD5AE92712F4D5ABE1C13723EEEB /* UIDevice+Tool.m in Sources */,
-				362A048586A71C6B711041746ABDCE86 /* UIDeviceScreen.m in Sources */,
+				362A048586A71C6B711041746ABDCE86 /* UIDevice+ScreenSize.m in Sources */,
 				8078D9B56EC326A807DB80361C396561 /* UIImage+create.m in Sources */,
 				59A296D5862FD49D6E54B836B26ADE98 /* UIImage+gradient.m in Sources */,
 				93CF85E29F39991D4C08557D20ADB810 /* UIImage+read.m in Sources */,

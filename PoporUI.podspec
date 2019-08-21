@@ -106,11 +106,6 @@ Pod::Spec.new do |s|
     ss.source_files = 'PoporUI/Classes/ProgressView/*.{h,m}'
   end
   
-  s.subspec 'UIDeviceScreen' do |ss|
-    ss.source_files = 'PoporUI/Classes/UIDeviceScreen/*.{h,m}'
-  end
-  
-  
   #-----------------------
   
   s.platform     = :ios, "8.0"

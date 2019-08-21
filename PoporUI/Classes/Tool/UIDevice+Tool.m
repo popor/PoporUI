@@ -37,6 +37,9 @@
     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
     // app名称
     NSString *app_Name = [infoDictionary objectForKey:@"CFBundleDisplayName"];
+    if (!app_Name) {
+        app_Name = [infoDictionary objectForKey:@"CFBundleName"];
+    }
     
     return app_Name;
 }

@@ -34,15 +34,13 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 #import "UIDevice+Permission.h"
 #import "UIDevice+SaveImage.h"
 #import "UIDevice+Tool.h"
+#import "UIDevice+ScreenSize.h"
 #import "UIPasteImageTextView.h"
 
 // UIButton
 #import "UIButton+CommonStyle.h"
 #import "UIButton+UIEdgeInsets.h"
 #import "UIButtonLayoutCustom.h"
-
-// UIDeviceScreen
-#import "UIDeviceScreen.h"
 
 // UIImage
 #import "UIImage+create.h"
