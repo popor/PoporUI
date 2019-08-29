@@ -14,12 +14,6 @@ FOUNDATION_EXPORT double UIExtensionVersionNumber;
 //! Project version string for UIExtension.
 FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <UIExtension/PublicHeader.h>
-
-// BlockView
-#import "BlockActionSheet.h"
-#import "BlockAlertView.h"
-
 // IToast
 #import "IToastKeyboard.h"
 
@@ -29,13 +23,11 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 // Responder
 #import "UIResponder+Router.h"
 
-// Tool
-#import "DeviceDisk.h"
+// UIDevice
 #import "UIDevice+Permission.h"
 #import "UIDevice+SaveImage.h"
-#import "UIDevice+Tool.h"
 #import "UIDevice+ScreenSize.h"
-#import "UIPasteImageTextView.h"
+#import "UIDevice+Tool.h"
 
 // UIButton
 #import "UIButton+CommonStyle.h"

@@ -13,7 +13,6 @@
 #import <Photos/Photos.h>
 
 #import "UIDevice+Tool.h"
-#import "BlockAlertView.h"
 #import <PoporFoundation/NSString+Tool.h>
 
 static NSString * AlertSysPermissionAlbum__  = @"请在iPhone的“设置-隐私-照片”选项中，允许__访问您的照片。";
@@ -124,14 +123,19 @@ static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私
     }
 }
 
-+ (void)showAV_OpenSettingsURLWithMessage:(NSString *)message
-{
-    UIAlertView * oneAV=[[UIAlertView alloc] initWithTitle:@"提示" message:message delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"设置", nil];
-    [oneAV showWithBlock:^(NSInteger buttonIndex) {
-        if (buttonIndex != oneAV.cancelButtonIndex) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
-        }
++ (void)showAV_OpenSettingsURLWithMessage:(NSString *)message {    
+    UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction * okAction = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
     }];
+    
+    [oneAC addAction:cancleAction];
+    [oneAC addAction:okAction];
+    
+    UIWindow * window = [UIApplication sharedApplication].windows.firstObject;
+    [window.rootViewController presentViewController:oneAC animated:YES completion:nil];
 }
 
 // 相册: 判断.
@@ -139,8 +143,7 @@ static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私
     return [PHPhotoLibrary authorizationStatus] == PHAuthorizationStatusAuthorized;
 }
 
-+ (NSString *)alertTitleWithOriginText:(NSString *)text
-{
++ (NSString *)alertTitleWithOriginText:(NSString *)text {
     return [text replaceWithREG:@"__" newString:[UIDevice getAppName]];
 }
 

@@ -16,8 +16,6 @@
 
 #import <PoporFoundation/PrefixFun.h>
 
-#import "UIDeviceScreen.h"
-
 #import "IToastKeyboard.h"
 
 #import "UIImage+Tool.h"
@@ -55,9 +53,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //NSLog(@"top margin: %i", self.navigationController.topMargin);
-    NSLog(@"HasFFmpeg: %i", HasFFmpeg);
     
+}
+
+- (void)testWifiName {
+    NSString * name = [UIDevice getWifiName];
+    NSLog(@"name: %@", name);
+}
+
+- (void)testMacro {
 #if HasFFmpeg == 0
     NSLog(@"HasFFmpeg 0 __ : %i", HasFFmpeg);
 #endif
@@ -69,14 +73,27 @@
 #if (HasUI == YES)
     NSLog(@"HasUI 0 __ : %i", HasUI);
 #endif
+}
+
+- (void)testAC {
+    UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"修改" message:nil preferredStyle:UIAlertControllerStyleAlert];
     
-    [self testWifiName];
+    [oneAC addTextFieldWithConfigurationHandler:^(UITextField *textField){
+        textField.placeholder = @"请设置标题";
+    }];
+    
+    UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"取消");
+    }];
+    UIAlertAction * changeAction = [UIAlertAction actionWithTitle:@"修改" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"修改");
+    }];
+    
+    [oneAC addAction:cancleAction];
+    [oneAC addAction:changeAction];
+    
+    UIWindow * window = [UIApplication sharedApplication].windows.firstObject;
+    [window.rootViewController presentViewController:oneAC animated:YES completion:nil];
 }
-
-- (void)testWifiName {
-    NSString * name = [UIDevice getWifiName];
-    NSLog(@"name: %@", name);
-}
-
 
 @end

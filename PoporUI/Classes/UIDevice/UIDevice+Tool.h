@@ -53,4 +53,16 @@ typedef NS_ENUM(int, NetStatusType)
 
 + (NSString *)getWifiName;
 
+#pragma mark [获取设备版本号]
++ (NSString *)getDeviceNormalPlatform;
+
+/**
+ * 获取当前可用内存
+ */
++ (long long)getAvailableMemorySize;
+
+#pragma mark 【获取人性化容量】
++ (NSString *)getHumanSize:(float)fileSizeFloat;
+
+
 @end

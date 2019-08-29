@@ -10,8 +10,7 @@
 
 @interface UIScrollView (tool)
 
-- (void)qmui_scrollToBottomAnimated:(BOOL)animated;
-- (void)qmui_scrollToBottom;
-
+// 采自qmui
+- (void)scrollToBottomAnimated:(BOOL)animated;
 
 @end

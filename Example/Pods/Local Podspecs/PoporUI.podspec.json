@@ -1,6 +1,6 @@
 {
   "name": "PoporUI",
-  "version": "0.0.50",
+  "version": "0.0.51",
   "summary": "Contain Itoast;\n  UIButton,UILabel,UITextView,UITextField extention;",
   "homepage": "https://github.com/popor/PoporUI",
   "license": {
@@ -12,17 +12,13 @@
   },
   "source": {
     "git": "https://github.com/popor/PoporUI.git",
-    "tag": "0.0.50"
+    "tag": "0.0.51"
   },
   "platforms": {
     "ios": "8.0"
   },
   "source_files": "PoporUI/Classes/PoporUI.h",
   "subspecs": [
-    {
-      "name": "BlockView",
-      "source_files": "PoporUI/Classes/BlockView/*.{h,m}"
-    },
     {
       "name": "IToast",
       "ios": {
@@ -39,13 +35,10 @@
       "source_files": "PoporUI/Classes/Response/*.{h,m}"
     },
     {
-      "name": "Tool",
+      "name": "UIDevice",
       "ios": {
         "dependencies": {
           "PoporUI/IToast": [
-
-          ],
-          "PoporUI/BlockView": [
 
           ],
           "PoporFoundation/NSString": [
@@ -53,7 +46,7 @@
           ]
         }
       },
-      "source_files": "PoporUI/Classes/Tool/*.{h,m}"
+      "source_files": "PoporUI/Classes/UIDevice/*.{h,m}"
     },
     {
       "name": "UIButton",
@@ -144,10 +137,6 @@
     {
       "name": "ProgressView",
       "source_files": "PoporUI/Classes/ProgressView/*.{h,m}"
-    },
-    {
-      "name": "UIDeviceScreen",
-      "source_files": "PoporUI/Classes/UIDeviceScreen/*.{h,m}"
     }
   ]
 }

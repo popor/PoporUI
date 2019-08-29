@@ -22,14 +22,10 @@ UIEdgeInsetsGetHorizontalValue(UIEdgeInsets insets) {
 
 @implementation UIScrollView (tool)
 
-- (void)qmui_scrollToBottomAnimated:(BOOL)animated {
+- (void)scrollToBottomAnimated:(BOOL)animated {
     if ([self qmui_canScroll]) {
         [self setContentOffset:CGPointMake(self.contentOffset.x, self.contentSize.height + self.qmui_contentInset.bottom - CGRectGetHeight(self.bounds)) animated:animated];
     }
-}
-
-- (void)qmui_scrollToBottom {
-    [self qmui_scrollToBottomAnimated:NO];
 }
 
 - (BOOL)qmui_canScroll {

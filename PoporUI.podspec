@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.50'
+  s.version          = '0.0.51'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   '
@@ -24,10 +24,6 @@ Pod::Spec.new do |s|
   
   
   #-----------------------
-  s.subspec 'BlockView' do |ss|
-    ss.source_files = 'PoporUI/Classes/BlockView/*.{h,m}'
-  end
-  
   s.subspec 'IToast' do |ss|
     ss.ios.dependency 'PoporFoundation/NSString'
     
@@ -39,12 +35,11 @@ Pod::Spec.new do |s|
   end
   
   #-----------------------
-  s.subspec 'Tool' do |ss|
+  s.subspec 'UIDevice' do |ss|
     ss.ios.dependency 'PoporUI/IToast'
-    ss.ios.dependency 'PoporUI/BlockView'
     ss.ios.dependency 'PoporFoundation/NSString'
     
-    ss.source_files = 'PoporUI/Classes/Tool/*.{h,m}'
+    ss.source_files = 'PoporUI/Classes/UIDevice/*.{h,m}'
   end
   
   s.subspec 'UIButton' do |ss|

@@ -11,9 +11,8 @@
 @implementation UIResponder (Router)
 
 - (void)routerEventWithName:(NSString *)eventName userInfo:(NSDictionary *)userInfo {
-    NSLog(@"nextResponder : %@", [self nextResponder]);
+    // NSLog(@"nextResponder : %@", [self nextResponder]);
     [[self nextResponder] routerEventWithName:eventName userInfo:userInfo];
-    
 }
 
 @end
