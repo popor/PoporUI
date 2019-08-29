@@ -17,8 +17,7 @@
     });
 }
 
-+ (IToastKeyboard *)shareIToastKeyboard
-{
++ (IToastKeyboard *)shareIToastKeyboard {
     static IToastKeyboard * oneRK = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -28,57 +27,49 @@
     return oneRK;
 }
 
-- (void)addMonitor
-{
+- (void)addMonitor {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
 }
 
 
 #pragma mark - 键盘通知事件
--(void)keyboardShow:(NSNotification *)note
-{
+- (void)keyboardShow:(NSNotification *)note {
     CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     self.keyboardH = keyBoardRect.size.height;
 }
 
--(void)keyboardHide:(NSNotification *)note
-{
+- (void)keyboardHide:(NSNotification *)note {
     self.keyboardH = 0;
 }
 
-+ (void)alertToastTitle:(NSString *)title
-{
-    if ([title isEqualToString:@""] || !title) {
-        NSLog(@"提示语为空");
-        return;
-    }
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        IToast * oneIT=[[IToast alloc] initWithText:title];
-        [oneIT setDuration:2.0 * 1000];
-        [oneIT show:iToastTypeNotice];
-    });
++ (void)alertTitle:(NSString *)title {
+    [self alertTitle:title duration:0.5 copy:NO];
 }
 
-+ (void)alertToastTitle:(NSString *)title duration:(NSInteger)duration
-{
++ (void)alertTitle:(NSString *)title duration:(NSInteger)duration {
+    [self alertTitle:title duration:duration copy:NO];
+}
+
++ (void)alertTitle:(NSString *)title duration:(NSInteger)duration copy:(BOOL)copy {
     if ([title isEqualToString:@""] || !title) {
         NSLog(@"提示语为空");
         return;
     }
+    if (duration == 0 || duration == -1) {
+        duration = 0.5;
+    }
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         IToast * oneIT=[[IToast alloc] initWithText:title];
         [oneIT setDuration:duration * 1000];
         [oneIT show:iToastTypeNotice];
+        
+        if (copy) {
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            [pasteboard setString:title];
+        }
     });
-}
-
-+ (void)alertToastTitleCopy:(NSString *)title {
-    if (title) {
-        [IToastKeyboard alertToastTitle:title];
-        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-        [pasteboard setString:title];
-    }
 }
 
 @end

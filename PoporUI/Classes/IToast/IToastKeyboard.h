@@ -9,10 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "IToast.h"
 
-
-#define AlertToastTitle(title)              [IToastKeyboard alertToastTitle:title]
-#define AlertToastTitleTime(title, time)    [IToastKeyboard alertToastTitle:title duration:time]
-#define AlertToastTitleCopy(title)          [IToastKeyboard alertToastTitleCopy:title]
+#define AlertToastTitle(title)                       [IToastKeyboard alertTitle:title duration:0    copy:NO]
+#define AlertToastTitleTime(title, time)             [IToastKeyboard alertTitle:title duration:time copy:NO]
+#define AlertToastTitleTimeCopy(title, time, isCopy) [IToastKeyboard alertTitle:title duration:time copy:isCopy]
 
 @interface IToastKeyboard : NSObject
 
@@ -21,8 +20,14 @@
 
 @property (nonatomic        ) int keyboardH;
 
-+ (void)alertToastTitle:(NSString *)title;
-+ (void)alertToastTitle:(NSString *)title duration:(NSInteger)duration;
-+ (void)alertToastTitleCopy:(NSString *)title;
++ (void)alertTitle:(NSString *)title;
++ (void)alertTitle:(NSString *)title duration:(NSInteger)duration;
+
+/*
+ if (duration == 0 || duration == -1) {
+ duration = 0.5;
+ }
+ //*/
++ (void)alertTitle:(NSString *)title duration:(NSInteger)duration copy:(BOOL)copy;
 
 @end

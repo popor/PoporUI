@@ -30,10 +30,10 @@
 
 @interface ProgressView : UIView
 
-@property(nonatomic) CGFloat frameWidth;
-@property(nonatomic, strong) UIColor *progressColor;
-@property(nonatomic, strong) UIColor *progressBackgroundColor;
-@property(nonatomic, strong) UIColor *circleBackgroundColor;
+@property(nonatomic        ) CGFloat   frameWidth;
+@property(nonatomic, strong) UIColor * progressColor;
+@property(nonatomic, strong) UIColor * progressBackgroundColor;
+@property(nonatomic, strong) UIColor * circleBackgroundColor;
 
 - (void)setCurrentProgress:(CGFloat)progress;
 
