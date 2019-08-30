@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "IToast.h"
+#import "IToast_Popor.h"
 
 #define AlertToastTitle(title)                       [IToastKeyboard alertTitle:title duration:0    copy:NO]
 #define AlertToastTitleTime(title, time)             [IToastKeyboard alertTitle:title duration:time copy:NO]

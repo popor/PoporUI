@@ -24,6 +24,9 @@ pod 'PoporFoundation'
 
 增加了对macOS的兼容.
 
+更新日志
+0.0.36: 之后不再对 filrUrl 进行toUrlEncode, 因为发现 AVAudioPlayer 使用本地url不能将汉字转换为 urlCode .
+
 ## Author
 
 popor, 908891024@qq.com

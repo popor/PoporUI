@@ -61,9 +61,9 @@
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        IToast * oneIT=[[IToast alloc] initWithText:title];
+        IToast_Popor * oneIT=[[IToast_Popor alloc] initWithText:title];
         [oneIT setDuration:duration * 1000];
-        [oneIT show:iToastTypeNotice];
+        [oneIT show:iToastTypePoporNotice];
         
         if (copy) {
             UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];

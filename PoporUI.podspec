@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '0.0.51'
+  s.version          = '1.01'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   '
@@ -21,7 +21,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   
   s.source_files = 'PoporUI/Classes/PoporUI.h'
-  
   
   #-----------------------
   s.subspec 'IToast' do |ss|
@@ -44,7 +43,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'UIButton' do |ss|
     ss.ios.dependency 'PoporFoundation/NSString'
-    ss.ios.dependency 'PoporFoundation/PrefixCore'
+    ss.ios.dependency 'PoporFoundation/Prefix'
     ss.ios.dependency 'PoporUI/UIView'
     ss.ios.dependency 'PoporUI/UIImage'
     
@@ -86,7 +85,7 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UIViewController' do |ss|
-    ss.ios.dependency 'PoporFoundation/PrefixCore'
+    ss.ios.dependency 'PoporFoundation/Prefix'
     ss.ios.dependency 'PoporFoundation/NSObject'
     ss.ios.dependency 'PoporFoundation/NSString'
     
@@ -102,9 +101,6 @@ Pod::Spec.new do |s|
   end
   
   #-----------------------
-  
   s.platform     = :ios, "8.0"
-  
-  #s.dependency 'PoporFoundation'
   
 end
