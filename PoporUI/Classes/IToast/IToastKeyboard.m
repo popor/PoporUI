@@ -44,7 +44,7 @@
 }
 
 + (void)alertTitle:(NSString *)title {
-    [self alertTitle:title duration:0.5 copy:NO];
+    [self alertTitle:title duration:2 copy:NO];
 }
 
 + (void)alertTitle:(NSString *)title duration:(NSInteger)duration {
@@ -57,7 +57,7 @@
         return;
     }
     if (duration == 0 || duration == -1) {
-        duration = 0.5;
+        duration = 2;
     }
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

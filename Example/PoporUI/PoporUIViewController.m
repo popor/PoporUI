@@ -53,6 +53,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    {
+        UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithTitle:@"测试" style:UIBarButtonItemStylePlain target:self action:@selector(testAction)];
+        self.navigationItem.leftBarButtonItems = @[item1];
+    }
+}
+
+- (void)testAction {
+    AlertToastTitle(@"123");
 }
 
 - (void)testWifiName {
