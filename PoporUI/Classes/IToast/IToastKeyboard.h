@@ -25,7 +25,7 @@
 
 /*
  if (duration == 0 || duration == -1) {
- duration = 0.5;
+ duration = 2;
  }
  //*/
 + (void)alertTitle:(NSString *)title duration:(NSInteger)duration copy:(BOOL)copy;

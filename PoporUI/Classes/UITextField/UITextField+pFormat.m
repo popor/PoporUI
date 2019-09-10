@@ -55,6 +55,50 @@
     [textField setSelectedTextRange:selectedTextRange];
 }
 
+- (void)formatChinaIdcard {
+    [self formatChinaIdcardGapWidth:6];
+}
+
+- (void)formatChinaIdcardGapWidth:(int)gapWidth {
+    UITextField * textField = self;
+    if (textField.text.length == 0) {
+        return;
+    }
+    if (gapWidth < 0) {
+        gapWidth = 0;
+    }
+    
+    UITextRange *selectedTextRange = textField.selectedTextRange;
+    
+    NSString * text = textField.text;
+    NSMutableAttributedString * attributedString;
+    {
+        attributedString = [[NSMutableAttributedString alloc] initWithString:text];
+        {
+            long number = gapWidth; // gap宽度
+            int length = 1;
+            CFNumberRef num = CFNumberCreate(kCFAllocatorDefault,kCFNumberSInt8Type,&number);
+            if (text.length > 6) {
+                [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(5, length)];
+            }
+            if (text.length > 10) {
+                [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(9, length)];
+            }
+            if (text.length > 14) {
+                [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(13, length)];
+            }
+            if (text.length > 18) {
+                [attributedString addAttribute:(id)kCTKernAttributeName value:(__bridge id)num range:NSMakeRange(17,length)];
+            }
+            
+            CFRelease(num);
+        }
+        [textField setAttributedText:attributedString];
+    }
+    
+    [textField setSelectedTextRange:selectedTextRange];
+}
+
 // money
 - (void)formatMoneyUnit:(int)unit {
     [self formatMoneyUnit:unit gapWitdh:6];

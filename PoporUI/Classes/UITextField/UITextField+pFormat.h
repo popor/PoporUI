@@ -10,9 +10,14 @@
 
 @interface UITextField (pFormat)
 
+// gapWidth 默认为:6
+
 // 中国的电话, 格式为3-4-4
 - (void)formatChinaPhone;
 - (void)formatChinaPhoneGapWidth:(int)gapWidth;
+
+- (void)formatChinaIdcard;
+- (void)formatChinaIdcardGapWidth:(int)gapWidth;
 
 // money, unit 一般为3或者4
 - (void)formatMoneyUnit:(int)unit;
