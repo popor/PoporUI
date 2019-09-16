@@ -10,6 +10,8 @@
 #import "PoporUIVCInteractor.h"
 #import <Masonry/Masonry.h>
 
+#import "PoporUI.h"
+
 @interface PoporUIVC ()
 
 @property (nonatomic, strong) PoporUIVCPresenter * present;
@@ -76,6 +78,7 @@
 - (void)startEvent {
     [self.present startEvent];
     
+    //[UIAlertController showAt:self style:UIAlertControllerStyleAlert title:@"12" message:@"33" cancelTitle:@"22" cancelHandel:^(UIAlertAction * _Nonnull action) { }];
 }
 
 // -----------------------------------------------------------------------------

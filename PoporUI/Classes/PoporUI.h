@@ -23,6 +23,9 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 // Responder
 #import "UIResponder+pRouter.h"
 
+// UIAlertController
+#import "UIAlertController+pTool.h"
+
 // UIButton
 #import "UIButton+pUIEdgeInsets.h"
 #import "UIButton_pLayoutCustom.h"

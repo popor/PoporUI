@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'PoporUI'
-  s.version          = '1.04'
+  s.version          = '1.05'
   s.summary          = 'Contain Itoast;
   UIButton,UILabel,UITextView,UITextField extention;
   '
@@ -34,6 +34,11 @@ Pod::Spec.new do |s|
   end
   
   #-----------------------
+  s.subspec 'UIAlertController' do |ss|
+    
+    ss.source_files = 'PoporUI/Classes/UIAlertController/*.{h,m}'
+  end
+  
   s.subspec 'UIDevice' do |ss|
     ss.ios.dependency 'PoporUI/IToast'
     ss.ios.dependency 'PoporFoundation/NSString'
