@@ -1,58 +1,62 @@
 PODS:
+  - Masonry (1.1.0)
   - PoporFoundation/NSObject (1.02)
   - PoporFoundation/NSString (1.02):
     - PoporFoundation/Os
   - PoporFoundation/Os (1.02)
   - PoporFoundation/Prefix (1.02):
     - PoporFoundation/Os
-  - PoporUI (1.03):
-    - PoporUI/IToast (= 1.03)
-    - PoporUI/ProgressView (= 1.03)
-    - PoporUI/Response (= 1.03)
-    - PoporUI/UIButton (= 1.03)
-    - PoporUI/UIDevice (= 1.03)
-    - PoporUI/UIImage (= 1.03)
-    - PoporUI/UILabel (= 1.03)
-    - PoporUI/UINavigationController (= 1.03)
-    - PoporUI/UIScrollView (= 1.03)
-    - PoporUI/UITableView (= 1.03)
-    - PoporUI/UITextField (= 1.03)
-    - PoporUI/UITextView (= 1.03)
-    - PoporUI/UIView (= 1.03)
-    - PoporUI/UIViewController (= 1.03)
-  - PoporUI/IToast (1.03):
+  - PoporUI (1.04):
+    - PoporUI/IToast (= 1.04)
+    - PoporUI/ProgressView (= 1.04)
+    - PoporUI/Response (= 1.04)
+    - PoporUI/UIButton (= 1.04)
+    - PoporUI/UIDevice (= 1.04)
+    - PoporUI/UIImage (= 1.04)
+    - PoporUI/UILabel (= 1.04)
+    - PoporUI/UINavigationController (= 1.04)
+    - PoporUI/UIScrollView (= 1.04)
+    - PoporUI/UITableView (= 1.04)
+    - PoporUI/UITextField (= 1.04)
+    - PoporUI/UITextView (= 1.04)
+    - PoporUI/UIView (= 1.04)
+    - PoporUI/UIViewController (= 1.04)
+  - PoporUI/IToast (1.04):
     - PoporFoundation/NSString
-  - PoporUI/ProgressView (1.03)
-  - PoporUI/Response (1.03)
-  - PoporUI/UIButton (1.03):
+  - PoporUI/ProgressView (1.04)
+  - PoporUI/Response (1.04)
+  - PoporUI/UIButton (1.04):
     - PoporFoundation/NSString
     - PoporFoundation/Prefix
     - PoporUI/UIImage
     - PoporUI/UIView
-  - PoporUI/UIDevice (1.03):
+  - PoporUI/UIDevice (1.04):
     - PoporFoundation/NSString
     - PoporUI/IToast
-  - PoporUI/UIImage (1.03)
-  - PoporUI/UILabel (1.03):
+  - PoporUI/UIImage (1.04)
+  - PoporUI/UILabel (1.04):
     - PoporFoundation/NSString
     - PoporUI/UIView
-  - PoporUI/UINavigationController (1.03)
-  - PoporUI/UIScrollView (1.03)
-  - PoporUI/UITableView (1.03)
-  - PoporUI/UITextField (1.03):
+  - PoporUI/UINavigationController (1.04)
+  - PoporUI/UIScrollView (1.04)
+  - PoporUI/UITableView (1.04)
+  - PoporUI/UITextField (1.04):
+    - PoporFoundation/NSObject
     - PoporFoundation/NSString
-  - PoporUI/UITextView (1.03)
-  - PoporUI/UIView (1.03)
-  - PoporUI/UIViewController (1.03):
+  - PoporUI/UITextView (1.04)
+  - PoporUI/UIView (1.04)
+  - PoporUI/UIViewController (1.04):
     - PoporFoundation/NSObject
     - PoporFoundation/NSString
     - PoporFoundation/Prefix
 
 DEPENDENCIES:
+  - Masonry
   - PoporUI (from `../`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Masonry
     - PoporFoundation
 
 EXTERNAL SOURCES:
@@ -60,9 +64,10 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 3bc0abbb2bd3e13083558717185d67abeec25ab0
-  PoporUI: 4a22f838365ea001488fcdf0f239c87bacccf32e
+  PoporUI: c0d5bcb4d5338cd3c0080c73551443051bf0e3bc
 
-PODFILE CHECKSUM: 6fd9dcb794450056994659285c6a76c4698cc680
+PODFILE CHECKSUM: 971d801e414bfdef529dd06e265f413b185f655e
 
 COCOAPODS: 1.7.5

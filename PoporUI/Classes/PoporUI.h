@@ -59,9 +59,10 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 #import "UITableViewCell+pSetSeparatorType.h"
 
 // UITextField
-#import "UITextField_pInsets.h"
 #import "UITextField+pFormat.h"
+#import "UITextField+pInsets.h"
 #import "UITextField+pMaxLength.h"
+#import "UITextField+pPlaceholder.h"
 #import "UITextField+pTextRange.h"
 
 // UITextView
