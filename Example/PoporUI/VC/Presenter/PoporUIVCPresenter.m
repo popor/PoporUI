@@ -9,6 +9,7 @@
 #import "PoporUIVCInteractor.h"
 
 #import "VC_UITextField+pPlaceholder.h"
+#import "BTVC.h"
 
 @interface PoporUIVCPresenter ()
 
@@ -49,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -81,6 +82,10 @@
             cell.textLabel.text = [NSString stringWithFormat:@"%li : 输入框默认文字颜色", indexPath.row];
             break;
         }
+        case 1: {
+            cell.textLabel.text = [NSString stringWithFormat:@"%li : 按钮", indexPath.row];
+            break;
+        }
             
         default:
             break;
@@ -96,7 +101,10 @@
             [self.view.vc.navigationController pushViewController:[VC_UITextField_pPlaceholder new] animated:YES];
             break;
         }
-            
+        case 1: {
+            [self.view.vc.navigationController pushViewController:[BTVC new] animated:YES];
+            break;
+        }
         default:
             break;
     }

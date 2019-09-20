@@ -28,7 +28,7 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
 // UIButton
 #import "UIButton+pUIEdgeInsets.h"
-#import "UIButton_pLayoutCustom.h"
+#import "UIButton+pLayoutCustom.h"
 
 // UIDevice
 #import "UIDevice+pPermission.h"
@@ -45,8 +45,8 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
 // UILabel
 #import "UILabel+pFormat.h"
+#import "UILabel+pInsets.h"
 #import "UILabel+pSize.h"
-#import "UILabel_pInsets.h"
 #import "UILabel_pPhone.h"
 
 // UINavigationController

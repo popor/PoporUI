@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1818073521549D0500CB87CE /* foot.png in Resources */ = {isa = PBXBuildFile; fileRef = 1818073421549D0500CB87CE /* foot.png */; };
+		1818073521549D0500CB87CE /* foot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1818073421549D0500CB87CE /* foot@2x.png */; };
 		1828EA56232F2D9100396DDA /* PoporUIVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828EA4D232F2D9100396DDA /* PoporUIVCPresenter.m */; };
 		1828EA57232F2D9100396DDA /* PoporUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828EA51232F2D9100396DDA /* PoporUIVC.m */; };
 		1828EA58232F2D9100396DDA /* PoporUIVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828EA54232F2D9100396DDA /* PoporUIVCInteractor.m */; };
 		1828EA5D232F2F8700396DDA /* VC_UITextField+pPlaceholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1828EA5C232F2F8700396DDA /* VC_UITextField+pPlaceholder.m */; };
-		18631B7620E4D65F0080DC41 /* icon180.png in Resources */ = {isa = PBXBuildFile; fileRef = 18631B7520E4D65F0080DC41 /* icon180.png */; };
+		18631B7620E4D65F0080DC41 /* icon180@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18631B7520E4D65F0080DC41 /* icon180@2x.png */; };
+		187D30DF23346C8C00045911 /* BTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 187D30DE23346C8C00045911 /* BTVC.m */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
@@ -44,7 +45,7 @@
 
 /* Begin PBXFileReference section */
 		180028C42305499100EF6843 /* PoporUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporUI_Example.entitlements; sourceTree = "<group>"; };
-		1818073421549D0500CB87CE /* foot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = foot.png; sourceTree = "<group>"; };
+		1818073421549D0500CB87CE /* foot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foot@2x.png"; sourceTree = "<group>"; };
 		1828EA4D232F2D9100396DDA /* PoporUIVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoporUIVCPresenter.m; sourceTree = "<group>"; };
 		1828EA4E232F2D9100396DDA /* PoporUIVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoporUIVCPresenter.h; sourceTree = "<group>"; };
 		1828EA50232F2D9100396DDA /* PoporUIVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoporUIVCProtocol.h; sourceTree = "<group>"; };
@@ -54,7 +55,9 @@
 		1828EA55232F2D9100396DDA /* PoporUIVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoporUIVCInteractor.h; sourceTree = "<group>"; };
 		1828EA5B232F2F8700396DDA /* VC_UITextField+pPlaceholder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VC_UITextField+pPlaceholder.h"; sourceTree = "<group>"; };
 		1828EA5C232F2F8700396DDA /* VC_UITextField+pPlaceholder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "VC_UITextField+pPlaceholder.m"; sourceTree = "<group>"; };
-		18631B7520E4D65F0080DC41 /* icon180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon180.png; sourceTree = "<group>"; };
+		18631B7520E4D65F0080DC41 /* icon180@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon180@2x.png"; sourceTree = "<group>"; };
+		187D30DD23346C8C00045911 /* BTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BTVC.h; sourceTree = "<group>"; };
+		187D30DE23346C8C00045911 /* BTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BTVC.m; sourceTree = "<group>"; };
 		2497EEB7FBA989374EB5A062 /* Pods-PoporUI_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporUI_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PoporUI_Example/Pods-PoporUI_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		47759FDEC074483E23CF9D40 /* Pods_PoporUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* PoporUI_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoporUI_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +172,15 @@
 			path = "UITextField+pPlaceholder";
 			sourceTree = "<group>";
 		};
+		187D30DC23346C6F00045911 /* BTVC */ = {
+			isa = PBXGroup;
+			children = (
+				187D30DD23346C8C00045911 /* BTVC.h */,
+				187D30DE23346C8C00045911 /* BTVC.m */,
+			);
+			path = BTVC;
+			sourceTree = "<group>";
+		};
 		18D2BDF620D8D8E000C91F09 /* other */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,12 +242,13 @@
 			isa = PBXGroup;
 			children = (
 				18D2BDF620D8D8E000C91F09 /* other */,
-				1818073421549D0500CB87CE /* foot.png */,
-				18631B7520E4D65F0080DC41 /* icon180.png */,
+				1818073421549D0500CB87CE /* foot@2x.png */,
+				18631B7520E4D65F0080DC41 /* icon180@2x.png */,
 				6003F59C195388D20070C39A /* PoporUIAppDelegate.h */,
 				6003F59D195388D20070C39A /* PoporUIAppDelegate.m */,
 				1828EA45232F2D6400396DDA /* VC */,
 				1828EA5A232F2F5000396DDA /* UITextField+pPlaceholder */,
+				187D30DC23346C6F00045911 /* BTVC */,
 				1828EA59232F2E4200396DDA /* old */,
 			);
 			name = "Example for PoporUI";
@@ -375,8 +388,8 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				18631B7620E4D65F0080DC41 /* icon180.png in Resources */,
-				1818073521549D0500CB87CE /* foot.png in Resources */,
+				18631B7620E4D65F0080DC41 /* icon180@2x.png in Resources */,
+				1818073521549D0500CB87CE /* foot@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187D30DF23346C8C00045911 /* BTVC.m in Sources */,
 				1828EA5D232F2F8700396DDA /* VC_UITextField+pPlaceholder.m in Sources */,
 				1828EA58232F2D9100396DDA /* PoporUIVCInteractor.m in Sources */,
 				6003F59E195388D20070C39A /* PoporUIAppDelegate.m in Sources */,

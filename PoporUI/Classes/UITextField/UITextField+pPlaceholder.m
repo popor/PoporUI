@@ -7,7 +7,7 @@
 
 #import "UITextField+pPlaceholder.h"
 
-#import "NSObject+pSwizzling.h"
+#import <PoporFoundation/NSObject+pSwizzling.h>
 
 @implementation UITextField (pPlaceholder)
 
