@@ -116,6 +116,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18050BD723349F0500BC6A65 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				6003F59C195388D20070C39A /* PoporUIAppDelegate.h */,
+				6003F59D195388D20070C39A /* PoporUIAppDelegate.m */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
 		1828EA45232F2D6400396DDA /* VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +193,8 @@
 		18D2BDF620D8D8E000C91F09 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				1818073421549D0500CB87CE /* foot@2x.png */,
+				18631B7520E4D65F0080DC41 /* icon180@2x.png */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
@@ -242,10 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				18D2BDF620D8D8E000C91F09 /* other */,
-				1818073421549D0500CB87CE /* foot@2x.png */,
-				18631B7520E4D65F0080DC41 /* icon180@2x.png */,
-				6003F59C195388D20070C39A /* PoporUIAppDelegate.h */,
-				6003F59D195388D20070C39A /* PoporUIAppDelegate.m */,
+				18050BD723349F0500BC6A65 /* App */,
 				1828EA45232F2D6400396DDA /* VC */,
 				1828EA5A232F2F5000396DDA /* UITextField+pPlaceholder */,
 				187D30DC23346C6F00045911 /* BTVC */,

@@ -7,6 +7,8 @@
 
 #import "UIButton+pLayoutCustom.h"
 #import <PoporFoundation/NSObject+pSwizzling.h>
+#import <PoporFoundation/NSString+pSize.h>
+#import <PoporFoundation/NSString+pAtt.h>
 
 @implementation UIButton (pLayoutCustom)
 
@@ -19,24 +21,113 @@
     });
 }
 
-
 - (CGRect)titleRectForContentRect_pLayoutCustom:(CGRect)contentRect {
     if (self.titleFrameBlock) {
-        return self.titleFrameBlock(contentRect);
+        return self.titleFrameBlock(self, contentRect);
     }else{
-        return contentRect;
+        return [self titleRectForContentRect_pLayoutCustom:contentRect];
     }
 }
 
 - (CGRect)imageRectForContentRect_pLayoutCustom:(CGRect)contentRect {
     if (self.imageFrameBlock) {
-        return self.imageFrameBlock(contentRect);
+        return self.imageFrameBlock(self, contentRect);
     }else{
-        if (self.currentImage) {
-            return CGRectMake(0, (contentRect.size.height - self.currentImage.size.height)/2, self.currentImage.size.width, self.currentImage.size.height);
-        }else{
-            return contentRect;
+        return [self imageRectForContentRect_pLayoutCustom:contentRect];
+    }
+}
+
+// 居中显示,图片在文字右边
+- (void)layoutHorizon_textImage_:(UIImage *)image title:(NSString *)title font:(UIFont *)font forState:(UIControlState)state {
+    [self setTitle:title forState:state];
+    self.titleLabel.font = font;
+    [self setImage:image forState:state];
+    
+    CGSize titleSize = [title sizeInFont:font];
+    [self layoutHorizon_textImage_:image titleSize:titleSize forState:state];
+}
+
+- (void)layoutHorizon_textImage_:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state {
+    [self setAttributedTitle:att forState:state];
+    [self setImage:image forState:state];
+    
+    CGSize titleSize = [att sizeWithWidth:MAXFLOAT];
+    [self layoutHorizon_textImage_:image titleSize:titleSize forState:state];
+}
+
+- (void)layoutHorizon_textImage_:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state {
+    
+    __block CGSize imageSize  = CGSizeZero;
+    
+    self.imageFrameBlock = ^CGRect(UIButton * button, CGRect contentRect) {
+        if (CGSizeEqualToSize(CGSizeZero, imageSize)) {
+            imageSize = [UIButton imageMaxSize:image contentRect:contentRect];
         }
+        
+        int x = (contentRect.size.width - titleSize.width - imageSize.width)/2 + titleSize.width;
+        return CGRectMake(x, (contentRect.size.height - imageSize.height)/2, imageSize.width, imageSize.height);
+    };
+    self.titleFrameBlock = ^CGRect(UIButton * button, CGRect contentRect) {
+        if (CGSizeEqualToSize(CGSizeZero, imageSize)) {
+            imageSize = [UIButton imageMaxSize:image contentRect:contentRect];
+        }
+        
+        int x = (contentRect.size.width - titleSize.width - imageSize.width)/2;
+        return CGRectMake(x, 0, titleSize.width, contentRect.size.height);
+    };
+}
+
+// 靠右显示,图片在文字右边
+- (void)layoutHorizon_textImage:(UIImage *)image title:(NSString *)title font:(UIFont *)font forState:(UIControlState)state {
+    [self setTitle:title forState:state];
+    self.titleLabel.font = font;
+    [self setImage:image forState:state];
+    
+    CGSize titleSize = [title sizeInFont:font];
+    [self layoutHorizon_textImage:image titleSize:titleSize forState:state];
+}
+
+- (void)layoutHorizon_textImage:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state {
+    [self setAttributedTitle:att forState:state];
+    [self setImage:image forState:state];
+    
+    CGSize titleSize = [att sizeWithWidth:MAXFLOAT];
+    [self layoutHorizon_textImage:image titleSize:titleSize forState:state];
+}
+
+- (void)layoutHorizon_textImage:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state {
+    
+    __block CGSize imageSize  = CGSizeZero;
+    
+    self.imageFrameBlock = ^CGRect(UIButton * button, CGRect contentRect) {
+        if (CGSizeEqualToSize(CGSizeZero, imageSize)) {
+            imageSize = [UIButton imageMaxSize:image contentRect:contentRect];
+        }
+        
+        return CGRectMake(contentRect.size.width - imageSize.width, 0, imageSize.width, imageSize.height);
+    };
+    self.titleFrameBlock = ^CGRect(UIButton * button, CGRect contentRect) {
+        if (CGSizeEqualToSize(CGSizeZero, imageSize)) {
+            imageSize = [UIButton imageMaxSize:image contentRect:contentRect];
+        }
+        
+        return CGRectMake(0, 0, contentRect.size.width - imageSize.width, contentRect.size.height);
+    };
+}
+
+#pragma mark - tool
++ (CGSize)imageMaxSize:(UIImage *)image contentRect:(CGRect)contentRect {
+    if (contentRect.size.width > image.size.width || contentRect.size.height > image.size.height) {
+        float s1 = contentRect.size.width/image.size.width;
+        float s2 = contentRect.size.height/image.size.height;
+        
+        if (s1 <= s2) {
+            return CGSizeMake(image.size.width * s1, image.size.height * s1);
+        } else {
+            return CGSizeMake(image.size.width * s2, image.size.height * s2);
+        }
+    } else {
+        return image.size;
     }
 }
 

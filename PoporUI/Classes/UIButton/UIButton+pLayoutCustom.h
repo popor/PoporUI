@@ -9,12 +9,25 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef CGRect(^Block_pLayoutCustom_frame) (CGRect contentRect);
+typedef CGRect(^Block_pLayoutCustom_frame) (UIButton * button, CGRect contentRect);
 
 @interface UIButton (pLayoutCustom)
 
 @property (nonatomic, copy  ) Block_pLayoutCustom_frame imageFrameBlock;
 @property (nonatomic, copy  ) Block_pLayoutCustom_frame titleFrameBlock;
+
+// 最好在设置了image和title之后进行
+// 居中显示,图片在文字右边, 算法还有问题.
+- (void)layoutHorizon_textImage_:(UIImage *)image title:(NSString *)title font:(UIFont *)font forState:(UIControlState)state;
+- (void)layoutHorizon_textImage_:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state;
+
+- (void)layoutHorizon_textImage_:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state;
+
+// 靠右显示,图片在文字右边
+- (void)layoutHorizon_textImage:(UIImage *)image title:(NSString *)title font:(UIFont *)font forState:(UIControlState)state;
+- (void)layoutHorizon_textImage:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state;
+
+- (void)layoutHorizon_textImage:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state;
 
 @end
 
