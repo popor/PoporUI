@@ -37,22 +37,27 @@
     }
 }
 
-// 居中显示,图片在文字右边
+#pragma mark -  居中显示,图片在文字右边
 - (void)layoutHorizon_textImage_:(UIImage *)image title:(NSString *)title font:(UIFont *)font forState:(UIControlState)state {
-    [self setTitle:title forState:state];
-    self.titleLabel.font = font;
-    [self setImage:image forState:state];
     
     CGSize titleSize = [title sizeInFont:font];
+    //NSLog(@"titleSize: %@", NSStringFromCGSize(titleSize));
     [self layoutHorizon_textImage_:image titleSize:titleSize forState:state];
+    
+    {
+        [self setImage:image forState:state];
+        [self setTitle:title forState:state];
+        self.titleLabel.font = font;
+    }
 }
 
 - (void)layoutHorizon_textImage_:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state {
-    [self setAttributedTitle:att forState:state];
-    [self setImage:image forState:state];
-    
     CGSize titleSize = [att sizeWithWidth:MAXFLOAT];
     [self layoutHorizon_textImage_:image titleSize:titleSize forState:state];
+    {
+        [self setAttributedTitle:att forState:state];
+        [self setImage:image forState:state];
+    }
 }
 
 - (void)layoutHorizon_textImage_:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state {
@@ -65,7 +70,10 @@
         }
         
         int x = (contentRect.size.width - titleSize.width - imageSize.width)/2 + titleSize.width;
-        return CGRectMake(x, (contentRect.size.height - imageSize.height)/2, imageSize.width, imageSize.height);
+        CGRect rect = CGRectMake(x, (contentRect.size.height - imageSize.height)/2, imageSize.width, imageSize.height);
+        
+        //NSLog(@"image rect: %@, content: %@", NSStringFromCGRect(rect), NSStringFromCGRect(contentRect));
+        return rect;
     };
     self.titleFrameBlock = ^CGRect(UIButton * button, CGRect contentRect) {
         if (CGSizeEqualToSize(CGSizeZero, imageSize)) {
@@ -73,26 +81,35 @@
         }
         
         int x = (contentRect.size.width - titleSize.width - imageSize.width)/2;
-        return CGRectMake(x, 0, titleSize.width, contentRect.size.height);
+        CGRect rect = CGRectMake(x, 0, titleSize.width, contentRect.size.height);
+        
+        //NSLog(@"title rect: %@, content: %@", NSStringFromCGRect(rect), NSStringFromCGRect(contentRect));
+        return rect;
     };
 }
 
-// 靠右显示,图片在文字右边
+#pragma mark - 靠右显示,图片在文字右边
 - (void)layoutHorizon_textImage:(UIImage *)image title:(NSString *)title font:(UIFont *)font forState:(UIControlState)state {
-    [self setTitle:title forState:state];
-    self.titleLabel.font = font;
-    [self setImage:image forState:state];
     
     CGSize titleSize = [title sizeInFont:font];
     [self layoutHorizon_textImage:image titleSize:titleSize forState:state];
+    
+    {
+        [self setTitle:title forState:state];
+        self.titleLabel.font = font;
+        [self setImage:image forState:state];
+    }
 }
 
 - (void)layoutHorizon_textImage:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state {
-    [self setAttributedTitle:att forState:state];
-    [self setImage:image forState:state];
     
     CGSize titleSize = [att sizeWithWidth:MAXFLOAT];
     [self layoutHorizon_textImage:image titleSize:titleSize forState:state];
+    
+    {
+        [self setAttributedTitle:att forState:state];
+        [self setImage:image forState:state];
+    }
 }
 
 - (void)layoutHorizon_textImage:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state {
