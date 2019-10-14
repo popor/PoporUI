@@ -35,7 +35,7 @@
 - (BOOL)isChinaIdCardNo {
     
     if (self.length == 18) {
-        NSString * checkString = [NSString getUserCardNoLastCode:self];
+        NSString * checkString = [self chinaIdcardLastCode];
         NSLog(@"身份证验证码为: %@", checkString);
         if ([checkString isEqualToString:[[self substringFromIndex:17] uppercaseString]]) {
             return YES;
@@ -48,8 +48,8 @@
 }
 
 //获取身份证最后一位验证码,超过17未即可.
-+ (NSString *)getUserCardNoLastCode:(NSString *)cardNo
-{
+- (NSString *)chinaIdcardLastCode {
+    NSString * cardNo = self;
     if (cardNo.length >= 17) {
         NSMutableArray * cardNumArray = [[NSMutableArray alloc] init];
         [cardNo enumerateSubstringsInRange:NSMakeRange(0, cardNo.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {

@@ -21,9 +21,9 @@
 
 - (void)drawTextInRect_pInsets:(CGRect)rect {
     if (UIEdgeInsetsEqualToEdgeInsets(UIEdgeInsetsZero, self.insets)) {
-        [self drawTextInRect_pInsets:UIEdgeInsetsInsetRect(rect, self.insets)];
-    } else {
         [self drawTextInRect_pInsets:rect];
+    } else {
+        [self drawTextInRect_pInsets:UIEdgeInsetsInsetRect(rect, self.insets)];
     }
 }
 
