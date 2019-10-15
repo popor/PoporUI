@@ -36,7 +36,7 @@
 }
 
 - (void)setTopMargin:(int)topMargin {
-    objc_setAssociatedObject(self, @"topMargin", @(topMargin), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @"topMargin", @(topMargin), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (int)topMargin {
@@ -52,7 +52,7 @@
 }
 
 - (void)set_initTopMargin:(BOOL)_initTopMargin {
-    objc_setAssociatedObject(self, @"_initTopMargin", @(_initTopMargin), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @"_initTopMargin", @(_initTopMargin), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)_initTopMargin {

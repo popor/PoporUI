@@ -29,7 +29,7 @@
 
 #pragma mark - set get
 - (void)setInsets:(UIEdgeInsets)insets {
-    objc_setAssociatedObject(self, @"insets", NSStringFromUIEdgeInsets(insets), OBJC_ASSOCIATION_COPY_NONATOMIC);
+    objc_setAssociatedObject(self, @"insets", NSStringFromUIEdgeInsets(insets), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (UIEdgeInsets)insets {

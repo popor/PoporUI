@@ -13,7 +13,7 @@
 @dynamic hiddenNcBar;
 
 - (void)setHiddenNcBar:(BOOL)hiddenNcBar {
-    objc_setAssociatedObject(self, @"hiddenNcBar", @(hiddenNcBar), OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, @"hiddenNcBar", @(hiddenNcBar), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (BOOL)hiddenNcBar {
