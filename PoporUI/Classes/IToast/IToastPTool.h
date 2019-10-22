@@ -1,5 +1,5 @@
 //
-//  WanziRecorderKeyboard.h
+//  IToastPTool.h
 //  PoporUI
 //
 //  Created by popor on 2018/6/19.
@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "IToast_Popor.h"
 
-#define AlertToastTitle(title)                       [IToastKeyboard alertTitle:title duration:0    copy:NO]
-#define AlertToastTitleTime(title, time)             [IToastKeyboard alertTitle:title duration:time copy:NO]
-#define AlertToastTitleTimeCopy(title, time, isCopy) [IToastKeyboard alertTitle:title duration:time copy:isCopy]
+/*
+ 会根据键盘的高度自动调整吐司位置.
+ */
 
-@interface IToastKeyboard : NSObject
+#define AlertToastTitle(title)                       [IToastPTool alertTitle:title duration:0    copy:NO]
+#define AlertToastTitleTime(title, time)             [IToastPTool alertTitle:title duration:time copy:NO]
+#define AlertToastTitleTimeCopy(title, time, isCopy) [IToastPTool alertTitle:title duration:time copy:isCopy]
 
+@interface IToastPTool : NSObject
 // 需要在APP启动之前就增加
-+ (IToastKeyboard *)shareIToastKeyboard;
++ (IToastPTool *)share;
 
 @property (nonatomic        ) int keyboardH;
 

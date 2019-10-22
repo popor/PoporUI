@@ -8,7 +8,7 @@
 
 #import "IToast_Popor.h"
 #import <QuartzCore/QuartzCore.h>
-#import "IToastKeyboard.h"
+#import "IToastPTool.h"
 
 #import <PoporFoundation/NSString+pSize.h>
 
@@ -35,8 +35,8 @@ static iToastSettingsPopor *sharedSettings = nil;
 
 @interface IToast_Popor ()
 
-@property (nonatomic, weak  ) IToastKeyboard * iToastKeyboard;
-@property (nonatomic, weak  ) UIView         * view;
+@property (nonatomic, weak  ) IToastPTool * itool;
+@property (nonatomic, weak  ) UIView      * view;
 
 @end
 
@@ -45,8 +45,8 @@ static iToastSettingsPopor *sharedSettings = nil;
 
 - (id) initWithText:(NSString *) tex{
     if (self = [super init]) {
-        self.iToastKeyboard = [IToastKeyboard shareIToastKeyboard];
-        text = [tex copy];
+        self.itool = [IToastPTool share];
+        text       = [tex copy];
     }
     
     return self;
@@ -136,7 +136,7 @@ static iToastSettingsPopor *sharedSettings = nil;
                 point = CGPointMake(window.frame.size.width / 2, window.frame.size.height - 45);
             } else if (theSettings.gravity == iToastGravityPoporCenter) {
 #pragma mark - 王凯庆更改,假如键盘弹开了,那么在键盘上面.
-                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.iToastKeyboard.keyboardH)/2);
+                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.itool.keyboardH)/2);
             } else {
                 point = theSettings.postition;
             }
@@ -176,7 +176,7 @@ static iToastSettingsPopor *sharedSettings = nil;
             } else if (theSettings.gravity == iToastGravityPoporCenter) {
                 //point = CGPointMake(window.frame.size.width/2, window.frame.size.height/2);
 #pragma mark - 王凯庆更改,假如键盘弹开了,那么在键盘上面.
-                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.iToastKeyboard.keyboardH)/2);
+                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.itool.keyboardH)/2);
             } else {
                 // TODO : handle this case
                 point = theSettings.postition;
@@ -196,7 +196,7 @@ static iToastSettingsPopor *sharedSettings = nil;
             } else if (theSettings.gravity == iToastGravityPoporCenter) {
                 //point = CGPointMake(window.frame.size.width/2, window.frame.size.height/2);
 #pragma mark - 王凯庆更改,假如键盘弹开了,那么在键盘上面.
-                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.iToastKeyboard.keyboardH)/2);
+                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.itool.keyboardH)/2);
             } else {
                 // TODO : handle this case
                 point = theSettings.postition;

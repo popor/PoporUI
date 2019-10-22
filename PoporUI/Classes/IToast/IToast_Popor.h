@@ -34,10 +34,8 @@ typedef enum iToastImageLocationPopor {
 @interface IToast_Popor : NSObject  {
 	NSInteger offsetLeft;
 	NSInteger offsetTop;
-    
-	NSTimer *timer;
-    
-	NSString *text;
+	NSTimer   * timer;
+	NSString  * text;
 }
 
 - (void) show;

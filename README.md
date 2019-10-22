@@ -23,7 +23,7 @@ pod 'PoporUI'
 
 兼容iOS和macOS系统
 ~~BlockView : iOS8以前的UIAlertView、UIActionSheet采用block模式~~
-IToast : 整理了IToast，import IToastKeyboard.h 使用AlertToastTitle(title)，弹出键盘弹出的时候IToast弹出高度自动上移。
+IToast : 整理了IToast，import IToastPTool.h 使用AlertToastTitle(title)，弹出键盘弹出的时候IToast弹出高度自动上移。
 ProgressView : 使用了 https://github.com/gin0606插件。
 Response : 根据UIResponder传递事件。
 Tool : 包含磁盘空间、设备使用权限、保存图片、APP版本号等信息。

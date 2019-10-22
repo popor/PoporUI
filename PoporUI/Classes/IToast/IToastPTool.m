@@ -1,24 +1,24 @@
 //
-//  WanziRecorderKeyboard.m
+//  IToastPTool.m
 //  PoporUI
 //
 //  Created by popor on 2018/6/19.
 //  Copyright © 2018年 popor. All rights reserved.
 //
 
-#import "IToastKeyboard.h"
+#import "IToastPTool.h"
 
-@implementation IToastKeyboard
+@implementation IToastPTool
 
 + (void)load {
     static dispatch_once_t once;
     dispatch_once(&once, ^{
-        [IToastKeyboard shareIToastKeyboard];
+        [IToastPTool share];
     });
 }
 
-+ (IToastKeyboard *)shareIToastKeyboard {
-    static IToastKeyboard * oneRK = nil;
++ (IToastPTool *)share {
+    static IToastPTool * oneRK = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         oneRK = [[self alloc] init];
