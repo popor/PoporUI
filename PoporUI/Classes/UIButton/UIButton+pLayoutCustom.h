@@ -13,6 +13,8 @@ typedef CGRect(^Block_pLayoutCustom_frame) (UIButton * button, CGRect contentRec
 
 @interface UIButton (pLayoutCustom)
 
+/*
+ 至少在iOS13的虚拟机无法正确运行,所以取消这里的方法了.(不适用category, 使用单独定义的UIButton可以正常运行)
 @property (nonatomic, copy  ) Block_pLayoutCustom_frame imageFrameBlock;
 @property (nonatomic, copy  ) Block_pLayoutCustom_frame titleFrameBlock;
 
@@ -28,6 +30,8 @@ typedef CGRect(^Block_pLayoutCustom_frame) (UIButton * button, CGRect contentRec
 - (void)layoutHorizon_textImage:(UIImage *)image att:(NSMutableAttributedString *)att forState:(UIControlState)state;
 
 - (void)layoutHorizon_textImage:(UIImage *)image titleSize:(CGSize)titleSize forState:(UIControlState)state;
+
+ //*/
 
 @end
 

@@ -31,6 +31,8 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		996DDB081DBAB23775312153 /* Pods_PoporUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47759FDEC074483E23CF9D40 /* Pods_PoporUI_Example.framework */; };
 		CC53DD6287A5144A7112BBE3 /* Pods_PoporUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF986D6F109BF8BB570484A8 /* Pods_PoporUI_Tests.framework */; };
+		E45FA6C123F8E2AF00C5CC45 /* bt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45FA6BF23F8E2AF00C5CC45 /* bt@2x.png */; };
+		E45FA6C223F8E2AF00C5CC45 /* CBT.m in Sources */ = {isa = PBXBuildFile; fileRef = E45FA6C023F8E2AF00C5CC45 /* CBT.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		CB223FB7ABFC8E081DA6AD59 /* PoporUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PoporUI.podspec; path = ../PoporUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DAF6EEEE55744EBD712939C4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DBD8EF0880D504CF05FCE213 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E45FA6BE23F8E2AF00C5CC45 /* CBT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBT.h; sourceTree = "<group>"; };
+		E45FA6BF23F8E2AF00C5CC45 /* bt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt@2x.png"; sourceTree = "<group>"; };
+		E45FA6C023F8E2AF00C5CC45 /* CBT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBT.m; sourceTree = "<group>"; };
 		FF986D6F109BF8BB570484A8 /* Pods_PoporUI_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoporUI_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -184,6 +189,9 @@
 		187D30DC23346C6F00045911 /* BTVC */ = {
 			isa = PBXGroup;
 			children = (
+				E45FA6BF23F8E2AF00C5CC45 /* bt@2x.png */,
+				E45FA6BE23F8E2AF00C5CC45 /* CBT.h */,
+				E45FA6C023F8E2AF00C5CC45 /* CBT.m */,
 				187D30DD23346C8C00045911 /* BTVC.h */,
 				187D30DE23346C8C00045911 /* BTVC.m */,
 			);
@@ -396,6 +404,7 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				E45FA6C123F8E2AF00C5CC45 /* bt@2x.png in Resources */,
 				18631B7620E4D65F0080DC41 /* icon180@2x.png in Resources */,
 				1818073521549D0500CB87CE /* foot@2x.png in Resources */,
 			);
@@ -483,6 +492,7 @@
 				6003F59E195388D20070C39A /* PoporUIAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* PoporUIViewController.m in Sources */,
 				1828EA56232F2D9100396DDA /* PoporUIVCPresenter.m in Sources */,
+				E45FA6C223F8E2AF00C5CC45 /* CBT.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				1828EA57232F2D9100396DDA /* PoporUIVC.m in Sources */,
 			);

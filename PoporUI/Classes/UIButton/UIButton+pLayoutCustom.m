@@ -12,6 +12,7 @@
 
 @implementation UIButton (pLayoutCustom)
 
+/*
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -164,5 +165,7 @@
 - (Block_pLayoutCustom_frame)imageFrameBlock {
     return objc_getAssociatedObject(self, @"imageFrameBlock");
 }
+
+ */
 
 @end

@@ -52,7 +52,9 @@ UIViewController : UIViewController (AC: iPad弹出UIAlertControl sheet 模式�
 #### 0.0.46
 UINavigationController 增加静态方法 statusBarHeight
 
-
+#### 1.11
+UIButton+pLayoutCustom: 取消该class方法.
+至少在iOS13的虚拟机无法正确运行,所以取消这里的方法了.(不适用category, 使用单独定义的UIButton可以正常运行)
 
 ## Author
 
