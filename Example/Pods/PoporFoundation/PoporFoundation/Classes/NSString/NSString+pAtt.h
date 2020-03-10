@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 // 用于纠正不同字体之间的文字,不会行居中的问题
 - (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range;
-- (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont scale:(float)scale range:(NSRange)range;
+- (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range scale:(float)scale;
 
 #pragma mark - Size Department
 - (CGSize)sizeWithWidth:(CGFloat)width;

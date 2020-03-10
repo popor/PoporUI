@@ -27,6 +27,12 @@ pod 'PoporFoundation'
 更新日志
 0.0.36: 之后不再对 filrUrl 进行toUrlEncode, 因为发现 AVAudioPlayer 使用本地url不能将汉字转换为 urlCode .
 
+1.10
+增加NSString+pSwizzling
+
+1.11
+NSDictionary+pSwizzling setSafeObject: forKey: 增加对key的判断
+
 ## Author
 
 popor, 908891024@qq.com

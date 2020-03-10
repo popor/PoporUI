@@ -18,6 +18,7 @@
 #import "NSString+pIDCard.h"
 #import "NSString+pMD5.h"
 #import "NSString+pSize.h"
+#import "NSString+pSwizzling.h"
 #import "NSString+pTool.h"
 #import "Os+pPrefix.h"
 #import "Block+pPrefix.h"

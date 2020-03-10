@@ -46,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		180028C42305499100EF6843 /* PoporUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporUI_Example.entitlements; sourceTree = "<group>"; };
+		180028C42305499100EF6843 /* PoporUI_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PoporUI_Example.entitlements; sourceTree = SOURCE_ROOT; };
 		1818073421549D0500CB87CE /* foot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "foot@2x.png"; sourceTree = "<group>"; };
 		1828EA4D232F2D9100396DDA /* PoporUIVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoporUIVCPresenter.m; sourceTree = "<group>"; };
 		1828EA4E232F2D9100396DDA /* PoporUIVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoporUIVCPresenter.h; sourceTree = "<group>"; };
@@ -201,6 +201,7 @@
 		18D2BDF620D8D8E000C91F09 /* other */ = {
 			isa = PBXGroup;
 			children = (
+				180028C42305499100EF6843 /* PoporUI_Example.entitlements */,
 				1818073421549D0500CB87CE /* foot@2x.png */,
 				18631B7520E4D65F0080DC41 /* icon180@2x.png */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -225,7 +226,6 @@
 		6003F581195388D10070C39A = {
 			isa = PBXGroup;
 			children = (
-				180028C42305499100EF6843 /* PoporUI_Example.entitlements */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for PoporUI */,
 				6003F5B5195388D20070C39A /* Tests */,

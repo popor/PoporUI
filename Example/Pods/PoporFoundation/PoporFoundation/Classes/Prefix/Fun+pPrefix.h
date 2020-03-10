@@ -9,7 +9,7 @@
 #ifndef Fun_pPrefix_h
 #define Fun_pPrefix_h
 
-// 异步执行
+#pragma mark - 异步执行
 #ifndef dispatch_main_async_safe_sd
 #define dispatch_main_async_safe_sd(block)\
 if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {\
@@ -19,16 +19,14 @@ dispatch_async(dispatch_get_main_queue(), block);\
 }
 #endif
 
-#define WeakSelf(weakSelf) __weak __typeof(self)weakSelf = self
-
-// 标记开发状态
+#pragma mark - 标记开发状态
 #ifndef __OPTIMIZE__
 #define PIsDebugVersion                     YES
 #else
 #define PIsDebugVersion                     NO
 #endif
 
-// 特殊输入日志
+#pragma mark - 特殊输入日志
 #ifndef __OPTIMIZE__
 #define NSLog(...) NSLog(__VA_ARGS__)
 
@@ -68,11 +66,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 
 #endif
 
-#define PIsIphoneDevice (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
-#define PIsIpadDevice   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
-// -----------------------------------------------------------------------------
-#pragma mark - iOS
+#pragma mark - NSValue
 #if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_WATCH
 #import <UIKit/UIKit.h>
 
@@ -84,11 +78,22 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define NSValueInsets(insets)       [NSValue valueWithUIEdgeInsets:insets]
 #define NSValueOffset(insets)       [NSValue valueWithUIOffset:insets]
 
-#pragma mark - macOS
 #elif TARGET_OS_MAC
 #import <AppKit/AppKit.h>
 
-
 #endif
+
+// --- 其他小函数 ----------------------------------------------------------------
+#pragma mark - NSIndexPath
+#undef  PIndexPath
+#define PIndexPath(section, row)  [NSIndexPath indexPathForRow:row inSection:section]
+
+#pragma mark - 图片
+#undef  PImageNamed
+#define PImageNamed(imageName)    [UIImage imageNamed:imageName]
+
+#pragma mark - 设备型号
+#define PIsIphoneDevice (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define PIsIpadDevice   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 #endif /* Fun+pPrefix_h */
