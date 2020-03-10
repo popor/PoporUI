@@ -11,6 +11,8 @@
 @interface UITextField (pTextRange)
 
 - (NSRange)selectedRange;
+
+// 备注：UITextField必须为第一响应者才有效
 - (void)setSelectedRange:(NSRange) range;
 
 @end

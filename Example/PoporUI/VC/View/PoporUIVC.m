@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [self assembleViper];
     [super viewDidLoad];
-    
+    UITextField *d;
     if (!self.title) {
         self.title = @"UI";
     }
