@@ -19,6 +19,7 @@ target 'PoporUI_Example' do
   pod 'PoporUI', :path => '../'
   pod 'Masonry'
   
+  #pod 'PoporFoundation', :path => '/Users/popor/Documents/wkq/GitHubSDK/PoporFoundation', :tag=>'1.13'
   target 'PoporUI_Tests' do
       inherit! :search_paths
       

@@ -14,6 +14,10 @@
 - (void)formatChinaPhone;
 - (void)formatChinaPhoneGapWidth:(int)gapWidth;
 
+// 中国身份证
+- (void)formatChinaIdcard;
+- (void)formatChinaIdcardGapWidth:(int)gapWidth;
+
 // money, unit 一般为3或者4
 - (void)formatMoneyUnit:(int)unit;
 - (void)formatMoneyUnit:(int)unit gapWitdh:(int)gapWidth;

@@ -31,6 +31,12 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		996DDB081DBAB23775312153 /* Pods_PoporUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47759FDEC074483E23CF9D40 /* Pods_PoporUI_Example.framework */; };
 		CC53DD6287A5144A7112BBE3 /* Pods_PoporUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF986D6F109BF8BB570484A8 /* Pods_PoporUI_Tests.framework */; };
+		E42831032417CE4D00DDD344 /* LabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42830FA2417CE4D00DDD344 /* LabelVC.m */; };
+		E42831042417CE4D00DDD344 /* LabelVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E42830FE2417CE4D00DDD344 /* LabelVCInteractor.m */; };
+		E42831052417CE4D00DDD344 /* LabelVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E42831012417CE4D00DDD344 /* LabelVCPresenter.m */; };
+		E4283118241873B900DDD344 /* TfVCPresenter.m in Sources */ = {isa = PBXBuildFile; fileRef = E428310F241873B900DDD344 /* TfVCPresenter.m */; };
+		E4283119241873B900DDD344 /* TfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E4283112241873B900DDD344 /* TfVC.m */; };
+		E428311A241873B900DDD344 /* TfVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E4283117241873B900DDD344 /* TfVCInteractor.m */; };
 		E45FA6C123F8E2AF00C5CC45 /* bt@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E45FA6BF23F8E2AF00C5CC45 /* bt@2x.png */; };
 		E45FA6C223F8E2AF00C5CC45 /* CBT.m in Sources */ = {isa = PBXBuildFile; fileRef = E45FA6C023F8E2AF00C5CC45 /* CBT.m */; };
 /* End PBXBuildFile section */
@@ -89,6 +95,20 @@
 		CB223FB7ABFC8E081DA6AD59 /* PoporUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PoporUI.podspec; path = ../PoporUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DAF6EEEE55744EBD712939C4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DBD8EF0880D504CF05FCE213 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		E42830FA2417CE4D00DDD344 /* LabelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelVC.m; sourceTree = "<group>"; };
+		E42830FB2417CE4D00DDD344 /* LabelVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelVCProtocol.h; sourceTree = "<group>"; };
+		E42830FC2417CE4D00DDD344 /* LabelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelVC.h; sourceTree = "<group>"; };
+		E42830FE2417CE4D00DDD344 /* LabelVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelVCInteractor.m; sourceTree = "<group>"; };
+		E42830FF2417CE4D00DDD344 /* LabelVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelVCInteractor.h; sourceTree = "<group>"; };
+		E42831012417CE4D00DDD344 /* LabelVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelVCPresenter.m; sourceTree = "<group>"; };
+		E42831022417CE4D00DDD344 /* LabelVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelVCPresenter.h; sourceTree = "<group>"; };
+		E428310F241873B900DDD344 /* TfVCPresenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TfVCPresenter.m; sourceTree = "<group>"; };
+		E4283110241873B900DDD344 /* TfVCPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TfVCPresenter.h; sourceTree = "<group>"; };
+		E4283112241873B900DDD344 /* TfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TfVC.m; sourceTree = "<group>"; };
+		E4283113241873B900DDD344 /* TfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TfVC.h; sourceTree = "<group>"; };
+		E4283114241873B900DDD344 /* TfVCProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TfVCProtocol.h; sourceTree = "<group>"; };
+		E4283116241873B900DDD344 /* TfVCInteractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TfVCInteractor.h; sourceTree = "<group>"; };
+		E4283117241873B900DDD344 /* TfVCInteractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TfVCInteractor.m; sourceTree = "<group>"; };
 		E45FA6BE23F8E2AF00C5CC45 /* CBT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBT.h; sourceTree = "<group>"; };
 		E45FA6BF23F8E2AF00C5CC45 /* bt@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bt@2x.png"; sourceTree = "<group>"; };
 		E45FA6C023F8E2AF00C5CC45 /* CBT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBT.m; sourceTree = "<group>"; };
@@ -130,14 +150,14 @@
 			name = App;
 			sourceTree = "<group>";
 		};
-		1828EA45232F2D6400396DDA /* VC */ = {
+		1828EA45232F2D6400396DDA /* PoporUIVC */ = {
 			isa = PBXGroup;
 			children = (
 				1828EA4F232F2D9100396DDA /* View */,
 				1828EA4C232F2D9100396DDA /* Presenter */,
 				1828EA53232F2D9100396DDA /* Interactor */,
 			);
-			path = VC;
+			path = PoporUIVC;
 			sourceTree = "<group>";
 		};
 		1828EA4C232F2D9100396DDA /* Presenter */ = {
@@ -262,10 +282,8 @@
 			children = (
 				18D2BDF620D8D8E000C91F09 /* other */,
 				18050BD723349F0500BC6A65 /* App */,
-				1828EA45232F2D6400396DDA /* VC */,
-				1828EA5A232F2F5000396DDA /* UITextField+pPlaceholder */,
-				187D30DC23346C6F00045911 /* BTVC */,
-				1828EA59232F2E4200396DDA /* old */,
+				1828EA45232F2D6400396DDA /* PoporUIVC */,
+				E42831062418736600DDD344 /* Demo */,
 			);
 			name = "Example for PoporUI";
 			path = PoporUI;
@@ -309,6 +327,94 @@
 				DBD8EF0880D504CF05FCE213 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		E42830F22417CE1B00DDD344 /* LabelVC */ = {
+			isa = PBXGroup;
+			children = (
+				E42830F92417CE4D00DDD344 /* View */,
+				E42831002417CE4D00DDD344 /* Presenter */,
+				E42830FD2417CE4D00DDD344 /* Interactor */,
+			);
+			path = LabelVC;
+			sourceTree = "<group>";
+		};
+		E42830F92417CE4D00DDD344 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E42830FC2417CE4D00DDD344 /* LabelVC.h */,
+				E42830FA2417CE4D00DDD344 /* LabelVC.m */,
+				E42830FB2417CE4D00DDD344 /* LabelVCProtocol.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E42830FD2417CE4D00DDD344 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E42830FF2417CE4D00DDD344 /* LabelVCInteractor.h */,
+				E42830FE2417CE4D00DDD344 /* LabelVCInteractor.m */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		E42831002417CE4D00DDD344 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E42831022417CE4D00DDD344 /* LabelVCPresenter.h */,
+				E42831012417CE4D00DDD344 /* LabelVCPresenter.m */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E42831062418736600DDD344 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				1828EA59232F2E4200396DDA /* old */,
+				1828EA5A232F2F5000396DDA /* UITextField+pPlaceholder */,
+				187D30DC23346C6F00045911 /* BTVC */,
+				E42830F22417CE1B00DDD344 /* LabelVC */,
+				E42831072418739900DDD344 /* TfVC */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		E42831072418739900DDD344 /* TfVC */ = {
+			isa = PBXGroup;
+			children = (
+				E4283111241873B900DDD344 /* View */,
+				E428310E241873B900DDD344 /* Presenter */,
+				E4283115241873B900DDD344 /* Interactor */,
+			);
+			path = TfVC;
+			sourceTree = "<group>";
+		};
+		E428310E241873B900DDD344 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E428310F241873B900DDD344 /* TfVCPresenter.m */,
+				E4283110241873B900DDD344 /* TfVCPresenter.h */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E4283111241873B900DDD344 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E4283113241873B900DDD344 /* TfVC.h */,
+				E4283112241873B900DDD344 /* TfVC.m */,
+				E4283114241873B900DDD344 /* TfVCProtocol.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E4283115241873B900DDD344 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E4283116241873B900DDD344 /* TfVCInteractor.h */,
+				E4283117241873B900DDD344 /* TfVCInteractor.m */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,12 +594,18 @@
 			files = (
 				187D30DF23346C8C00045911 /* BTVC.m in Sources */,
 				1828EA5D232F2F8700396DDA /* VC_UITextField+pPlaceholder.m in Sources */,
+				E42831042417CE4D00DDD344 /* LabelVCInteractor.m in Sources */,
 				1828EA58232F2D9100396DDA /* PoporUIVCInteractor.m in Sources */,
 				6003F59E195388D20070C39A /* PoporUIAppDelegate.m in Sources */,
+				E4283118241873B900DDD344 /* TfVCPresenter.m in Sources */,
 				6003F5A7195388D20070C39A /* PoporUIViewController.m in Sources */,
+				E42831052417CE4D00DDD344 /* LabelVCPresenter.m in Sources */,
 				1828EA56232F2D9100396DDA /* PoporUIVCPresenter.m in Sources */,
 				E45FA6C223F8E2AF00C5CC45 /* CBT.m in Sources */,
+				E4283119241873B900DDD344 /* TfVC.m in Sources */,
+				E42831032417CE4D00DDD344 /* LabelVC.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				E428311A241873B900DDD344 /* TfVCInteractor.m in Sources */,
 				1828EA57232F2D9100396DDA /* PoporUIVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

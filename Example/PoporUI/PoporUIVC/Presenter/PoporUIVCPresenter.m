@@ -10,6 +10,8 @@
 
 #import "VC_UITextField+pPlaceholder.h"
 #import "BTVC.h"
+#import "LabelVC.h"
+#import "TfVC.h"
 
 @interface PoporUIVCPresenter ()
 
@@ -50,7 +52,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 4;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -86,6 +88,14 @@
             cell.textLabel.text = [NSString stringWithFormat:@"%li : 按钮", indexPath.row];
             break;
         }
+        case 2: {
+            cell.textLabel.text = [NSString stringWithFormat:@"%li : Label", indexPath.row];
+            break;
+        }
+        case 3: {
+            cell.textLabel.text = [NSString stringWithFormat:@"%li : TextField", indexPath.row];
+            break;
+        }
             
         default:
             break;
@@ -105,6 +115,15 @@
             [self.view.vc.navigationController pushViewController:[BTVC new] animated:YES];
             break;
         }
+        case 2: {
+            [self.view.vc.navigationController pushViewController:[LabelVC new] animated:YES];
+            break;
+        }
+        case 3: {
+            [self.view.vc.navigationController pushViewController:[TfVC new] animated:YES];
+            break;
+        }
+            
         default:
             break;
     }

@@ -8,6 +8,7 @@
 
 #import "NSString+pAtt.h"
 #import <CoreText/CoreText.h>
+#import "NSString+pTool.h"
 
 //#pragma mark - iOS
 //#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_WATCH
@@ -130,6 +131,151 @@
     
 #endif
 
+}
+
+// MARK: 生成具有间隔的att, 例如身份证、电话号码、银行卡、金钱数等
+/**
+ *  普通信息
+ *
+ *  @param text 文本
+ *  @param bigGap 大间隔宽度,默认为6
+ *  @param smallGap 大间隔宽度,默认为0
+ *  @param separateNumberArray 大间隔点数组,里面的参数为NSNumber, 示例: 中国电话号码为 @[@2, @6, @10]
+ *
+ */
++ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumberArray:(NSArray *)separateNumberArray {
+    if (text.length <= 0) {
+        return [NSMutableAttributedString new];
+    }
+    if (bigGap <= 0) {
+        bigGap = 6;
+    }
+    if (smallGap < 0) {
+        smallGap = 0;
+    }
+    NSMutableAttributedString * att = [[NSMutableAttributedString alloc] initWithString:text];
+    CFNumberRef numSmallGap         = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &smallGap);
+    CFNumberRef numBigGap           = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &bigGap);
+    
+    //    int lastNumber = 0;
+    //    for (NSNumber * number in separateNumberArray) {
+    //        for (int i = lastNumber; i<=number.intValue && i<text.length; i++) {
+    //            if (i == number.intValue) {
+    //                [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(i, 1)];
+    //            } else {
+    //                [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numSmallGap range:NSMakeRange(i, 1)];
+    //            }
+    //        }
+    //        lastNumber = number.intValue+1;
+    //        if (number.intValue >= text.length) {
+    //            break;
+    //        }
+    //    }
+    
+    [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numSmallGap range:NSMakeRange(0, text.length)];
+    for (NSNumber * number in separateNumberArray) {
+        if (number.intValue < text.length) {
+            [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(number.intValue, 1)];
+        }
+    }
+    
+    CFRelease(numSmallGap);
+    CFRelease(numBigGap);
+    
+    return att;
+}
+
+/**
+*  普通信息
+*
+*  @param text 文本
+*  @param bigGap 大间隔宽度,默认为6
+*  @param smallGap 大间隔宽度,默认为0
+*  @param separateNumber 间隔分割间隔, 默认为4, 针对银行卡号
+*/
++ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumber:(int)separateNumber {
+    if (text.length <= 0) {
+        return [NSMutableAttributedString new];
+    }
+    if (bigGap <= 0) {
+        bigGap = 6;
+    }
+    if (smallGap < 0) {
+        smallGap = 0;
+    }
+    if (separateNumber == 0) {
+        separateNumber = 4;
+    }
+    NSMutableAttributedString * att = [[NSMutableAttributedString alloc] initWithString:text];
+    CFNumberRef numSmallGap         = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &smallGap);
+    CFNumberRef numBigGap           = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &bigGap);
+    
+    [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numSmallGap range:NSMakeRange(0, text.length)];
+    for (int i = separateNumber-1; i<text.length; i = i+separateNumber ) {
+        [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(i, 1)];
+    }
+    
+    CFRelease(numSmallGap);
+    CFRelease(numBigGap);
+    
+    return att;
+}
+
+/**
+*  金钱信息
+*
+*  @param text 文本
+*  @param bigGap 大间隔宽度,默认为6
+*  @param smallGap 大间隔宽度,默认为0
+*  @param separateNumber 间隔分割间隔, 默认为4, 针对中国数字习惯
+*/
++ (NSMutableAttributedString *)separateMoneyText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumber:(int)separateNumber {
+    if (text.length <= 0) {
+        return [NSMutableAttributedString new];
+    }
+    if (bigGap <= 0) {
+        bigGap = 6;
+    }
+    if (smallGap < 0) {
+        smallGap = 0;
+    }
+    if (separateNumber == 0) {
+        separateNumber = 4;
+    }
+    
+    // 纠正异常金钱值
+    if ([text hasPrefix:@"0"] && text.length != 1){
+        NSString * temp = [text replaceWithREG:@"^0+" newString:@""];
+        if (temp.length == 0) {
+            text = @"0";
+        }else{
+            text = temp;
+        }
+    }
+    
+    if ([text hasPrefix:@"."]) {
+        text = [NSString stringWithFormat:@"0%@", text];
+    }
+    
+    NSMutableAttributedString * att = [[NSMutableAttributedString alloc] initWithString:text];
+    CFNumberRef numSmallGap         = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &smallGap);
+    CFNumberRef numBigGap           = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &bigGap);
+    
+    NSString * textIntPart          = [text stringWithREG:@"\\d+"]; // 去除整数部分
+    int loopCountInt                = (int)(textIntPart.length-1)/(separateNumber);
+    
+    [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numSmallGap range:NSMakeRange(0, text.length)];
+    for (int i = 0; i < loopCountInt; i++) {
+        NSInteger location = textIntPart.length - separateNumber*i -1 - separateNumber;
+        if (location >= 0) {
+            [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(location, 1)];
+        }
+    }
+    
+    CFRelease(numSmallGap);
+    CFRelease(numBigGap);
+    
+    return att;
 }
 
 @end

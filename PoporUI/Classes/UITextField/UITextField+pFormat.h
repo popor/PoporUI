@@ -16,6 +16,7 @@
 - (void)formatChinaPhone;
 - (void)formatChinaPhoneGapWidth:(int)gapWidth;
 
+// 中国的省份证号
 - (void)formatChinaIdcard;
 - (void)formatChinaIdcardGapWidth:(int)gapWidth;
 
