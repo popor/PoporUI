@@ -10,10 +10,10 @@
 #import <objc/runtime.h>
 
 @implementation UINavigationController (pSize)
-@dynamic topMargin;
-@dynamic _initTopMargin;
+@dynamic barHeight;
+@dynamic _initBarHeight;
 
-- (int)fetchTopMargin {
+- (int)fetchBarHeight {
     int top;
     if (self.navigationBar.translucent) {
         //self.navigationItem.
@@ -31,32 +31,32 @@
     }else{
         top = 0;
     }
-    self.topMargin = top;
+    self.barHeight = top;
     return top;
 }
 
-- (void)setTopMargin:(int)topMargin {
-    objc_setAssociatedObject(self, @"topMargin", @(topMargin), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setBarHeight:(int)barHeight {
+    objc_setAssociatedObject(self, @"barHeight", @(barHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (int)topMargin {
-    if (self._initTopMargin) {
-        NSNumber * n = objc_getAssociatedObject(self, @"topMargin");
+- (int)barHeight {
+    if (self._initBarHeight) {
+        NSNumber * n = objc_getAssociatedObject(self, @"barHeight");
         return n.intValue;
     }else{
-        self._initTopMargin = YES;
-        int top = [self fetchTopMargin];
-        [self setTopMargin:top];
+        self._initBarHeight = YES;
+        int top = [self fetchBarHeight];
+        [self setBarHeight:top];
         return top;
     }
 }
 
-- (void)set_initTopMargin:(BOOL)_initTopMargin {
-    objc_setAssociatedObject(self, @"_initTopMargin", @(_initTopMargin), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)set_initBarHeight:(BOOL)_initBarHeight {
+    objc_setAssociatedObject(self, @"_initBarHeight", @(_initBarHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (BOOL)_initTopMargin {
-    NSNumber * n = objc_getAssociatedObject(self, @"_initTopMargin");
+- (BOOL)_initBarHeight {
+    NSNumber * n = objc_getAssociatedObject(self, @"_initBarHeight");
     return n.boolValue;
 }
 

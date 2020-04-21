@@ -96,7 +96,7 @@
             case 0: {
                 phoneL = oneL;
                 [oneL mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.mas_equalTo(self.navigationController.topMargin + 15);
+                    make.top.mas_equalTo(self.navigationController.barHeight + 15);
                     make.left.mas_equalTo(16);
                     make.height.mas_equalTo(40);
                     make.right.mas_equalTo(-16);

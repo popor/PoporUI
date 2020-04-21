@@ -12,9 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UINavigationController (pSize)
 
-@property (nonatomic) int topMargin;// 隐藏导航栏的视图
+@property (nonatomic) int barHeight;// 隐藏导航栏的视图
 
-@property (nonatomic) BOOL _initTopMargin; // 内部使用
+@property (nonatomic) BOOL _initBarHeight; // 内部使用
+
 
 @end
 
