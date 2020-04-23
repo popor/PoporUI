@@ -148,8 +148,8 @@ static iToastSettingsPopor *sharedSettings = nil;
         {
             //showBT.transform = CGAffineTransformMakeRotation(M_PI);
             
-            float width = window.frame.size.width;
-            float height = window.frame.size.height;
+            CGFloat width = window.frame.size.width;
+            CGFloat height = window.frame.size.height;
             
             if (theSettings.gravity == iToastGravityPoporTop) {
                 point = CGPointMake(width / 2, height - 45);
@@ -211,7 +211,7 @@ static iToastSettingsPopor *sharedSettings = nil;
     
     showBT.center = point;
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((float)theSettings.duration/1000 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)((CGFloat)theSettings.duration/1000 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self hideToast];
     });
     

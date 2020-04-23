@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableViewCell (pSetSeparatorType)
-- (void)setSeparatorX:(float)x;
+- (void)setSeparatorX:(CGFloat)x;
 
 @end

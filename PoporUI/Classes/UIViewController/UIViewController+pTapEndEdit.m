@@ -44,7 +44,7 @@
 #pragma mark - 键盘通知
 - (void)tapEndEditGR_keyboardWillShow:(NSNotification *)notification {
     CGRect endRect      = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    float animationTime = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    CGFloat animationTime = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     
     dispatch_async(dispatch_get_main_queue(), ^{
         [self keyboardFrameChanged:endRect duration:animationTime show:YES];
@@ -56,7 +56,7 @@
 }
 
 - (void)tapEndEditGR_keyboardWillHide:(NSNotification *)notification {
-    float animationTime = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    CGFloat animationTime = [notification.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
     dispatch_async(dispatch_get_main_queue(), ^{
         [self keyboardFrameChanged:CGRectZero duration:animationTime show:NO];
     });

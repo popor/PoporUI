@@ -14,17 +14,17 @@
 #define Color_pPrefix_h
 
 // need:UIKit,CoreGraphics
-CG_INLINE COLOR_CLASS * PRGBF(float R, float G, float B, float F) {
+CG_INLINE COLOR_CLASS * PRGBF(CGFloat R, CGFloat G, CGFloat B, CGFloat F) {
     return [COLOR_CLASS colorWithRed:R/255.0f green:G/255.0f blue:B/255.0f alpha:F];
 };
 
 // need:UIKit,CoreGraphics
 CG_INLINE COLOR_CLASS * PRGB16(unsigned long rgbValue) {
-    return [COLOR_CLASS colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0];
+    return [COLOR_CLASS colorWithRed:((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0 green:((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0 blue:((CGFloat)(rgbValue & 0xFF))/255.0 alpha:1.0];
 };
 
-CG_INLINE COLOR_CLASS * PRGB16F(unsigned long rgbValue, float F) {
-    return [COLOR_CLASS colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:F];
+CG_INLINE COLOR_CLASS * PRGB16F(unsigned long rgbValue, CGFloat F) {
+    return [COLOR_CLASS colorWithRed:((CGFloat)((rgbValue & 0xFF0000) >> 16))/255.0 green:((CGFloat)((rgbValue & 0xFF00) >> 8))/255.0 blue:((CGFloat)(rgbValue & 0xFF))/255.0 alpha:F];
 };
 
 //------------------------------------------------------------------------------

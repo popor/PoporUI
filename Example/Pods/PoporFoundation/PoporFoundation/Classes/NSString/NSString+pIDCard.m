@@ -55,10 +55,10 @@
         [cardNo enumerateSubstringsInRange:NSMakeRange(0, cardNo.length) options:NSStringEnumerationByComposedCharacterSequences usingBlock:^(NSString *substring, NSRange substringRange, NSRange enclosingRange, BOOL *stop) {
             [cardNumArray addObject:substring];
         }];
-        int multiplicationSum = 0;
-        for (int i = 0; i< IDCardNoCheckOriginArray.count; i++) {
-            int idCardNum = [cardNumArray[i] intValue];
-            int checkNum  = [IDCardNoCheckOriginArray[i] intValue];
+        NSInteger multiplicationSum = 0;
+        for (NSInteger i = 0; i< IDCardNoCheckOriginArray.count; i++) {
+            NSInteger idCardNum = [cardNumArray[i] intValue];
+            NSInteger checkNum  = [IDCardNoCheckOriginArray[i] intValue];
             multiplicationSum = multiplicationSum + idCardNum * checkNum;
         }
         return IDCardNoCheckResultArray[multiplicationSum%11];

@@ -39,7 +39,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - 生成:根据图片
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size;
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner;
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner;
 
 // 图片+边界线, 如果imageDrawRect==CGRectZero,则居中铺满
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size imageDrawRect:(CGRect)imageDrawRect corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor * _Nullable)borderColor;

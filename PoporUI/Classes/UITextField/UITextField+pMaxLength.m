@@ -31,14 +31,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:target name:UITextFieldTextDidChangeNotification object:nil];
 }
 
-- (void)textFieldMaxLength:(int)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
+- (void)textFieldMaxLength:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self delayML:maxLength block:textFieldBlock];
     });
 }
 
-- (void)delayML:(int)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
+- (void)delayML:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
 {
     NSString *toBeString = self.text;
     

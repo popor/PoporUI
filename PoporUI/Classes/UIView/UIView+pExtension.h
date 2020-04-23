@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (pExtension)
-@property (assign, nonatomic) CGFloat x;
-@property (assign, nonatomic) CGFloat y;
-@property (assign, nonatomic) CGFloat width;
-@property (assign, nonatomic) CGFloat height;
-@property (assign, nonatomic) CGSize  size;
-@property (assign, nonatomic) CGPoint origin;
+@property (nonatomic) CGFloat x;
+@property (nonatomic) CGFloat y;
+@property (nonatomic) CGFloat width;
+@property (nonatomic) CGFloat height;
+@property (nonatomic) CGSize  size;
+@property (nonatomic) CGPoint origin;
 
 @property (nonatomic) CGFloat left;
 @property (nonatomic) CGFloat top;

@@ -71,7 +71,7 @@
 }
 
 #pragma mark - 10-16转换
-+ (NSString *)stringToHexWithInt:(int)theNumber {
++ (NSString *)stringToHexWithInt:(NSInteger)theNumber {
     return [NSString stringWithFormat:@"%x", (unsigned int) theNumber];
 }
 
@@ -79,7 +79,7 @@
     if (!theNumber) {
         return @"";
     }
-    return [NSString stringWithFormat:@"%i", (int)strtoul([theNumber UTF8String], 0, 16)];
+    return [NSString stringWithFormat:@"%li", (long)strtoul([theNumber UTF8String], 0, 16)];
 }
 
 - (NSDictionary *)toDic {
@@ -167,9 +167,9 @@
 
 - (COLOR_CLASS *)toColor {
     if (self.length == 6) {
-        int red   = (int)strtoul([[self substringWithRange:(NSRange){0, 2}] UTF8String], 0, 16);
-        int green = (int)strtoul([[self substringWithRange:(NSRange){2, 2}] UTF8String], 0, 16);
-        int blue  = (int)strtoul([[self substringWithRange:(NSRange){4, 2}] UTF8String], 0, 16);
+        NSInteger red   = (NSInteger)strtoul([[self substringWithRange:(NSRange){0, 2}] UTF8String], 0, 16);
+        NSInteger green = (NSInteger)strtoul([[self substringWithRange:(NSRange){2, 2}] UTF8String], 0, 16);
+        NSInteger blue  = (NSInteger)strtoul([[self substringWithRange:(NSRange){4, 2}] UTF8String], 0, 16);
         return [COLOR_CLASS colorWithRed:red/255.0f green:green/255.0f blue:blue/255.0f alpha:1];
     }else{
         return [COLOR_CLASS clearColor];

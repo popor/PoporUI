@@ -13,8 +13,8 @@
 @dynamic barHeight;
 @dynamic _initBarHeight;
 
-- (int)fetchBarHeight {
-    int top;
+- (NSInteger)fetchBarHeight {
+    NSInteger top;
     if (self.navigationBar.translucent) {
         //self.navigationItem.
         if (@available(iOS 11.0, *)) {
@@ -35,17 +35,17 @@
     return top;
 }
 
-- (void)setBarHeight:(int)barHeight {
+- (void)setBarHeight:(NSInteger)barHeight {
     objc_setAssociatedObject(self, @"barHeight", @(barHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (int)barHeight {
+- (NSInteger)barHeight {
     if (self._initBarHeight) {
         NSNumber * n = objc_getAssociatedObject(self, @"barHeight");
-        return n.intValue;
+        return n.integerValue;
     }else{
         self._initBarHeight = YES;
-        int top = [self fetchBarHeight];
+        NSInteger top = [self fetchBarHeight];
         [self setBarHeight:top];
         return top;
     }

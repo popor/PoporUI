@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (CGSize)sizeInFont:(FONT_CLASS * _Nonnull)font;
 
-- (CGSize)sizeInFont:(FONT_CLASS * _Nonnull)font width:(float)width;
+- (CGSize)sizeInFont:(FONT_CLASS * _Nonnull)font width:(CGFloat)width;
 
 - (CGSize)sizeAttrSpace:(CGFloat)lineSpeace withFont:(FONT_CLASS * _Nonnull)font withWidth:(CGFloat)width;
 @end

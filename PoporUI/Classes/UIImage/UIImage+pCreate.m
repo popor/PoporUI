@@ -57,7 +57,7 @@
                       w - borderWidth - borderInset.left - borderInset.right,   // 减去左边右边的set
                       h - borderWidth - borderInset.top  - borderInset.bottom);// 减去上边下边的set
     
-    float radii = corner-borderWidth;
+    CGFloat radii = corner-borderWidth;
     path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
     
     
@@ -106,7 +106,7 @@
     return [self imageFromImage:image size:size imageDrawRect:CGRectZero bgColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil scale:-1];
 }
 
-+ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(float)corner {
++ (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner {
     return [self imageFromImage:image size:size imageDrawRect:CGRectZero bgColor:[UIColor clearColor] corner:corner borderWidth:0 borderColor:nil scale:-1];
 }
 
@@ -122,12 +122,12 @@
     
     if (CGRectEqualToRect(imageDrawRect, CGRectZero)) {
         // 图片要居中显示
-        float ImageOW = image.size.width;
-        float ImageOH = image.size.height;
-        float ImageMinScale = MIN(ImageOW/size.width, ImageOH/size.height);
+        CGFloat ImageOW = image.size.width;
+        CGFloat ImageOH = image.size.height;
+        CGFloat ImageMinScale = MIN(ImageOW/size.width, ImageOH/size.height);
         
-        float ImageSW = ImageOW/ImageMinScale;
-        float ImageSH = ImageOH/ImageMinScale;
+        CGFloat ImageSW = ImageOW/ImageMinScale;
+        CGFloat ImageSH = ImageOH/ImageMinScale;
         
         imageDrawRect = CGRectMake(-(ImageSW-size.width)/2, -(ImageSH-size.height)/2, ImageSW, ImageSH);
     }
@@ -239,12 +239,12 @@
     CGRect drawRect;
     {
         // 图片要居中显示
-        float ImageOW = baseImage.size.width;
-        float ImageOH = baseImage.size.height;
-        float ImageMinScale = MIN(ImageOW/size.width, ImageOH/size.height);
+        CGFloat ImageOW = baseImage.size.width;
+        CGFloat ImageOH = baseImage.size.height;
+        CGFloat ImageMinScale = MIN(ImageOW/size.width, ImageOH/size.height);
         
-        float ImageSW = ImageOW/ImageMinScale;
-        float ImageSH = ImageOH/ImageMinScale;
+        CGFloat ImageSW = ImageOW/ImageMinScale;
+        CGFloat ImageSH = ImageOH/ImageMinScale;
         
         drawRect = CGRectMake(-(ImageSW-size.width)/2, -(ImageSH-size.height)/2, ImageSW, ImageSH);
     }

@@ -136,8 +136,8 @@
 #pragma mark - tool
 + (CGSize)imageMaxSize:(UIImage *)image contentRect:(CGRect)contentRect {
     if (contentRect.size.width > image.size.width || contentRect.size.height > image.size.height) {
-        float s1 = contentRect.size.width/image.size.width;
-        float s2 = contentRect.size.height/image.size.height;
+        CGFloat s1 = contentRect.size.width/image.size.width;
+        CGFloat s2 = contentRect.size.height/image.size.height;
         
         if (s1 <= s2) {
             return CGSizeMake(image.size.width * s1, image.size.height * s1);

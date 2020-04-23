@@ -90,8 +90,8 @@
     NSString *originSelectorName = NSStringFromSelector(selector);
     NSString *replaceSelectorName = [NSString stringWithFormat:@"%@_%@",@"rep",originSelectorName];
     SEL repSelector = NSSelectorFromString(replaceSelectorName);
-    for(int i=1;[destaClass respondsToSelector:repSelector];i++){
-        replaceSelectorName = [NSString stringWithFormat:@"%@%d_%@",@"rep",i,originSelectorName];
+    for(NSInteger i=1;[destaClass respondsToSelector:repSelector];i++){
+        replaceSelectorName = [NSString stringWithFormat:@"%@%li_%@",@"rep",i,originSelectorName];
         repSelector = NSSelectorFromString(replaceSelectorName);
     }
     IMP imp = imp_implementationWithBlock(callback);

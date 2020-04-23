@@ -27,6 +27,6 @@
 //    }];
 //}
 
-- (void)textFieldMaxLength:(int)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock;
+- (void)textFieldMaxLength:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock;
 
 @end

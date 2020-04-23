@@ -74,7 +74,7 @@
     UIApplication *app = [UIApplication sharedApplication];
     NSArray *children  = [[[app valueForKeyPath:@"statusBar"] valueForKeyPath:@"foregroundView"] subviews];
     NSString *state    = @"无网络";
-    int netType = 0;
+    NSInteger netType = 0;
     //获取到网络返回码
     for (id child in children) {
         if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
@@ -116,8 +116,8 @@
 + (NetStatusType)getIOSStatusBarNetWorkTypeInt {
     UIApplication *app = [UIApplication sharedApplication];
     NSArray *children  = [[[app valueForKeyPath:@"statusBar"] valueForKeyPath:@"foregroundView"] subviews];
-    int state    = NetStatusType_nil;
-    int netType = 0;
+    NSInteger state    = NetStatusType_nil;
+    NSInteger netType = 0;
     //获取到网络返回码
     for (id child in children) {
         if ([child isKindOfClass:NSClassFromString(@"UIStatusBarDataNetworkItemView")]) {
@@ -182,7 +182,7 @@
 + (BOOL)isIPhone6SOrNewer {
     NSString * platform = [UIDevice devicePlatform];
     if (platform.length > 7) {
-        int number = [[platform substringWithRange:(NSRange){6,1}] intValue];
+        NSInteger number = [[platform substringWithRange:(NSRange){6,1}] integerValue];
         if (number >= 8) {
             return YES;
         }else{
@@ -201,7 +201,7 @@
 + (BOOL)isIPhone5S {
     NSString * platform = [UIDevice devicePlatform];
     if (platform.length > 7) {
-        int number = [[platform substringWithRange:(NSRange){6,1}] intValue];
+        NSInteger number = [[platform substringWithRange:(NSRange){6,1}] integerValue];
         if (number == 6) {
             return YES;
         }else{
@@ -257,7 +257,7 @@
     return freeSpace;
 }
 
-+ (NSString *)getHumanSize:(float)fileSizeFloat {
++ (NSString *)getHumanSize:(CGFloat)fileSizeFloat {
     if (fileSizeFloat<1048576.0f) {
         return [NSString stringWithFormat:@"%.02fKB", fileSizeFloat/1024.0f];
     }else if(fileSizeFloat<1073741824.0f) {

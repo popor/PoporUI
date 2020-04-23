@@ -23,7 +23,7 @@
     [self setSizeStr:text font:font width:self.frame.size.width];
 }
 
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font width:(float)width {
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font width:(CGFloat)width {
     if (!text) {
         return;
     }
@@ -34,7 +34,7 @@
     self.font   = font;
 }
 
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font color:(UIColor *)color lineSpacing:(float)lineSpacing width:(float)width {
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font color:(UIColor *)color lineSpacing:(CGFloat)lineSpacing width:(CGFloat)width {
     if (!text) {
         return;
     }
@@ -65,7 +65,7 @@
     [self setSizeATT:att width:self.frame.size.width];
 }
 
-- (void)setSizeATT:(NSMutableAttributedString *)att width:(float)width {
+- (void)setSizeATT:(NSMutableAttributedString *)att width:(CGFloat)width {
     self.numberOfLines=0;
     [self setAttributedText:att];
     self.lineBreakMode = NSLineBreakByCharWrapping;

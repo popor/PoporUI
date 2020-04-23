@@ -26,7 +26,7 @@
     return contentSize;
 }
 
-- (CGSize)sizeInFont:(FONT_CLASS * _Nonnull)font width:(float)width {
+- (CGSize)sizeInFont:(FONT_CLASS * _Nonnull)font width:(CGFloat)width {
     if (!self || self.length==0 || !font) {
         return CGSizeZero;
     }

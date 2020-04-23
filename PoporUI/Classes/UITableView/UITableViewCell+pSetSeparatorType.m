@@ -10,8 +10,7 @@
 
 @implementation UITableViewCell (pSetSeparatorType)
 
-- (void)setSeparatorX:(float)x
-{
+- (void)setSeparatorX:(CGFloat)x {
     /* first
      {
      // 初始化

@@ -59,6 +59,9 @@ UIButton+pLayoutCustom: 取消该class方法.
 #### 1.13
 更新UILabel+pFormat, UITextField+pFormat
 
+1.15
+适配swift: int > NSInteger,  float > CGFloat
+
 ## Author
 
 wangkq, 908891024@qq.com

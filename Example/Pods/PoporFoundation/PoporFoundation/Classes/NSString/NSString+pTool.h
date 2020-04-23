@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)stringWithREG:(NSString * _Nonnull)reg;
 
 #pragma mark - 10-16转换
-+ (NSString *)stringToHexWithInt:(int)theNumber;
++ (NSString *)stringToHexWithInt:(NSInteger)theNumber;
 + (NSString *)stringToDecimalWithString:(NSString * _Nonnull)theNumber;
 
 - (NSDictionary *)toDic;

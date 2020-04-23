@@ -18,7 +18,7 @@
     [self formatChinaPhoneGapWidth:6];
 }
 
-- (void)formatChinaPhoneGapWidth:(int)gapWidth {
+- (void)formatChinaPhoneGapWidth:(NSInteger)gapWidth {
     NSMutableAttributedString * att = [NSMutableAttributedString separateText:self.text bigGap:gapWidth smallGap:0 separateNumberArray:@[@2, @6, @10]];
     self.attributedText = att;
 }
@@ -28,26 +28,26 @@
     [self formatChinaIdcardGapWidth:6];
 }
 
-- (void)formatChinaIdcardGapWidth:(int)gapWidth {
+- (void)formatChinaIdcardGapWidth:(NSInteger)gapWidth {
     NSMutableAttributedString * att = [NSMutableAttributedString separateText:self.text bigGap:gapWidth smallGap:0 separateNumberArray:@[@5, @9, @13, @17]];
     self.attributedText = att;
 }
 
 // money
-- (void)formatMoneyUnit:(int)unit {
+- (void)formatMoneyUnit:(NSInteger)unit {
     [self formatMoneyUnit:unit gapWitdh:6];
 }
 
-- (void)formatMoneyUnit:(int)unit gapWitdh:(int)gapWidth {
+- (void)formatMoneyUnit:(NSInteger)unit gapWitdh:(NSInteger)gapWidth {
     NSMutableAttributedString * att = [NSMutableAttributedString separateMoneyText:self.text bigGap:gapWidth smallGap:0 separateNumber:unit];
     self.attributedText = att;
 }
 
-- (void)formatBankUnit:(int)unit {
+- (void)formatBankUnit:(NSInteger)unit {
     [self formatBankUnit:unit gapWitdh:6];
 }
 
-- (void)formatBankUnit:(int)unit gapWitdh:(int)gapWidth {
+- (void)formatBankUnit:(NSInteger)unit gapWitdh:(NSInteger)gapWidth {
     NSMutableAttributedString * att = [NSMutableAttributedString separateText:self.text bigGap:gapWidth smallGap:0 separateNumber:unit];
     self.attributedText = att;
 }

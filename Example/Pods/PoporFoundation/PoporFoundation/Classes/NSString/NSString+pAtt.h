@@ -27,11 +27,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addString:(NSString * _Nullable)string font:(FONT_CLASS * _Nullable)font color:(COLOR_CLASS * _Nullable)color bgColor:(COLOR_CLASS * _Nullable)bgColor underline:(BOOL)isUnderLine;
 
-- (void)addString:(NSString * _Nullable)string font:(FONT_CLASS * _Nullable)font color:(COLOR_CLASS * _Nullable)color bgColor:(COLOR_CLASS * _Nullable)bgColor underline:(BOOL)isUnderLine lineSpacing:(float)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
+- (void)addString:(NSString * _Nullable)string font:(FONT_CLASS * _Nullable)font color:(COLOR_CLASS * _Nullable)color bgColor:(COLOR_CLASS * _Nullable)bgColor underline:(BOOL)isUnderLine lineSpacing:(CGFloat)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
 // 用于纠正不同字体之间的文字,不会行居中的问题
-- (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range;
-- (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range scale:(float)scale;
+- (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range;
+- (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range scale:(CGFloat)scale;
 
 #pragma mark - Size Department
 - (CGSize)sizeWithWidth:(CGFloat)width;
@@ -46,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param separateNumberArray 大间隔点数组,里面的参数为NSNumber, 示例: 中国电话号码为 @[@2, @6, @10]
  *
  */
-+ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumberArray:(NSArray *)separateNumberArray;
++ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumberArray:(NSArray *)separateNumberArray;
 
 /**
 *  普通信息
@@ -56,7 +56,7 @@ NS_ASSUME_NONNULL_BEGIN
 *  @param smallGap 大间隔宽度,默认为0
 *  @param separateNumber 间隔分割间隔, 默认为4, 针对银行卡号
 */
-+ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumber:(int)separateNumber;
++ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumber:(NSInteger)separateNumber;
 
 /**
 *  金钱信息
@@ -66,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 *  @param smallGap 大间隔宽度,默认为0
 *  @param separateNumber 间隔分割间隔, 默认为4, 针对中国数字习惯
 */
-+ (NSMutableAttributedString *)separateMoneyText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumber:(int)separateNumber;
++ (NSMutableAttributedString *)separateMoneyText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumber:(NSInteger)separateNumber;
 
 @end
 

@@ -14,18 +14,18 @@
 
 // 中国的电话, 格式为3-4-4
 - (void)formatChinaPhone;
-- (void)formatChinaPhoneGapWidth:(int)gapWidth;
+- (void)formatChinaPhoneGapWidth:(NSInteger)gapWidth;
 
 // 中国的省份证号
 - (void)formatChinaIdcard;
-- (void)formatChinaIdcardGapWidth:(int)gapWidth;
+- (void)formatChinaIdcardGapWidth:(NSInteger)gapWidth;
 
 // money, unit 一般为3或者4
-- (void)formatMoneyUnit:(int)unit;
-- (void)formatMoneyUnit:(int)unit gapWitdh:(int)gapWidth;
+- (void)formatMoneyUnit:(NSInteger)unit;
+- (void)formatMoneyUnit:(NSInteger)unit gapWitdh:(NSInteger)gapWidth;
 
 // bank, unit 一般为4
-- (void)formatBankUnit:(int)unit;
-- (void)formatBankUnit:(int)unit gapWitdh:(int)gapWidth;
+- (void)formatBankUnit:(NSInteger)unit;
+- (void)formatBankUnit:(NSInteger)unit gapWitdh:(NSInteger)gapWidth;
 
 @end

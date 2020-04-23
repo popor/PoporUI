@@ -13,8 +13,8 @@
 - (void)updateSize;
 - (void)setSizeStr:(NSString *)text;
 - (void)setSizeStr:(NSString *)text font:(UIFont *)font;
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font width:(float)width;
-- (void)setSizeStr:(NSString *)text font:(UIFont *)font color:(UIColor *)color lineSpacing:(float)lineSpacing width:(float)width;
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font width:(CGFloat)width;
+- (void)setSizeStr:(NSString *)text font:(UIFont *)font color:(UIColor *)color lineSpacing:(CGFloat)lineSpacing width:(CGFloat)width;
 
 
 
@@ -53,7 +53,7 @@
  [oneL setSizeATT:att width:oneL.width];
  //*/
 - (void)setSizeATT:(NSMutableAttributedString *)att;
-- (void)setSizeATT:(NSMutableAttributedString *)att width:(float)width;
+- (void)setSizeATT:(NSMutableAttributedString *)att width:(CGFloat)width;
 
 
 @end

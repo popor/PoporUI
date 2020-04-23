@@ -21,7 +21,7 @@
 // 需要在APP启动之前就增加
 + (IToastPTool *)share;
 
-@property (nonatomic        ) int keyboardH;
+@property (nonatomic        ) NSInteger keyboardH;
 
 + (void)alertTitle:(NSString *)title;
 + (void)alertTitle:(NSString *)title duration:(NSInteger)duration;

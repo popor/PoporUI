@@ -70,7 +70,7 @@
     [self appendAttributedString:attString];
 }
 
-- (void)addString:(NSString * _Nullable)string font:(FONT_CLASS * _Nullable)font color:(COLOR_CLASS * _Nullable)color bgColor:(COLOR_CLASS * _Nullable)bgColor underline:(BOOL)isUnderLine lineSpacing:(float)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
+- (void)addString:(NSString * _Nullable)string font:(FONT_CLASS * _Nullable)font color:(COLOR_CLASS * _Nullable)color bgColor:(COLOR_CLASS * _Nullable)bgColor underline:(BOOL)isUnderLine lineSpacing:(CGFloat)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode
 {
     if (!string) {
         return;
@@ -104,12 +104,12 @@
 }
 
 // 用于纠正不同字体之间的文字,不会行居中的问题,用于•
-- (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range
+- (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range
 {
     [self addAttribute:NSBaselineOffsetAttributeName value:@(0.36 * (maxFont - miniFont)) range:range];
 }
 
-- (void)setBaselineOffsetMaxFont:(float)maxFont miniFont:(float)miniFont range:(NSRange)range scale:(float)scale
+- (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range scale:(CGFloat)scale
 {
     [self addAttribute:NSBaselineOffsetAttributeName value:@(scale * (maxFont - miniFont)) range:range];
 }
@@ -143,7 +143,7 @@
  *  @param separateNumberArray 大间隔点数组,里面的参数为NSNumber, 示例: 中国电话号码为 @[@2, @6, @10]
  *
  */
-+ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumberArray:(NSArray *)separateNumberArray {
++ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumberArray:(NSArray *)separateNumberArray {
     if (text.length <= 0) {
         return [NSMutableAttributedString new];
     }
@@ -157,9 +157,9 @@
     CFNumberRef numSmallGap         = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &smallGap);
     CFNumberRef numBigGap           = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &bigGap);
     
-    //    int lastNumber = 0;
+    //    NSInteger lastNumber = 0;
     //    for (NSNumber * number in separateNumberArray) {
-    //        for (int i = lastNumber; i<=number.intValue && i<text.length; i++) {
+    //        for (NSInteger i = lastNumber; i<=number.intValue && i<text.length; i++) {
     //            if (i == number.intValue) {
     //                [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(i, 1)];
     //            } else {
@@ -193,7 +193,7 @@
 *  @param smallGap 大间隔宽度,默认为0
 *  @param separateNumber 间隔分割间隔, 默认为4, 针对银行卡号
 */
-+ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumber:(int)separateNumber {
++ (NSMutableAttributedString *)separateText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumber:(NSInteger)separateNumber {
     if (text.length <= 0) {
         return [NSMutableAttributedString new];
     }
@@ -211,7 +211,7 @@
     CFNumberRef numBigGap           = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &bigGap);
     
     [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numSmallGap range:NSMakeRange(0, text.length)];
-    for (int i = separateNumber-1; i<text.length; i = i+separateNumber ) {
+    for (NSInteger i = separateNumber-1; i<text.length; i = i+separateNumber ) {
         [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(i, 1)];
     }
     
@@ -229,7 +229,7 @@
 *  @param smallGap 大间隔宽度,默认为0
 *  @param separateNumber 间隔分割间隔, 默认为4, 针对中国数字习惯
 */
-+ (NSMutableAttributedString *)separateMoneyText:(NSString *)text bigGap:(int)bigGap smallGap:(int)smallGap separateNumber:(int)separateNumber {
++ (NSMutableAttributedString *)separateMoneyText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumber:(NSInteger)separateNumber {
     if (text.length <= 0) {
         return [NSMutableAttributedString new];
     }
@@ -262,10 +262,10 @@
     CFNumberRef numBigGap           = CFNumberCreate(kCFAllocatorDefault, kCFNumberSInt8Type, &bigGap);
     
     NSString * textIntPart          = [text stringWithREG:@"\\d+"]; // 去除整数部分
-    int loopCountInt                = (int)(textIntPart.length-1)/(separateNumber);
+    NSInteger loopCountInt          = (NSInteger)(textIntPart.length-1)/(separateNumber);
     
     [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numSmallGap range:NSMakeRange(0, text.length)];
-    for (int i = 0; i < loopCountInt; i++) {
+    for (NSInteger i = 0; i < loopCountInt; i++) {
         NSInteger location = textIntPart.length - separateNumber*i -1 - separateNumber;
         if (location >= 0) {
             [att addAttribute:(id)kCTKernAttributeName value:(__bridge id)numBigGap range:NSMakeRange(location, 1)];

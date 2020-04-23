@@ -81,8 +81,8 @@ CGFloat const UI_PLACEHOLDER_TEXT_CHANGED_ANIMATION_DURATION = 0.25;
     if( [[self placeholder] length] > 0 )
     {
         if (_placeHolderLabel == nil ) {
-            float originX = 8;
-            float originY = 8;
+            CGFloat originX = 8;
+            CGFloat originY = 8;
             if (self.placeHolderOrigin.x != 0 || self.placeHolderOrigin.y != 0) {
                 originX = self.placeHolderOrigin.x;
                 originY = self.placeHolderOrigin.y;
