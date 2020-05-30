@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIAlertController (pTool)
 
+// MARK: 独立的函数
 + (void)showAt:(nonnull UIViewController *)vc
          style:(UIAlertControllerStyle)style
          title:(nullable NSString *)title
@@ -33,6 +34,18 @@ NS_ASSUME_NONNULL_BEGIN
        message:(nullable NSString *)message
    cancelAlert:(nullable UIAlertAction *)cancelAlert
     otherAlert:(nullable UIAlertAction *)otherAlert, ... NS_REQUIRES_NIL_TERMINATION;
+
+// MARK: 链式编程
+/**
+ 摘自: https://github.com/wode0weiyi/MethodChaining
+ */
+- (UIAlertController * (^)( NSString *actionName,void(^)(UIAlertAction *action)))addCancel;
+
+- (UIAlertController * (^)( NSString *actionName,void(^)(UIAlertAction *action)))addDestructive;
+
+- (UIAlertController * (^)( NSString *actionName,void(^)(UIAlertAction *action)))addDefault;
+
+- (UIAlertController * (^)(NSString *placeHolder,void(^)(UITextField *textField)))addInput;
 
 @end
 

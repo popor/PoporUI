@@ -9,6 +9,7 @@
 
 @implementation UIAlertController (pTool)
 
+// MARK: 独立的函数
 + (void)showAt:(nonnull UIViewController *)vc
          style:(UIAlertControllerStyle)style
          title:(nullable NSString *)title
@@ -76,5 +77,59 @@
     
     [vc presentViewController:oneAC animated:YES completion:nil];
 }
+
+// MARK: 链式编程
+- (UIAlertController * (^)( NSString *actionName,void(^)(UIAlertAction *action)))addCancel {
+    UIAlertController *(^addActionBlock)(NSString * actionName,void(^)(UIAlertAction *action)) = ^(NSString * actionName,void(^neibublock)(UIAlertAction *action)){
+        UIAlertAction * action = [UIAlertAction actionWithTitle:actionName style:(UIAlertActionStyleCancel) handler:^(UIAlertAction * _Nonnull action) {
+            if (neibublock) {
+                neibublock(action);
+            }
+        }];
+        [self addAction:action];
+        return self;
+    };
+    return addActionBlock;
+}
+
+- (UIAlertController * (^)( NSString *actionName,void(^)(UIAlertAction *action)))addDestructive {
+    UIAlertController *(^addActionBlock)(NSString * actionName,void(^)(UIAlertAction *action)) = ^(NSString * actionName,void(^neibublock)(UIAlertAction *action)){
+        UIAlertAction * action = [UIAlertAction actionWithTitle:actionName style:(UIAlertActionStyleDestructive) handler:^(UIAlertAction * _Nonnull action) {
+            if (neibublock) {
+                neibublock(action);
+            }
+        }];
+        [self addAction:action];
+        return self;
+    };
+    return addActionBlock;
+}
+
+- (UIAlertController * (^)( NSString *actionName,void(^)(UIAlertAction *action)))addDefault {
+    UIAlertController *(^addActionBlock)(NSString * actionName,void(^)(UIAlertAction *action)) = ^(NSString * actionName,void(^neibublock)(UIAlertAction *action)){
+        UIAlertAction * action = [UIAlertAction actionWithTitle:actionName style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+            if (neibublock) {
+                neibublock(action);
+            }
+        }];
+        [self addAction:action];
+        return self;
+    };
+    return addActionBlock;
+}
+
+- (UIAlertController * (^)(NSString *placeHolder, void (^)(UITextField *)))addInput {
+    UIAlertController * (^inputBlock)(NSString *placeHolder,void (^)(UITextField *textField)) = ^(NSString * placeHolder,void(^neibublock)(UITextField * textField)){
+        [self addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = placeHolder;
+            if (neibublock) {
+                neibublock(textField);
+            }
+        }];
+        return self;
+    };
+    return inputBlock;
+}
+
 
 @end

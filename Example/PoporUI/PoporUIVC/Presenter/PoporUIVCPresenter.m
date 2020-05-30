@@ -12,6 +12,7 @@
 #import "BTVC.h"
 #import "LabelVC.h"
 #import "TfVC.h"
+#import "ACVC.h"
 
 @interface PoporUIVCPresenter ()
 
@@ -52,7 +53,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,8 +78,6 @@
         
     }
     
-    
-    
     switch (indexPath.row) {
         case 0: {
             cell.textLabel.text = [NSString stringWithFormat:@"%li : 输入框默认文字颜色", indexPath.row];
@@ -94,6 +93,10 @@
         }
         case 3: {
             cell.textLabel.text = [NSString stringWithFormat:@"%li : TextField", indexPath.row];
+            break;
+        }
+        case 4: {
+            cell.textLabel.text = [NSString stringWithFormat:@"%li : UIAlertControler", indexPath.row];
             break;
         }
             
@@ -121,6 +124,10 @@
         }
         case 3: {
             [self.view.vc.navigationController pushViewController:[TfVC new] animated:YES];
+            break;
+        }
+        case 4: {
+            [self.view.vc.navigationController pushViewController:[ACVC new] animated:YES];
             break;
         }
             

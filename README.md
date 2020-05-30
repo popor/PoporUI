@@ -62,6 +62,10 @@ UIButton+pLayoutCustom: 取消该class方法.
 1.15
 适配swift: int > NSInteger,  float > CGFloat
 
+1.16
+摘自:https://github.com/wode0weiyi/MethodChaining
+增加了UIAlertController的链式编程.
+
 ## Author
 
 wangkq, 908891024@qq.com
