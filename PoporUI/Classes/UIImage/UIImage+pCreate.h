@@ -62,6 +62,8 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - 从View上截图
 + (UIImage *)imageFromView:(UIView *)view;
 
++ (UIImage *)imageFromLayer:(CALayer *)layer;
+
 #pragma mark - 图片压缩
 - (UIImage *)scaleWidth:(CGFloat)width;
 - (UIImage *)scaleWidth:(CGFloat)width scale:(CGFloat)scale;

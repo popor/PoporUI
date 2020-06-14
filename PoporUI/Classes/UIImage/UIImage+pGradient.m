@@ -55,4 +55,32 @@
     return image;
 }
 
+/**
+ CGPointMake(0, 0);// 开始点
+ CGPointMake(0, 1);// 结束点
+ 用法:
+ 1  [UIImage imageFromLayer:gradientLayer];
+ 2  [view.layer addSublayer:gradientLayer];
+ */
++ (CAGradientLayer *)gradientLayer:(CGRect)bounds colors:(NSArray<UIColor *> *)colors locations:(NSArray<NSNumber *> *)locations start:(CGPoint)start end:(CGPoint)end {
+    if (colors.count != locations.count) {
+        return nil;
+    }
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = bounds;
+    
+    NSMutableArray * cgColors = [NSMutableArray new];
+    for (UIColor * color in colors) {
+        [cgColors addObject:(id)color.CGColor];
+    }
+    
+    gradientLayer.colors    = cgColors;
+    gradientLayer.locations = locations;
+    
+    gradientLayer.startPoint = start;
+    gradientLayer.endPoint   = end;
+    
+    return gradientLayer;
+}
+
 @end

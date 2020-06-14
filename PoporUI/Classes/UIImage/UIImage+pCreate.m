@@ -278,6 +278,17 @@
     return image;
 }
 
++ (UIImage *)imageFromLayer:(CALayer *)layer {
+    UIGraphicsBeginImageContextWithOptions(layer.frame.size, NO, 0);
+    
+    [layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return outputImage;
+}
+
 #pragma mark - 图片压缩
 - (UIImage *)scaleWidth:(CGFloat)width {
     return [self scaleWidthScale:(width/self.size.width) scale:-1];
