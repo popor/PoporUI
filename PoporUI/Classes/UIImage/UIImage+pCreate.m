@@ -20,7 +20,7 @@
 }
 
 + (UIImage *)imageFromColor:(UIColor *)color size:(CGSize)size corner:(CGFloat)corner borderWidth:(CGFloat)borderWidth borderColor:(UIColor *)borderColor {
-    return [UIImage imageFromColor:color size:size corner:corner corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:nil borderInset:UIEdgeInsetsZero scale:-1];
+    return [UIImage imageFromColor:color size:size corner:corner corners:UIRectCornerAllCorners borderWidth:borderWidth borderColor:borderColor borderInset:UIEdgeInsetsZero scale:-1];
 }
 
 #pragma mark - 制定圆角
