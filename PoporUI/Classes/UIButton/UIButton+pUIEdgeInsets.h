@@ -17,6 +17,6 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
 
 @interface UIButton (pUIEdgeInsets)
 
--(void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap;
+- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth;
 
 @end

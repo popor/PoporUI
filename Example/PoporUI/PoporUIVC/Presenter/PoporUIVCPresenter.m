@@ -109,7 +109,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
  
-    switch (indexPath.row) {
+    [self pushIndex:indexPath.row];
+    [self saveLastVCIndex:[NSString stringWithFormat:@"%li", indexPath.row]];
+}
+
+- (void)pushIndex:(NSInteger)index {
+    switch (index) {
         case 0: {
             [self.view.vc.navigationController pushViewController:[VC_UITextField_pPlaceholder new] animated:YES];
             break;
@@ -137,6 +142,17 @@
 }
 
 #pragma mark - VC_EventHandler
+- (void)saveLastVCIndex:(NSString *)lastVCIndex {
+    [[NSUserDefaults standardUserDefaults] setObject:lastVCIndex forKey:@"lastVCIndex"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (NSString *)getLastVCIndex {
+    NSString * info = [[NSUserDefaults standardUserDefaults] objectForKey:@"lastVCIndex"];
+    return info;
+}
+
+
 
 #pragma mark - Interactor_EventHandler
 

@@ -29,6 +29,10 @@ NS_ASSUME_NONNULL_BEGIN
 // MARK: UI事件
 @protocol PoporUIVCEventHandler <NSObject>
 
+- (void)saveLastVCIndex:(NSString *)lastVCIndex;
+- (NSString *)getLastVCIndex;
+- (void)pushIndex:(NSInteger)index;
+
 @end
 
 NS_ASSUME_NONNULL_END

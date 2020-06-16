@@ -11,46 +11,70 @@
 
 @implementation UIButton (pUIEdgeInsets)
 
--(void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap{
+- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth {
+    NSLog(@"spaceGap: %f", spaceGap);
+    NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
     
-    CGFloat space = spaceGap;
+    CGFloat imageWith   = self.imageView.image.size.width;
+    CGFloat imageHeight = self.imageView.image.size.height;
+    //NSLog(@"imageWith: %f, imageHeight: %f", imageWith, imageHeight);
     
-    CGFloat imageWith   = self.imageView.frame.size.width;
-    CGFloat imageHeight = self.imageView.frame.size.height;
+    if (maxWidth <= 0) {
+        maxWidth = self.frame.size.width;
+    }
+    CGSize testSize     = [self.titleLabel.text sizeInFont:self.titleLabel.font width:maxWidth];
+    CGFloat labelWidth  = testSize.width;//ceil(MAX(self.titleLabel.frame.size.width, size.width));
+    CGFloat labelHeight = testSize.height;//ceil(MAX(self.titleLabel.frame.size.height, size.height));
     
-    CGSize size = [self.titleLabel.text sizeInFont:self.titleLabel.font width:self.frame.size.width];
-    CGFloat labelWidth  = MAX(self.titleLabel.frame.size.width, size.width) + 2;
-    CGFloat labelHeight = MAX(self.titleLabel.frame.size.height, size.height) + 2;
+    UIEdgeInsets imageEdgeInsets   = UIEdgeInsetsZero;
+    UIEdgeInsets labelEdgeInsets   = UIEdgeInsetsZero;
+    UIEdgeInsets contentEdgeInsets = UIEdgeInsetsZero;
     
-    UIEdgeInsets imageEdgeInsets = UIEdgeInsetsZero;
-    UIEdgeInsets labelEdgeInsets = UIEdgeInsetsZero;
     switch (edgeInsetType) {
         case PEdgeInsetType_Top: {
-            imageEdgeInsets = UIEdgeInsetsMake(-labelHeight-space/2.0, 0, 0, -labelWidth);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, -imageHeight-space/2.0, 0);
+            self.bounds = CGRectMake(0, 0, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            
+            NSLog(@"self.bounds: %@", NSStringFromCGRect(self.bounds));
+            NSLog(@"lable.size: %@", NSStringFromCGSize(testSize));
+            
+            CGFloat imageBottom = self.bounds.size.height - imageHeight;
+            CGFloat imageLeft   = fabs(labelWidth - imageWith)/2 +0;
+            CGFloat textTop     = self.bounds.size.height - labelHeight;
+            CGFloat textLeft    = fabs(labelWidth - imageWith)/2 +2;
+            
+            imageEdgeInsets   = UIEdgeInsetsMake(0, imageLeft, imageBottom , 0);
+            labelEdgeInsets   = UIEdgeInsetsMake(textTop, -textLeft, 0, textLeft);
+            contentEdgeInsets = UIEdgeInsetsMake(0, 0, spaceGap, 0);
+            
             break;
         }
         case PEdgeInsetType_Left: {
-            imageEdgeInsets = UIEdgeInsetsMake(0, -space/2.0, 0, space/2.0);
-            labelEdgeInsets = UIEdgeInsetsMake(0, space/2.0, 0, -space/2.0);
+            imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, 0);
+            labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap, 0, -spaceGap);
+            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
             break;
         }
         case PEdgeInsetType_Bottom: {
-            imageEdgeInsets = UIEdgeInsetsMake(0, 0, -labelHeight-space/2.0, -labelWidth);
-            labelEdgeInsets = UIEdgeInsetsMake(-imageHeight-space/2.0, -imageWith, 0, 0);
+            self.bounds = CGRectMake(0, 0, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            
+            imageEdgeInsets   = UIEdgeInsetsMake(0, 0, -labelHeight-spaceGap/2.0, -labelWidth);
+            labelEdgeInsets   = UIEdgeInsetsMake(-imageHeight-spaceGap/2.0, -imageWith, 0, 0);
+            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
             break;
         }
-        case PEdgeInsetType_Right:{
-            imageEdgeInsets = UIEdgeInsetsMake(0, labelWidth+space/2.0, 0, -labelWidth-space/2.0);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith-space/2.0, 0, imageWith+space/2.0);
+        case PEdgeInsetType_Right: {
+            labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2, 0, 0);
+            imageEdgeInsets   = UIEdgeInsetsMake(0, labelWidth +spaceGap, 0, -spaceGap);
+            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
             break;
         }
         default:
             break;
     }
     
-    self.imageEdgeInsets = imageEdgeInsets;
-    self.titleEdgeInsets = labelEdgeInsets;
+    self.imageEdgeInsets   = imageEdgeInsets;
+    self.titleEdgeInsets   = labelEdgeInsets;
+    self.contentEdgeInsets = contentEdgeInsets;
     
     //NSLog(@"image: %@", NSStringFromUIEdgeInsets(self.imageEdgeInsets));
     //NSLog(@"title: w %f - %@", self.titleLabel.width, NSStringFromUIEdgeInsets(self.titleEdgeInsets));

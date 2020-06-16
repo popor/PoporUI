@@ -16,6 +16,8 @@
 
 @property (nonatomic, strong) PoporUIVCPresenter * present;
 
+@property (nonatomic        ) BOOL initVC;
+
 @end
 
 @implementation PoporUIVC
@@ -28,6 +30,25 @@
         }
     }
     return self;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (!self.initVC) {
+        self.initVC = YES;
+        NSString * indexStr = [self.present getLastVCIndex];
+        NSInteger indexInt  = [indexStr integerValue];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (indexInt >= 0) {
+                [self.present pushIndex:indexInt];
+            }
+        });
+        
+    } else {
+        [self.present saveLastVCIndex:@"-1"];
+    }
+    
 }
 
 - (void)viewDidLoad {
