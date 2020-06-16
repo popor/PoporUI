@@ -94,34 +94,25 @@
     [self.view addSubview:oneBT];
     
     {   // left 和 right
-        //        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 30)] forState:UIControlStateNormal];
-        //        //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 maxWidth:400];
-        //        [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:40 maxWidth:400];
-        //
-        //        [oneBT mas_makeConstraints:^(MASConstraintMaker *make) {
-        //            make.top.mas_equalTo(120);
-        //            make.left.mas_equalTo(100);
-        //            //make.bottom.mas_equalTo(-20);
-        //            make.height.mas_equalTo(oneBT.height);
-        //        }];
+        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 30)] forState:UIControlStateNormal];
+        //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 maxWidth:400];
+        [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:40 maxWidth:400];
+        
+        [oneBT mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(120);
+            make.left.mas_equalTo(100);
+            //make.bottom.mas_equalTo(-20);
+            make.height.mas_equalTo(oneBT.height);
+        }];
     }
     {   // top 和 bottom
-        oneBT.frame = CGRectMake(100, 220, 0, 0);
-        UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(375/2, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
+        //        oneBT.frame = CGRectMake(100, 220, 0, 0);
+        //        UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(375/2, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
+        //
+        //        [oneBT setImage:image forState:UIControlStateNormal];
+        //        //[oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:20 maxWidth:400];
+        //        [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:20 maxWidth:400];
         
-        [oneBT setImage:image forState:UIControlStateNormal];
-        //[oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:20 maxWidth:400];
-        [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:20 maxWidth:400];
-        
-        //        UIImageView * oneIV = ({
-        //            UIImageView * iv = [UIImageView new];
-        //            iv.backgroundColor = [UIColor redColor];
-        //            iv.image = image;
-        //            NSLog(@"image.size: %@", NSStringFromCGSize(image.size));;
-        //            iv.frame = CGRectMake(26, 150, iv.image.size.width, iv.image.size.height);
-        //            [self.view addSubview:iv];
-        //            iv;
-        //        });
     }
     [oneBT setBackgroundImage:[UIImage imageFromColor:[UIColor redColor] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
     
