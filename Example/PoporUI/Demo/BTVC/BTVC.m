@@ -110,8 +110,8 @@
         UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(375/2, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
         
         [oneBT setImage:image forState:UIControlStateNormal];
-        //[oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:40 maxWidth:400];
-        [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:40 maxWidth:400];
+        //[oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:20 maxWidth:400];
+        [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:20 maxWidth:400];
         
         //        UIImageView * oneIV = ({
         //            UIImageView * iv = [UIImageView new];

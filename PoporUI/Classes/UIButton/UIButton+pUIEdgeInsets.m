@@ -32,7 +32,7 @@
     
     switch (edgeInsetType) {
         case PEdgeInsetType_Top: {
-            self.bounds = CGRectMake(0, 0, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            self.bounds = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
             //NSLog(@"self.bounds: %@", NSStringFromCGRect(self.bounds));
             //NSLog(@"lable.size: %@", NSStringFromCGSize(testSize));
             
@@ -57,7 +57,7 @@
             break;
         }
         case PEdgeInsetType_Bottom: {
-            self.bounds = CGRectMake(0, 0, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
             //NSLog(@"self.bounds: %@", NSStringFromCGRect(self.bounds));
             //NSLog(@"lable.size: %@", NSStringFromCGSize(testSize));
             
