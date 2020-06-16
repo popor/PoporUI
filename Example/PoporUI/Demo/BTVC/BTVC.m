@@ -24,6 +24,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    NSLog(@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
     //[self addViews];
     //[self addBt1];
     [self addBt2];
@@ -83,7 +84,7 @@
     
     UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
     oneBT.frame =  CGRectMake(100, 100, 400, 44);
-    [oneBT setTitle:@"测试数据----" forState:UIControlStateNormal];
+    [oneBT setTitle:@"测试数据----123456" forState:UIControlStateNormal];
     [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     oneBT.titleLabel.font = [UIFont systemFontOfSize:16];
     oneBT.titleLabel.backgroundColor = [UIColor purpleColor];
@@ -106,10 +107,21 @@
     }
     {   // top 和 bottom
         oneBT.frame = CGRectMake(100, 220, 0, 0);
-        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 20)] forState:UIControlStateNormal];
-        [oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:20 maxWidth:400];
+        UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(375/2, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
         
+        [oneBT setImage:image forState:UIControlStateNormal];
+        //[oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:40 maxWidth:400];
+        [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:40 maxWidth:400];
         
+        //        UIImageView * oneIV = ({
+        //            UIImageView * iv = [UIImageView new];
+        //            iv.backgroundColor = [UIColor redColor];
+        //            iv.image = image;
+        //            NSLog(@"image.size: %@", NSStringFromCGSize(image.size));;
+        //            iv.frame = CGRectMake(26, 150, iv.image.size.width, iv.image.size.height);
+        //            [self.view addSubview:iv];
+        //            iv;
+        //        });
     }
     [oneBT setBackgroundImage:[UIImage imageFromColor:[UIColor redColor] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
     
