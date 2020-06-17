@@ -12,8 +12,8 @@
 @implementation UIButton (pUIEdgeInsets)
 
 - (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth {
-    NSLog(@"spaceGap: %f", spaceGap);
-    NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
+    //NSLog(@"spaceGap: %f", spaceGap);
+    //NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
     
     CGFloat imageWith   = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
