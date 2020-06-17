@@ -22,6 +22,7 @@
 #import "UIDevice+pSaveImage.h"
 #import "UIDevice+pScreenSize.h"
 #import "UIDevice+pTool.h"
+#import "UIImage+ColorAtPixel.h"
 #import "UIImage+pCreate.h"
 #import "UIImage+pGradient.h"
 #import "UIImage+pRead.h"
