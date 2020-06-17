@@ -37,6 +37,7 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 #import "UIDevice+pTool.h"
 
 // UIImage
+#import "UIImage+pColorAtPixel.h"
 #import "UIImage+pCreate.h"
 #import "UIImage+pGradient.h"
 #import "UIImage+pRead.h"
