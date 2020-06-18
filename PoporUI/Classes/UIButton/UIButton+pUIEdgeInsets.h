@@ -10,9 +10,21 @@
 
 typedef NS_ENUM(NSInteger, PEdgeInsetType) {
     PEdgeInsetType_Top = 0,
+    PEdgeInsetType_TopLeft,
+    PEdgeInsetType_TopRight,
+    
     PEdgeInsetType_Left,
+    PEdgeInsetType_LeftTop,
+    PEdgeInsetType_LeftBottom,
+    
     PEdgeInsetType_Bottom,
-    PEdgeInsetType_Right
+    PEdgeInsetType_BottomLeft,
+    PEdgeInsetType_BottomRight,
+    
+    
+    PEdgeInsetType_Right,
+    PEdgeInsetType_RightTop,
+    PEdgeInsetType_RightBottom,
 };
 
 @interface UIButton (pUIEdgeInsets)
