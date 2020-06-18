@@ -12,10 +12,7 @@
 @implementation UIButton (pUIEdgeInsets)
 
 - (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth {
-    //NSLog(@"spaceGap: %f", spaceGap);
-    NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
     self.titleLabel.numberOfLines = 0;
-    
     CGFloat imageWith   = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
     //NSLog(@"imageWith: %f, imageHeight: %f", imageWith, imageHeight);
@@ -23,11 +20,15 @@
     if (maxWidth <= 0) {
         maxWidth = self.frame.size.width;
     }
-    NSLog(@"maxWidth: %f", maxWidth);
+    
     CGSize testSize     = [self.titleLabel.text sizeInFont:self.titleLabel.font width:maxWidth];
     CGFloat labelWidth  = testSize.width;
     CGFloat labelHeight = testSize.height;
-    NSLog(@"lable: %@, size: %@", self.titleLabel.text, NSStringFromCGSize(testSize));
+    
+    //NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
+    //NSLog(@"maxWidth: %f", maxWidth);
+    //NSLog(@"lable: %@, size: %@", self.titleLabel.text, NSStringFromCGSize(testSize));
+    //NSLog(@"spaceGap: %f", spaceGap);
     
     UIEdgeInsets imageEdgeInsets   = UIEdgeInsetsZero;
     UIEdgeInsets labelEdgeInsets   = UIEdgeInsetsZero;

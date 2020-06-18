@@ -96,21 +96,27 @@
     [self.view addSubview:oneBT];
     
     {   // left 和 right
-        oneBT.frame =  CGRectMake(100, 100, 20, 20);
-        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
-        //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 maxWidth:80];
-        [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:40 maxWidth:280];
+        //        oneBT.frame =  CGRectMake(100, 100, 20, 20);
+        //        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
+        //        //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 maxWidth:80];
+        //        [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:40 maxWidth:80];
     }
     {   // top 和 bottom
-        //CGFloat width =
         //        oneBT.frame = CGRectMake(100, 220, 0, 0);
         //        UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(40, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
         //
         //        [oneBT setImage:image forState:UIControlStateNormal];
         //        [oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:20 maxWidth:60];
         //        //[oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:20 maxWidth:80];
-        
     }
+    
+    {   // top 和 bottom, 尝试固定宽度
+        /**
+         修改了 top和bottom之后, 再去修改frame, 就会出错了. 这个时候可以修改bt.center.
+         随便修改 width 之后, titleLabel 位置也需要修改.目前感觉比较麻烦.
+         */
+    }
+    
     [oneBT setBackgroundImage:[UIImage imageFromColor:[UIColor redColor] size:CGSizeMake(1, 1)] forState:UIControlStateNormal];
     
     
