@@ -13,7 +13,7 @@
 
 - (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth {
     //NSLog(@"spaceGap: %f", spaceGap);
-    //NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
+    NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
     self.titleLabel.numberOfLines = 0;
     
     CGFloat imageWith   = self.imageView.image.size.width;
@@ -48,10 +48,9 @@
             CGFloat textTop = self.bounds.size.height - labelHeight;
 
             imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft, imageBottom , 0);
-            if (labelHeight >= self.titleLabel.font.pointSize*2) {
-                // 多行title
+            if (labelHeight >= self.titleLabel.font.pointSize*2) {// 多行title
                 labelEdgeInsets   = UIEdgeInsetsMake(textTop, -imageWith, 0, -0);
-            } else {
+            } else { // 单行
                 labelEdgeInsets   = UIEdgeInsetsMake(textTop, -imageWith*2, 0, -imageWith);
             }
             
@@ -60,7 +59,14 @@
         case PEdgeInsetType_Left: {
             self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
             
-            imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, 0);
+            if (labelHeight > imageHeight) {
+                // 特别矮的图片, 不太好操作
+                imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, 0);
+            } else {
+                // 高图 不需要修改, 可以自适应
+                imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, 0);
+            }
+            
             labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap, 0, -spaceGap);
             contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
             break;
@@ -80,10 +86,9 @@
             CGFloat imageTop   = self.bounds.size.height - imageHeight;
             
             imageEdgeInsets   = UIEdgeInsetsMake(imageTop, imageLeft, 0 , 0);
-            if (labelHeight >= self.titleLabel.font.pointSize*2) {
-                // 多行title
+            if (labelHeight >= self.titleLabel.font.pointSize*2) { // 多行title
                 labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, textBottom, -0);
-            } else {
+            } else { // 单行
                 labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2, textBottom, -imageWith);
             }
             //self.contentEdgeInsets = UIEdgeInsetsMake(0, 0, -30, 0);
@@ -91,9 +96,15 @@
         }
         case PEdgeInsetType_Right: {
             self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
-            labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2, 0, 0);
+            if (labelHeight >= self.titleLabel.font.pointSize*2) {// 多行title
+                labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, 0, imageWith + spaceGap);
+            } else { // 单行
+                labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2 - spaceGap, 0, 0);
+            }
+            
             imageEdgeInsets   = UIEdgeInsetsMake(0, labelWidth +spaceGap, 0, -spaceGap);
-            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
+            //contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
+            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
             break;
         }
         default:
