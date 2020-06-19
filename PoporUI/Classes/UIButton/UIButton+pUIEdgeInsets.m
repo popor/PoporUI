@@ -7,6 +7,7 @@
 //
 #import "UIButton+pUIEdgeInsets.h"
 #import <PoporFoundation/NSString+pSize.h>
+#import <PoporFoundation/NSString+pAtt.h>
 #import "UIView+pExtension.h"
 
 @implementation UIButton (pUIEdgeInsets)
@@ -21,18 +22,17 @@
         maxWidth = self.frame.size.width;
     }
     
-    CGSize testSize     = [self.titleLabel.text sizeInFont:self.titleLabel.font width:maxWidth];
-    CGFloat labelWidth  = testSize.width;
-    CGFloat labelHeight = testSize.height;
+    CGSize textSize;
+    //if (self.titleLabel.attributedText) {
+        //testSize = [self.titleLabel.attributedText sizeWithWidth:maxWidth];
+    //} else {
+        textSize = [self.titleLabel.text sizeInFont:self.titleLabel.font width:maxWidth];
+    //}
+    CGFloat labelWidth  = textSize.width;
+    CGFloat labelHeight = textSize.height;
     
-    //NSLog(@"image: %@", NSStringFromCGSize(self.imageView.image.size));
-    //NSLog(@"maxWidth: %f", maxWidth);
-    //NSLog(@"lable: %@, size: %@", self.titleLabel.text, NSStringFromCGSize(testSize));
-    //NSLog(@"spaceGap: %f", spaceGap);
-    
-    UIEdgeInsets imageEdgeInsets   = UIEdgeInsetsZero;
-    UIEdgeInsets labelEdgeInsets   = UIEdgeInsetsZero;
-    UIEdgeInsets contentEdgeInsets = UIEdgeInsetsZero;
+    UIEdgeInsets imageEdgeInsets = UIEdgeInsetsZero;
+    UIEdgeInsets labelEdgeInsets = UIEdgeInsetsZero;
     
     switch (edgeInsetType) {
         case PEdgeInsetType_Top:
@@ -76,15 +76,14 @@
             CGFloat imageMove = (self.frame.size.height - imageHeight)/2;
             // 特别矮的图片, 不太好操作, 高图 不需要修改, 可以自适应
             if (edgeInsetType == PEdgeInsetType_Left) {
-                imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, 0);
+                imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, spaceGap/2);
             } else if (edgeInsetType == PEdgeInsetType_LeftTop){
-                imageEdgeInsets   = UIEdgeInsetsMake(-imageMove, 0, imageMove, 0);
+                imageEdgeInsets   = UIEdgeInsetsMake(-imageMove, 0, imageMove, spaceGap/2);
             } else {
-                imageEdgeInsets   = UIEdgeInsetsMake(imageMove, 0, -imageMove, 0);
+                imageEdgeInsets   = UIEdgeInsetsMake(imageMove, 0, -imageMove, spaceGap/2);
             }
             
-            labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap, 0, -spaceGap);
-            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
+            labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap/2, 0, 0);
             break;
         }
         case PEdgeInsetType_Bottom:
@@ -118,7 +117,6 @@
             } else { // 单行
                 labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2, textBottom, -imageWith);
             }
-            //self.contentEdgeInsets = UIEdgeInsetsMake(0, 0, -30, 0);
             break;
         }
         case PEdgeInsetType_Right:
@@ -141,8 +139,6 @@
                 imageEdgeInsets   = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap, -imageMove, -spaceGap);
             }
             
-            //contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, spaceGap);
-            contentEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 0);
             break;
         }
         default:
@@ -151,10 +147,25 @@
     
     self.imageEdgeInsets   = imageEdgeInsets;
     self.titleEdgeInsets   = labelEdgeInsets;
-    self.contentEdgeInsets = contentEdgeInsets;
     
     //NSLog(@"image: %@", NSStringFromUIEdgeInsets(self.imageEdgeInsets));
     //NSLog(@"title: w %f - %@", self.titleLabel.width, NSStringFromUIEdgeInsets(self.titleEdgeInsets));
+}
+
+
+- (void)updateLeftTypeWidth:(CGFloat)width {
+    if (width > self.width) {
+        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
+        CGFloat move = width - self.width;
+        self.titleEdgeInsets = UIEdgeInsetsMake(self.titleEdgeInsets.top, self.titleEdgeInsets.left, self.titleEdgeInsets.bottom, self.titleEdgeInsets.right + move);
+    }
+}
+
+- (void)updateRightTypeWidth:(CGFloat)width {
+    if (width > self.width) {
+        
+        
+    }
 }
 
 @end

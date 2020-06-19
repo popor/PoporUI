@@ -37,4 +37,8 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
  */
 - (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth;
 
+- (void)updateLeftTypeWidth:(CGFloat)width;
+
+- (void)updateRightTypeWidth:(CGFloat)width;
+
 @end
