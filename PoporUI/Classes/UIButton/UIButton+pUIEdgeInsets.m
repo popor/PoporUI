@@ -39,7 +39,7 @@
         case PEdgeInsetType_Top:
         case PEdgeInsetType_TopLeft:
         case PEdgeInsetType_TopRight:{
-            self.bounds = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
             //NSLog(@"self.bounds: %@", NSStringFromCGRect(self.bounds));
             
             CGFloat imageBottom = self.bounds.size.height - imageHeight;
@@ -79,7 +79,7 @@
                 imageMove = (self.frame.size.height - imageHeight)/2;
             }
             
-            imageEdgeInsets   = UIEdgeInsetsMake(-imageMove, -spaceGap/2, imageMove, spaceGap/2);
+            imageEdgeInsets   = UIEdgeInsetsMake(imageMove, -spaceGap/2, -imageMove, spaceGap/2);
             labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap/2 + spaceGap, 0, -spaceGap/2);
             break;
         }
