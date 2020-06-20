@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
     PEdgeInsetType_Right,
     PEdgeInsetType_RightTop,
     PEdgeInsetType_RightBottom,
+    
+    PEdgeInsetType_Center, // 只用于 updateWidth:type:
 };
 
 @interface UIButton (pUIEdgeInsets)
@@ -37,8 +39,12 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
  */
 - (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth;
 
-- (void)updateLeftTypeWidth:(CGFloat)width;
-
-- (void)updateRightTypeWidth:(CGFloat)width;
+/**
+ edgeInsetType  此时 只针对PEdgeInsetType_Top,PEdgeInsetType_Left,PEdgeInsetType_Bottom,PEdgeInsetType_Right
+ left 和 right 使用size的width, top和bottom使用size的heigt, center使用size的width和height.
+ left 对应 空白处添加到左边 ...
+ 
+ */
+- (void)updateSize:(CGSize)size type:(PEdgeInsetType)edgeInsetType;
 
 @end

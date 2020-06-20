@@ -95,23 +95,24 @@
     
     [self.view addSubview:oneBT];
     
+    // 1. 设置image和label位置 和间隔
     {   // left 和 right
-                oneBT.frame =  CGRectMake(100, 100, 20, 20);
-                [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
-                //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 maxWidth:80];
-                [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:40 maxWidth:80];
-    }
-    {   // left 上下
-//        oneBT.frame =  CGRectMake(100, 100, 20, 20);
-//        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
-//        //[oneBT setEdgeInsetType:PEdgeInsetType_LeftTop spaceGap:40 maxWidth:80];
-//        [oneBT setEdgeInsetType:PEdgeInsetType_LeftBottom spaceGap:40 maxWidth:80];
-    }
-    {   // right 上下
         //        oneBT.frame =  CGRectMake(100, 100, 20, 20);
         //        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
-        //        [oneBT setEdgeInsetType:PEdgeInsetType_RightTop spaceGap:40 maxWidth:80];
-        //        //[oneBT setEdgeInsetType:PEdgeInsetType_RightBottom spaceGap:40 maxWidth:80];
+        //        //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 maxWidth:80];
+        //        [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:40 maxWidth:80];
+    }
+    {   // left 上下
+        //        oneBT.frame =  CGRectMake(100, 100, 20, 20);
+        //        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
+        //        //[oneBT setEdgeInsetType:PEdgeInsetType_LeftTop spaceGap:40 maxWidth:80];
+        //        [oneBT setEdgeInsetType:PEdgeInsetType_LeftBottom spaceGap:40 maxWidth:80];
+    }
+    {   // right 上下
+        oneBT.frame =  CGRectMake(100, 100, 20, 20);
+        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
+        [oneBT setEdgeInsetType:PEdgeInsetType_RightTop spaceGap:40 maxWidth:80];
+        //[oneBT setEdgeInsetType:PEdgeInsetType_RightBottom spaceGap:40 maxWidth:80];
     }
     
     {   // top 和 bottom
@@ -139,6 +140,12 @@
         //        [oneBT setEdgeInsetType:PEdgeInsetType_BottomRight spaceGap:20 maxWidth:80];
     }
     
+    // 2. 更新width, height, size等
+    //[oneBT updateSize:CGSizeMake(300, 300) type:PEdgeInsetType_Left];
+    //[oneBT updateSize:CGSizeMake(300, 300) type:PEdgeInsetType_Right];
+    //[oneBT updateSize:CGSizeMake(300, 300) type:PEdgeInsetType_Top];
+    //[oneBT updateSize:CGSizeMake(300, 300) type:PEdgeInsetType_Bottom];
+    //[oneBT updateSize:CGSizeMake(300, 300) type:PEdgeInsetType_Center];
     {   // top 和 bottom, 尝试固定宽度
         /**
          修改了 top和bottom之后, 再去修改frame, 就会出错了. 这个时候可以修改bt.center.

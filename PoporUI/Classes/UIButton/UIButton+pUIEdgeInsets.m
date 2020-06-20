@@ -141,6 +141,10 @@
             
             break;
         }
+        case PEdgeInsetType_Center: {
+            // Do Nothing
+            break;
+        }
         default:
             break;
     }
@@ -152,19 +156,70 @@
     //NSLog(@"title: w %f - %@", self.titleLabel.width, NSStringFromUIEdgeInsets(self.titleEdgeInsets));
 }
 
-
-- (void)updateLeftTypeWidth:(CGFloat)width {
-    if (width > self.width) {
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, self.frame.size.height);
-        CGFloat move = width - self.width;
-        self.titleEdgeInsets = UIEdgeInsetsMake(self.titleEdgeInsets.top, self.titleEdgeInsets.left, self.titleEdgeInsets.bottom, self.titleEdgeInsets.right + move);
-    }
-}
-
-- (void)updateRightTypeWidth:(CGFloat)width {
-    if (width > self.width) {
-        
-        
+/**
+ edgeInsetType  此时 只针对PEdgeInsetType_Top,PEdgeInsetType_Left,PEdgeInsetType_Bottom,PEdgeInsetType_Right
+ left 和 right 使用size的width, top和bottom使用size的heigt, center使用size的width和height.
+ */
+- (void)updateSize:(CGSize)size type:(PEdgeInsetType)edgeInsetType {
+    switch (edgeInsetType) {
+        case PEdgeInsetType_Top:
+        case PEdgeInsetType_TopLeft:
+        case PEdgeInsetType_TopRight:{
+            if (size.height > self.height) {
+                CGFloat move = size.height - self.height;
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, size.height);
+                self.contentEdgeInsets = UIEdgeInsetsMake(self.contentEdgeInsets.top + move, self.contentEdgeInsets.left, self.contentEdgeInsets.bottom, self.contentEdgeInsets.right);
+            }
+            break;
+        }
+        case PEdgeInsetType_Left:
+        case PEdgeInsetType_LeftTop:
+        case PEdgeInsetType_LeftBottom: {
+            if (size.width > self.width) {
+                CGFloat move = size.width - self.width;
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, self.frame.size.height);
+                self.contentEdgeInsets = UIEdgeInsetsMake(self.contentEdgeInsets.top, self.contentEdgeInsets.left +move, self.contentEdgeInsets.bottom, self.contentEdgeInsets.right);
+            }
+            break;
+        }
+        case PEdgeInsetType_Bottom:
+        case PEdgeInsetType_BottomLeft:
+        case PEdgeInsetType_BottomRight: {
+            if (size.height > self.height) {
+                CGFloat move = size.height - self.height;
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, size.height);
+                self.contentEdgeInsets = UIEdgeInsetsMake(self.contentEdgeInsets.top, self.contentEdgeInsets.left, self.contentEdgeInsets.bottom + move, self.contentEdgeInsets.right);
+            }
+            
+            break;
+        }
+        case PEdgeInsetType_Right:
+        case PEdgeInsetType_RightTop:
+        case PEdgeInsetType_RightBottom: {
+            if (size.width > self.width) {
+                CGFloat move = size.width - self.width;
+                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, size.width, self.frame.size.height);
+                self.contentEdgeInsets = UIEdgeInsetsMake(self.contentEdgeInsets.top, self.contentEdgeInsets.left, self.contentEdgeInsets.bottom, self.contentEdgeInsets.right +move);
+            }
+            break;
+        }
+        case PEdgeInsetType_Center: {
+            CGFloat x      = 0;
+            CGFloat y      = 0;
+            CGFloat width  = self.frame.size.width;
+            CGFloat height = self.frame.size.height;
+            if (size.width > self.width) {
+                x = (size.width - self.width)/2;
+                width = size.width;
+            }
+            if (size.height > self.height) {
+                y = (size.height - self.height)/2;
+                height = size.height;
+            }
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, width, height);
+            self.contentEdgeInsets = UIEdgeInsetsMake(self.contentEdgeInsets.top + y, self.contentEdgeInsets.left + x, self.contentEdgeInsets.bottom + y, self.contentEdgeInsets.right+x);
+            break;
+        }
     }
 }
 
