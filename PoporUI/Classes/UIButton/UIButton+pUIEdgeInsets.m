@@ -23,11 +23,12 @@
     }
     
     CGSize textSize;
-    //if (self.titleLabel.attributedText) {
-        //testSize = [self.titleLabel.attributedText sizeWithWidth:maxWidth];
-    //} else {
+    if (self.titleLabel.attributedText) {
+        textSize = [self.titleLabel.attributedText sizeWithWidth:maxWidth];
+    } else {
         textSize = [self.titleLabel.text sizeInFont:self.titleLabel.font width:maxWidth];
-    //}
+    }
+    
     CGFloat labelWidth  = textSize.width;
     CGFloat labelHeight = textSize.height;
     
@@ -60,12 +61,7 @@
                 imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft+imageMove, imageBottom , -imageMove);
             }
             
-            if (labelHeight >= self.titleLabel.font.pointSize*2) {// 多行title
-                labelEdgeInsets   = UIEdgeInsetsMake(textTop, -imageWith, 0, -0);
-            } else { // 单行
-                labelEdgeInsets   = UIEdgeInsetsMake(textTop, -imageWith*2, 0, -imageWith);
-            }
-            
+            labelEdgeInsets   = UIEdgeInsetsMake(textTop, -imageWith, 0, -0);
             break;
         }
         case PEdgeInsetType_Left:
@@ -73,19 +69,21 @@
         case PEdgeInsetType_LeftBottom: {
             self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
             
-            CGFloat imageMove = (self.frame.size.height - imageHeight)/2;
+            CGFloat imageMove = 0;
             // 特别矮的图片, 不太好操作, 高图 不需要修改, 可以自适应
             if (edgeInsetType == PEdgeInsetType_Left) {
-                imageEdgeInsets   = UIEdgeInsetsMake(0, 0, 0, spaceGap/2);
+                //imageMove = 0;
             } else if (edgeInsetType == PEdgeInsetType_LeftTop){
-                imageEdgeInsets   = UIEdgeInsetsMake(-imageMove, 0, imageMove, spaceGap/2);
+                imageMove = -(self.frame.size.height - imageHeight)/2;
             } else {
-                imageEdgeInsets   = UIEdgeInsetsMake(imageMove, 0, -imageMove, spaceGap/2);
+                imageMove = (self.frame.size.height - imageHeight)/2;
             }
             
-            labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap/2, 0, 0);
+            imageEdgeInsets   = UIEdgeInsetsMake(-imageMove, -spaceGap/2, imageMove, spaceGap/2);
+            labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap/2 + spaceGap, 0, -spaceGap/2);
             break;
         }
+       
         case PEdgeInsetType_Bottom:
         case PEdgeInsetType_BottomLeft:
         case PEdgeInsetType_BottomRight: {
@@ -111,33 +109,27 @@
                 imageEdgeInsets   = UIEdgeInsetsMake(imageTop, imageLeft+imageMove, 0 , -imageMove);
             }
             
-            
-            if (labelHeight >= self.titleLabel.font.pointSize*2) { // 多行title
-                labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, textBottom, -0);
-            } else { // 单行
-                labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2, textBottom, -imageWith);
-            }
+            labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, textBottom, -0);
             break;
         }
+       
         case PEdgeInsetType_Right:
         case PEdgeInsetType_RightTop:
         case PEdgeInsetType_RightBottom: {
             self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
-            if (labelHeight >= self.titleLabel.font.pointSize*2) {// 多行title
-                labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, 0, imageWith + spaceGap);
-            } else { // 单行
-                labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith*2 - spaceGap, 0, 0);
-            }
             
-            CGFloat imageMove = (self.frame.size.height - imageHeight)/2;
+            labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, 0, imageWith + spaceGap);
+            
+            CGFloat imageMove = 0;
             // 特别矮的图片, 不太好操作, 高图 不需要修改, 可以自适应
             if (edgeInsetType == PEdgeInsetType_Right) {
-                imageEdgeInsets   = UIEdgeInsetsMake(0, labelWidth +spaceGap, 0, -spaceGap);
+                //imageMove = 0;
             } else if (edgeInsetType == PEdgeInsetType_RightTop){
-                imageEdgeInsets   = UIEdgeInsetsMake(-imageMove, labelWidth +spaceGap, imageMove, -spaceGap);
+                imageMove = -(self.frame.size.height - imageHeight)/2;
             } else {
-                imageEdgeInsets   = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap, -imageMove, -spaceGap);
+                imageMove = (self.frame.size.height - imageHeight)/2;
             }
+            imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth*2 +spaceGap/2, -imageMove, -spaceGap/2);
             
             break;
         }

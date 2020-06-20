@@ -33,9 +33,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range;
 - (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range scale:(CGFloat)scale;
 
-#pragma mark - Size Department
-- (CGSize)sizeWithWidth:(CGFloat)width;
-
 // MARK: 生成具有间隔的att, 例如身份证、电话号码、银行卡、金钱数等
 /**
  *  普通信息
@@ -67,6 +64,13 @@ NS_ASSUME_NONNULL_BEGIN
 *  @param separateNumber 间隔分割间隔, 默认为4, 针对中国数字习惯
 */
 + (NSMutableAttributedString *)separateMoneyText:(NSString *)text bigGap:(NSInteger)bigGap smallGap:(NSInteger)smallGap separateNumber:(NSInteger)separateNumber;
+
+@end
+
+@interface NSAttributedString (pAtt)
+
+#pragma mark - Size Department
+- (CGSize)sizeWithWidth:(CGFloat)width;
 
 @end
 

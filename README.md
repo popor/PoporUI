@@ -66,6 +66,12 @@ UIButton+pLayoutCustom: 取消该class方法.
 摘自:https://github.com/wode0weiyi/MethodChaining
 增加了UIAlertController的链式编程.
 
+1.18
+更新UIButton的UIButton+pUIEdgeInsets.
+
+1.19
+UIButton+pUIEdgeInsets 可以处理NSAttributedString.
+
 ## Author
 
 wangkq, 908891024@qq.com
