@@ -26,46 +26,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     NSLog(@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-    //[self addViews];
     //[self addBt1];
     [self addBt2];
-}
-
-- (void)addViews {
-    UIImage * image = [UIImage imageFromColor:[UIColor purpleColor] size:CGSizeMake(40, 100)];
-    //UIImage * image = [UIImage imageFromColor:[UIColor purpleColor] size:CGSizeMake(240, 50)];
-    //UIImage * image = [UIImage imageNamed:@"icon180"];
-    
-    UIButton * oneBT = ({
-        
-        UIButton * bt = [UIButton buttonWithType:UIButtonTypeCustom];
-        bt.frame =  CGRectMake(60, 160, 200, 60);
-        
-        UIFont * font = [UIFont systemFontOfSize:16];
-        // [bt layoutHorizon_textImage_:image title:@"123321" font:font forState:UIControlStateNormal];
-        
-        [bt setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [bt setBackgroundColor:[UIColor brownColor]];
-        bt.titleLabel.textAlignment = NSTextAlignmentRight;
-        
-        //[bt layoutHorizon_textImage:image title:@"123321" font:bt.titleLabel.font forState:UIControlStateNormal];
-        
-        [self.view addSubview:bt];
-        bt;
-    });
-    return;
-    //
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //        [oneBT layoutHorizon_textImage_:image title:@"12344321" font:oneBT.titleLabel.font forState:UIControlStateNormal];
-    //    });
-    //    //
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //        [oneBT layoutHorizon_textImage_:image title:@"1234554321" font:oneBT.titleLabel.font forState:UIControlStateNormal];
-    //    });
-    //    //
-    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-    //        [oneBT layoutHorizon_textImage_:image title:@"12345677654321" font:oneBT.titleLabel.font forState:UIControlStateNormal];
-    //    });
 }
 
 - (void)addBt1 {
@@ -84,59 +46,58 @@
 - (void)addBt2 {
     
     UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
+    UIImage * testImage = [UIImage imageNamed:@"q切换"];
+    [oneBT setImage:testImage forState:UIControlStateNormal];
     
+    BOOL attTitle = NO;
     {
+        attTitle = NO;
         //[oneBT setTitle:@"测试数据----123456测试数据----123456" forState:UIControlStateNormal];
-        //[oneBT setTitle:@"测试数据测试数据测试数据" forState:UIControlStateNormal];
+        [oneBT setTitle:@"测试数据测试数据测试数据" forState:UIControlStateNormal];
         //[oneBT setTitle:@"测试" forState:UIControlStateNormal];
-        //[oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        //oneBT.titleLabel.font = [UIFont systemFontOfSize:16];
+        [oneBT setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        oneBT.titleLabel.font = [UIFont systemFontOfSize:16];
     }
     
     {
-        NSMutableAttributedString * att = [NSMutableAttributedString new];
-        [att addString:@"测试数据----123456测试数据----123456测试数据----123456" font:[UIFont systemFontOfSize:16] color:[UIColor whiteColor] bgColor:[UIColor clearColor] underline:NO lineSpacing:10 textAlignment:NSTextAlignmentLeft lineBreakMode:NSLineBreakByWordWrapping];
-        
-        [oneBT setAttributedTitle:att forState:UIControlStateNormal];
+//        attTitle = YES;
+//        NSMutableAttributedString * att = [NSMutableAttributedString new];
+//        [att addString:@"测试数据----123456测试数据----123456测试数据----123456" font:[UIFont systemFontOfSize:16] color:[UIColor whiteColor] bgColor:[UIColor clearColor] underline:NO lineSpacing:10 textAlignment:NSTextAlignmentLeft lineBreakMode:NSLineBreakByWordWrapping];
+//
+//        [oneBT setAttributedTitle:att forState:UIControlStateNormal];
     }
 
     
-    oneBT.titleLabel.backgroundColor = [UIColor purpleColor];
+    oneBT.titleLabel.backgroundColor = [UIColor colorWithRed:0.4 green:0.4 blue:0 alpha:0.3];
     oneBT.imageView.contentMode = UIViewContentModeCenter;
     
     [self.view addSubview:oneBT];
     
     // MARK: 1. 设置image和label位置 和间隔
     oneBT.frame =  CGRectMake(30, 120, 20, 20);
-    {   // left 上下
-        //        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 30)] forState:UIControlStateNormal];
-        //        // [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:30 maxWidth:180];
-        //        // [oneBT setEdgeInsetType:PEdgeInsetType_LeftTop spaceGap:140 maxWidth:80];
-        //        [oneBT setEdgeInsetType:PEdgeInsetType_LeftBottom spaceGap:140 maxWidth:80];
-    }
-    {   // right 上下
-        //        [oneBT setImage:[UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(30, 10)] forState:UIControlStateNormal];
-        //        //[oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:140 maxWidth:80];
-        //        [oneBT setEdgeInsetType:PEdgeInsetType_RightTop spaceGap:140 maxWidth:80];
-        //        [oneBT setEdgeInsetType:PEdgeInsetType_RightBottom spaceGap:140 maxWidth:80];
-    }
+    // left 上下
+    // [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:230 titleWidth:80 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_LeftTop spaceGap:40 titleWidth:280 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_LeftBottom spaceGap:20 titleWidth:180 attTitle:attTitle];
+
     
-    {   // top 左右
-        //        UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(40, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
-        //        [oneBT setImage:image forState:UIControlStateNormal];
-        //
-        //        //[oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:100 maxWidth:100];
-        //        //[oneBT setEdgeInsetType:PEdgeInsetType_TopLeft spaceGap:100 maxWidth:100];
-        //        [oneBT setEdgeInsetType:PEdgeInsetType_TopRight spaceGap:100 maxWidth:100];
-    }
-    {   // bottom 左右
-        UIImage * image = [UIImage imageFromColor:[UIColor blueColor] size:CGSizeMake(40, 30) corner:15 borderWidth:5 borderColor:[UIColor yellowColor]];
-        [oneBT setImage:image forState:UIControlStateNormal];
-        
-        //[oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:120 maxWidth:100];
-        //[oneBT setEdgeInsetType:PEdgeInsetType_BottomLeft spaceGap:120 maxWidth:100];
-        [oneBT setEdgeInsetType:PEdgeInsetType_BottomRight spaceGap:120 maxWidth:100];
-    }
+    // right 上下
+     [oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 titleWidth:80 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_RightTop spaceGap:40 titleWidth:80 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_RightBottom spaceGap:20 titleWidth:80 attTitle:attTitle];
+    
+    
+    // top 左右
+    // [oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:30 titleWidth:100 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_TopLeft spaceGap:30 titleWidth:300 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_TopRight spaceGap:20 titleWidth:300 attTitle:attTitle];
+    
+    
+    // bottom 左右
+    // [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:120 titleWidth:400 attTitle:attTitle];
+    // [oneBT setEdgeInsetType:PEdgeInsetType_BottomLeft spaceGap:20 titleWidth:400 attTitle:attTitle];
+    //  [oneBT setEdgeInsetType:PEdgeInsetType_BottomRight spaceGap:120 titleWidth:70 attTitle:attTitle];
+    
     
     
     // MARK: 2. 更新width, height, size等
@@ -159,8 +120,6 @@
         NSLog(@"oneBT.frame: %@", NSStringFromCGRect(oneBT.frame));
     });
     
-    
-    
     {
         UIView * view = [UIView new];
         view.backgroundColor = [UIColor redColor];
@@ -168,7 +127,6 @@
         
         [self.view addSubview:view];
     };
-    
     {
         UIView * view = [UIView new];
         view.backgroundColor = [UIColor redColor];
@@ -176,7 +134,6 @@
         
         [self.view addSubview:view];
     };
-    
 }
 
 @end

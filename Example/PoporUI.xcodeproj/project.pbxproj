@@ -31,6 +31,8 @@
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		996DDB081DBAB23775312153 /* Pods_PoporUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47759FDEC074483E23CF9D40 /* Pods_PoporUI_Example.framework */; };
 		C35E276124824A6C00C7F50D /* ACVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E276024824A6C00C7F50D /* ACVC.m */; };
+		C3F06DC424A5D2D4002BBB28 /* q切换@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F06DC224A5D2D4002BBB28 /* q切换@3x.png */; };
+		C3F06DC524A5D2D4002BBB28 /* q切换@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F06DC324A5D2D4002BBB28 /* q切换@2x.png */; };
 		CC53DD6287A5144A7112BBE3 /* Pods_PoporUI_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF986D6F109BF8BB570484A8 /* Pods_PoporUI_Tests.framework */; };
 		E42831032417CE4D00DDD344 /* LabelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E42830FA2417CE4D00DDD344 /* LabelVC.m */; };
 		E42831042417CE4D00DDD344 /* LabelVCInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = E42830FE2417CE4D00DDD344 /* LabelVCInteractor.m */; };
@@ -95,6 +97,8 @@
 		BED3AEAA95A14B86CA4988CD /* Pods-PoporUI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporUI_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoporUI_Tests/Pods-PoporUI_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C35E275F24824A6C00C7F50D /* ACVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACVC.h; sourceTree = "<group>"; };
 		C35E276024824A6C00C7F50D /* ACVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACVC.m; sourceTree = "<group>"; };
+		C3F06DC224A5D2D4002BBB28 /* q切换@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "q切换@3x.png"; sourceTree = "<group>"; };
+		C3F06DC324A5D2D4002BBB28 /* q切换@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "q切换@2x.png"; sourceTree = "<group>"; };
 		CB223FB7ABFC8E081DA6AD59 /* PoporUI.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PoporUI.podspec; path = ../PoporUI.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DAF6EEEE55744EBD712939C4 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		DBD8EF0880D504CF05FCE213 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 		187D30DC23346C6F00045911 /* BTVC */ = {
 			isa = PBXGroup;
 			children = (
+				C3F06DC324A5D2D4002BBB28 /* q切换@2x.png */,
+				C3F06DC224A5D2D4002BBB28 /* q切换@3x.png */,
 				E45FA6BF23F8E2AF00C5CC45 /* bt@2x.png */,
 				E45FA6BE23F8E2AF00C5CC45 /* CBT.h */,
 				E45FA6C023F8E2AF00C5CC45 /* CBT.m */,
@@ -519,8 +525,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3F06DC524A5D2D4002BBB28 /* q切换@2x.png in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				C3F06DC424A5D2D4002BBB28 /* q切换@3x.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 				E45FA6C123F8E2AF00C5CC45 /* bt@2x.png in Resources */,

@@ -32,12 +32,20 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
 @interface UIButton (pUIEdgeInsets)
 
 /**
- 左右的时候, maxWidth 为tittle的最大宽度
- 上下的时候, maxWidth 为title的最大宽度
- 
- 目前缺少固定宽度的方法.
+ *  设置个人信息
+ *
+ *  @param edgeInsetType image 的位置
+ *  @param spaceGap title 和 image 间距
+ *  @param titleWidth 允许的最大宽度
+ *  @param attTitle 是否使用 setAttributedTitle 方法, 目前发现不同的方法计算的titlt.size数据不一致
  */
-- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth;
+- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle;
+
+/**
+ 允许自定义textSize.
+ */
+- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle textSize:(CGSize)textSize;
+
 
 /**
  edgeInsetType  此时 只针对PEdgeInsetType_Top,PEdgeInsetType_Left,PEdgeInsetType_Bottom,PEdgeInsetType_Right

@@ -12,21 +12,36 @@
 
 @implementation UIButton (pUIEdgeInsets)
 
-- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap maxWidth:(CGFloat)maxWidth {
+/**
+ *  设置个人信息
+ *
+ *  @param edgeInsetType image 的位置
+ *  @param spaceGap title 和 image 间距
+ *  @param titleWidth 允许的最大宽度
+ *  @param attTitle 是否使用 setAttributedTitle 方法, 目前发现不同的方法计算的titlt.size数据不一致
+ */
+- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle {
+    [self setEdgeInsetType:edgeInsetType spaceGap:spaceGap titleWidth:titleWidth attTitle:attTitle textSize:CGSizeZero];
+}
+
+- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle textSize:(CGSize)textSize {
+
+    
     self.titleLabel.numberOfLines = 0;
     CGFloat imageWith   = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
     //NSLog(@"imageWith: %f, imageHeight: %f", imageWith, imageHeight);
     
-    if (maxWidth <= 0) {
-        maxWidth = self.frame.size.width;
+    if (titleWidth <= 0) {
+        titleWidth = self.frame.size.width;
     }
     
-    CGSize textSize;
-    if (self.titleLabel.attributedText) {
-        textSize = [self.titleLabel.attributedText sizeWithWidth:maxWidth];
-    } else {
-        textSize = [self.titleLabel.text sizeInFont:self.titleLabel.font width:maxWidth];
+    if (CGSizeEqualToSize(CGSizeZero, textSize)) {
+        if (attTitle) {
+            textSize = [self.titleLabel.attributedText sizeWithWidth:titleWidth];
+        } else {
+            textSize = [self.titleLabel.text sizeInFont:self.titleLabel.font width:titleWidth];
+        }
     }
     
     CGFloat labelWidth  = textSize.width;
@@ -54,14 +69,15 @@
             CGFloat imageMove = (self.frame.size.width - imageWith)/2;
             
             if (edgeInsetType == PEdgeInsetType_Top) {
-                imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft, imageBottom , 0);
+                imageMove = 0;
             } else if (edgeInsetType == PEdgeInsetType_TopLeft) {
-                imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft-imageMove, imageBottom , imageMove);
+                imageMove = -imageMove;
             } else {
-                imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft+imageMove, imageBottom , -imageMove);
+                //imageMove = imageMove;
             }
             
-            labelEdgeInsets   = UIEdgeInsetsMake(textTop, -imageWith, 0, -0);
+            imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft +imageMove, imageBottom , -imageMove);
+            labelEdgeInsets = UIEdgeInsetsMake(textTop, -imageWith, 0, -0);
             break;
         }
         case PEdgeInsetType_Left:
@@ -79,11 +95,13 @@
                 imageMove = (self.frame.size.height - imageHeight)/2;
             }
             
-            imageEdgeInsets   = UIEdgeInsetsMake(imageMove, -spaceGap/2, -imageMove, spaceGap/2);
-            labelEdgeInsets   = UIEdgeInsetsMake(0, spaceGap/2 + spaceGap, 0, -spaceGap/2);
+            // 现更改image的位移.
+            imageEdgeInsets = UIEdgeInsetsMake(imageMove, 0, -imageMove, spaceGap + labelWidth);
+            // 此时title会跟随image移动到左侧, 然后再让lable右移spaceGap即可
+            labelEdgeInsets = UIEdgeInsetsMake(0, spaceGap, 0, 0);
             break;
         }
-       
+            
         case PEdgeInsetType_Bottom:
         case PEdgeInsetType_BottomLeft:
         case PEdgeInsetType_BottomRight: {
@@ -102,23 +120,22 @@
             
             CGFloat imageMove = (self.frame.size.width - imageWith)/2;
             if (edgeInsetType == PEdgeInsetType_Bottom) {
-                imageEdgeInsets   = UIEdgeInsetsMake(imageTop, imageLeft, 0 , 0);
+                imageMove = 0;
             } else if (edgeInsetType == PEdgeInsetType_BottomLeft) {
-                imageEdgeInsets   = UIEdgeInsetsMake(imageTop, imageLeft-imageMove, 0 , imageMove);
+                imageMove = -imageMove;
             } else {
-                imageEdgeInsets   = UIEdgeInsetsMake(imageTop, imageLeft+imageMove, 0 , -imageMove);
+                //imageMove = imageMove;
             }
             
-            labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, textBottom, -0);
+            imageEdgeInsets = UIEdgeInsetsMake(imageTop, imageLeft+imageMove, 0 , -imageMove);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, textBottom, -0);
             break;
         }
-       
+            
         case PEdgeInsetType_Right:
         case PEdgeInsetType_RightTop:
         case PEdgeInsetType_RightBottom: {
             self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
-            
-            labelEdgeInsets   = UIEdgeInsetsMake(0, -imageWith, 0, imageWith + spaceGap);
             
             CGFloat imageMove = 0;
             // 特别矮的图片, 不太好操作, 高图 不需要修改, 可以自适应
@@ -129,8 +146,9 @@
             } else {
                 imageMove = (self.frame.size.height - imageHeight)/2;
             }
-            imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth*2 +spaceGap/2, -imageMove, -spaceGap/2);
             
+            imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap, -imageMove, 0);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, 0, imageWith + spaceGap);
             break;
         }
         case PEdgeInsetType_Center: {
