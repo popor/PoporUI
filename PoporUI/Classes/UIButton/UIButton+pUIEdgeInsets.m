@@ -77,7 +77,13 @@
             }
             
             imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft +imageMove, imageBottom , -imageMove);
-            labelEdgeInsets = UIEdgeInsetsMake(textTop, -imageWith, 0, -0);
+            
+            CGFloat labelMove = 0;
+            if (imageWith > labelWidth) {
+                labelMove = (imageWith - labelWidth)/2;
+            }
+            
+            labelEdgeInsets = UIEdgeInsetsMake(textTop, -imageWith +labelMove, 0, labelMove);
             break;
         }
         case PEdgeInsetType_Left:
@@ -128,7 +134,13 @@
             }
             
             imageEdgeInsets = UIEdgeInsetsMake(imageTop, imageLeft+imageMove, 0 , -imageMove);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, textBottom, -0);
+            
+            CGFloat labelMove = 0;
+            if (imageWith > labelWidth) {
+                labelMove = (imageWith - labelWidth)/2;
+            }
+            
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith +labelMove, textBottom, labelMove);
             break;
         }
             
