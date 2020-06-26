@@ -46,8 +46,10 @@
 - (void)addBt2 {
     
     UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
-    UIImage * testImage = [UIImage imageNamed:@"q切换"];
-    [oneBT setImage:testImage forState:UIControlStateNormal];
+    
+    //[oneBT setImage:[UIImage imageNamed:@"q切换"] forState:UIControlStateNormal];
+    //[oneBT setImage:testImage forState:UIControlStateNormal];
+    [oneBT setImage:[UIImage imageFromColor:[UIColor colorWithRed:0.3 green:0.8 blue:0.3 alpha:0.3] size:CGSizeMake(30, 30)] forState:UIControlStateNormal];
     
     BOOL attTitle = NO;
     {
@@ -76,27 +78,27 @@
     // MARK: 1. 设置image和label位置 和间隔
     oneBT.frame =  CGRectMake(30, 120, 20, 20);
     // left 上下
-    // [oneBT setEdgeInsetType:PEdgeInsetType_Left spaceGap:230 titleWidth:80 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_LeftTop spaceGap:40 titleWidth:280 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_LeftBottom spaceGap:20 titleWidth:180 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_Left spaceGap:20 titleWidth:80 attTitle:attTitle];
+    // [oneBT setImageInset:PEdgeInsetType_LeftTop spaceGap:40 titleWidth:280 attTitle:attTitle];
+    // [oneBT setImageInset:PEdgeInsetType_LeftBottom spaceGap:20 titleWidth:180 attTitle:attTitle];
 
     
     // right 上下
-     [oneBT setEdgeInsetType:PEdgeInsetType_Right spaceGap:40 titleWidth:80 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_RightTop spaceGap:40 titleWidth:80 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_RightBottom spaceGap:20 titleWidth:80 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_Right spaceGap:40 titleWidth:30 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_RightTop spaceGap:40 titleWidth:30 attTitle:attTitle];
+    // [oneBT setImageInset:PEdgeInsetType_RightBottom spaceGap:20 titleWidth:80 attTitle:attTitle];
     
     
     // top 左右
-    // [oneBT setEdgeInsetType:PEdgeInsetType_Top spaceGap:30 titleWidth:100 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_TopLeft spaceGap:30 titleWidth:300 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_TopRight spaceGap:20 titleWidth:300 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_Top spaceGap:30 titleWidth:50 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_TopLeft spaceGap:30 titleWidth:50 attTitle:attTitle];
+    // [oneBT setImageInset:PEdgeInsetType_TopRight spaceGap:20 titleWidth:300 attTitle:attTitle];
     
     
     // bottom 左右
-    // [oneBT setEdgeInsetType:PEdgeInsetType_Bottom spaceGap:120 titleWidth:400 attTitle:attTitle];
-    // [oneBT setEdgeInsetType:PEdgeInsetType_BottomLeft spaceGap:20 titleWidth:400 attTitle:attTitle];
-    //  [oneBT setEdgeInsetType:PEdgeInsetType_BottomRight spaceGap:120 titleWidth:70 attTitle:attTitle];
+    [oneBT setImageInset:PEdgeInsetType_Bottom spaceGap:20 titleWidth:80 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_BottomLeft spaceGap:20 titleWidth:100 attTitle:attTitle];
+    // [oneBT setImageInset:PEdgeInsetType_BottomRight spaceGap:120 titleWidth:70 attTitle:attTitle];
     
     
     

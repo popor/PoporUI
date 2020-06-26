@@ -11,7 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 /**
- 启用setEdgeInsetType: spaceGap: titleWidth 之后
+ 启用setImageInset: spaceGap: titleWidth 之后
  1.设置 oneBT.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft; 会失效.
  2.之后,不能再随便设置width height等参数. (需要在函数接口设定,是否固定width,height.)
  

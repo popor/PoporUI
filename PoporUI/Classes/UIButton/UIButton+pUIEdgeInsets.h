@@ -32,19 +32,19 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
 @interface UIButton (pUIEdgeInsets)
 
 /**
- *  设置个人信息
+ *  设置 bt 的image的相对位置, 默认为title是居中的. 后期增加左右对齐的方式
  *
  *  @param edgeInsetType image 的位置
  *  @param spaceGap title 和 image 间距
  *  @param titleWidth 允许的最大宽度
  *  @param attTitle 是否使用 setAttributedTitle 方法, 目前发现不同的方法计算的titlt.size数据不一致
  */
-- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle;
+- (void)setImageInset:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle;
 
 /**
  允许自定义textSize.
  */
-- (void)setEdgeInsetType:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle textSize:(CGSize)textSize;
+- (void)setImageInset:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle textSize:(CGSize)textSize;
 
 
 /**
