@@ -11,7 +11,7 @@
 
 #pragma mark - 或许模仿苹果聊天的背景图片
 + (UIImage *)stretchableImage:(UIImage *)image orient:(UIImageOrientation)direction point:(CGPoint)point {
-    UIImage * twoI=[UIImage imageWithCGImage:image.CGImage scale:1.0 orientation:direction];
+    UIImage * twoI=[UIImage imageWithCGImage:image.CGImage scale:[UIScreen mainScreen].scale orientation:direction];
     return [twoI stretchableImageWithLeftCapWidth:point.x topCapHeight:point.y];
     //    if (leftOrRight) {
     //        return [oneI stretchableImageWithLeftCapWidth:thePoint.x
