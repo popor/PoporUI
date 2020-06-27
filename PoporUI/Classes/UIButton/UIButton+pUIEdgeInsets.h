@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
 
 /**
  *  设置 bt 的image的相对位置, 默认为title是居中的. 后期增加左右对齐的方式
+ *  注意同时使用了该接口和masonry 之后, 会导致异常, 英文本接口是根据文字和图片 动态生成 image和label inset的. 多次使用该接口后,同样需要mas_update.
  *
  *  @param edgeInsetType image 的位置
  *  @param spaceGap title 和 image 间距

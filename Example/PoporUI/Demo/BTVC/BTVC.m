@@ -47,9 +47,8 @@
     
     UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    //[oneBT setImage:[UIImage imageNamed:@"q切换"] forState:UIControlStateNormal];
-    //[oneBT setImage:testImage forState:UIControlStateNormal];
-    [oneBT setImage:[UIImage imageFromColor:[UIColor colorWithRed:0.3 green:0.8 blue:0.3 alpha:0.3] size:CGSizeMake(30, 30)] forState:UIControlStateNormal];
+    [oneBT setImage:[UIImage imageNamed:@"q切换"] forState:UIControlStateNormal];
+    //[oneBT setImage:[UIImage imageFromColor:[UIColor colorWithRed:0.3 green:0.8 blue:0.3 alpha:0.3] size:CGSizeMake(30, 30)] forState:UIControlStateNormal];
     
     BOOL attTitle = NO;
     {
@@ -78,7 +77,7 @@
     // MARK: 1. 设置image和label位置 和间隔
     oneBT.frame =  CGRectMake(30, 120, 20, 20);
     // left 上下
-    //[oneBT setImageInset:PEdgeInsetType_Left spaceGap:20 titleWidth:80 attTitle:attTitle];
+    [oneBT setImageInset:PEdgeInsetType_Left spaceGap:20 titleWidth:80 attTitle:attTitle];
     // [oneBT setImageInset:PEdgeInsetType_LeftTop spaceGap:40 titleWidth:280 attTitle:attTitle];
     // [oneBT setImageInset:PEdgeInsetType_LeftBottom spaceGap:20 titleWidth:180 attTitle:attTitle];
 
@@ -96,7 +95,7 @@
     
     
     // bottom 左右
-    [oneBT setImageInset:PEdgeInsetType_Bottom spaceGap:20 titleWidth:80 attTitle:attTitle];
+    //[oneBT setImageInset:PEdgeInsetType_Bottom spaceGap:20 titleWidth:80 attTitle:attTitle];
     //[oneBT setImageInset:PEdgeInsetType_BottomLeft spaceGap:20 titleWidth:100 attTitle:attTitle];
     // [oneBT setImageInset:PEdgeInsetType_BottomRight spaceGap:120 titleWidth:70 attTitle:attTitle];
     
