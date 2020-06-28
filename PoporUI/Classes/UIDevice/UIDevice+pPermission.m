@@ -15,6 +15,9 @@
 #import "UIDevice+pTool.h"
 #import <PoporFoundation/NSString+pTool.h>
 
+#import <UserNotifications/UserNotifications.h>
+//#import <UserNotificationsUI/UserNotificationsUI.h>
+
 static NSString * AlertSysPermissionAlbum__  = @"请在iPhone的“设置-隐私-照片”选项中，允许__访问您的照片。";
 static NSString * AlertSysPermissionCamera__ = @"请在iPhone的“设置-隐私-相机”选项中，允许__访问您的相机。";
 static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私-麦克风”选项中，允许__访问您的麦克风。";
@@ -123,7 +126,7 @@ static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私
     }
 }
 
-+ (void)showAV_OpenSettingsURLWithMessage:(NSString *)message {    
++ (void)showAV_OpenSettingsURLWithMessage:(NSString *)message {
     UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
@@ -147,5 +150,39 @@ static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私
     return [text replaceWithREG:@"__" newString:[UIDevice getAppName]];
 }
 
+
+/**
+ 作者：点火柴的小男孩
+ 链接：https://www.jianshu.com/p/06a77b00739f
+ 来源：简书
+ 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+ */
+// 推送权限
++ (void)isHaveApnsBlock:(UIDevicePermissionBlock)permissionBlock {
+    if (!permissionBlock) {
+        return;
+    }
+    
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
+    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            permissionBlock(NO, settings.authorizationStatus == UNAuthorizationStatusAuthorized);
+        });
+    }];
+    
+#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+    dispatch_async(dispatch_get_main_queue(), ^{
+        permissionBlock(NO, [[UIApplication sharedApplication] isRegisteredForRemoteNotifications]);
+    });
+    
+#else
+    dispatch_async(dispatch_get_main_queue(), ^{
+        UIRemoteNotificationType type = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+        permissionBlock(NO, type != UIRemoteNotificationTypeNone);
+    });
+    
+#endif
+    
+}
 
 @end
