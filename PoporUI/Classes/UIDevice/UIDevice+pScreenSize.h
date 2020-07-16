@@ -16,7 +16,7 @@
 + (BOOL)isIphoneXScreen;
 
 // 获取 系统statusBar Height
-+ (NSInteger)statusBarHeight;
++ (CGFloat)statusBarHeight;
 
 /** iphoneX 底部安全距离 */
 + (CGFloat)safeBottomMargin;

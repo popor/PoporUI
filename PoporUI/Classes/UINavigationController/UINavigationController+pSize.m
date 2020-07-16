@@ -39,10 +39,10 @@
     objc_setAssociatedObject(self, @"barHeight", @(barHeight), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (NSInteger)barHeight {
+- (CGFloat)barHeight {
     if (self._initBarHeight) {
         NSNumber * n = objc_getAssociatedObject(self, @"barHeight");
-        return n.integerValue;
+        return n.floatValue;
     }else{
         self._initBarHeight = YES;
         NSInteger top = [self fetchBarHeight];
