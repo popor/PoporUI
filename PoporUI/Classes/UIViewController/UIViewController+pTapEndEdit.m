@@ -16,6 +16,16 @@
     if (!self.tapEndEditGR) {
         self.tapEndEditGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapEndEditGRAction)];
         
+        /**
+         https://www.jianshu.com/p/ef83864655fe
+         两者同时使用时touchesBegan执行延时touchesCancelled先执行因此看不到触摸效果，
+         通过断点可知touchesBegan是执行了的并且断点后每次点击都会有效果，
+         对UITapGestureRecognizer添加 _tapGR.cancelsTouchesInView = NO;可解决问题
+         
+         假如 view 上面有touchevent 接收的事件, 可以继续进行, 比如YYTextView的点击事件.
+         */
+        self.tapEndEditGR.cancelsTouchesInView = NO;
+        
         [self.view addGestureRecognizer:self.tapEndEditGR];
     }
     

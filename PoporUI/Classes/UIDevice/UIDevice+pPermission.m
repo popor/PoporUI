@@ -126,7 +126,7 @@ static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私
     }
 }
 
-+ (void)showAV_OpenSettingsURLWithMessage:(NSString *)message {
++ (void)showAV_OpenSettingsURLWithMessage:(NSString *)message {    
     UIAlertController * oneAC = [UIAlertController alertControllerWithTitle:@"提示" message:message preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction * cancleAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
