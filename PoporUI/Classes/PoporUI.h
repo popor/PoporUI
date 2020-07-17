@@ -51,7 +51,6 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
 // UINavigationController
 #import "UINavigationController+pRemove.h"
-#import "UINavigationController+pSize.h"
 
 // UIScrollView
 #import "UIScrollView_pPanGR.h"
