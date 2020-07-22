@@ -248,14 +248,32 @@
 }
 
 #pragma mark 【获取人性化容量】
-+ (long long)getAvailableMemorySize {
+// root 用户可用磁盘空间
++ (long long)diskAvailableSize:(BOOL)root {
     struct statfs buf;
     unsigned long long freeSpace = -1;
     if (statfs("/var", &buf) >= 0) {
-        freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bavail);
+        if (root) {
+            freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bfree);
+        } else {
+            freeSpace = (unsigned long long)(buf.f_bsize * buf.f_bavail);
+        }
+        /**
+         可以看到f_bfree和f_bavail两个值的区别，前者是硬盘所有剩余空间，后者为非root用户剩余空间。一般ext3文件系统会给root留5%的独享空间。所以如果计算出来的剩余空间总比df显示的要大，那一定是你用了f_bfree。 5%的空间大小这个值是仅仅给root用的，普通用户用不了，目的是防止文件系统的碎片。
+         */
     }
     return freeSpace;
 }
+
++ (long long)diskTotalSize {
+    struct statfs buf;
+    unsigned long long freeSpace = -1;
+    if (statfs("/var", &buf) >= 0) {
+        freeSpace = (unsigned long long)(buf.f_bsize * buf.f_blocks);
+    }
+    return freeSpace;
+}
+
 
 + (NSString *)getHumanSize:(CGFloat)fileSizeFloat {
     if (fileSizeFloat<1048576.0f) {
