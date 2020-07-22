@@ -66,6 +66,6 @@ typedef NS_ENUM(NSInteger, NetStatusType)
 
 #pragma mark 【获取人性化容量】
 + (NSString *)getHumanSize:(CGFloat)fileSizeFloat;
-
++ (void)fileSize:(NSInteger)fileSize complete:(void (^ __nullable)(CGFloat sizeFloat, NSString * sizeUnit))complete ;
 
 @end

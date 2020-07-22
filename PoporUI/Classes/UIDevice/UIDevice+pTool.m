@@ -276,14 +276,31 @@
 
 
 + (NSString *)getHumanSize:(CGFloat)fileSizeFloat {
-    if (fileSizeFloat<1048576.0f) {
-        return [NSString stringWithFormat:@"%.02fKB", fileSizeFloat/1024.0f];
-    }else if(fileSizeFloat<1073741824.0f) {
-        return [NSString stringWithFormat:@"%.02fMB", fileSizeFloat/1048576.0f];
-    }else {
-        return [NSString stringWithFormat:@"%.02fGB", fileSizeFloat/1073741824.0f];
+    __block NSString * humanSize;
+    [self fileSize:fileSizeFloat complete:^(CGFloat size, NSString *unit) {
+        humanSize = [NSString stringWithFormat:@"%.02f%@", size, unit];
+    }];
+    return humanSize;;
+}
+
++ (void)fileSize:(NSInteger)fileSize complete:(void (^ __nullable)(CGFloat sizeFloat, NSString * sizeUnit))complete {
+    if (!complete) {
+        return;
     }
-    // end.
+    CGFloat KbMax = 1024.0;
+    CGFloat MbMax = 1048576.0;
+    CGFloat GbMax = 1073741824.0;
+    CGFloat TbMax = 1099511627776.0;
+    
+    if (fileSize < MbMax) {
+        complete(fileSize/KbMax, @"KB");
+    } else if (fileSize < GbMax) {
+        complete(fileSize/MbMax, @"MB");
+    } else if (fileSize < TbMax) {
+        complete(fileSize/GbMax, @"GB");
+    } else {
+        complete(fileSize/TbMax, @"TB");
+    }
 }
 
 @end
