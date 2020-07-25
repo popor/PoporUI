@@ -42,6 +42,15 @@
     }
 }
 
++ (UIEdgeInsets)safeAreaInsets {
+    if (@available(iOS 11.0, *)) {
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] delegate] window];
+        return mainWindow.safeAreaInsets;
+    } else {
+        return UIEdgeInsetsZero;
+    }
+}
+
 @end
 
 #pragma mark - macOX

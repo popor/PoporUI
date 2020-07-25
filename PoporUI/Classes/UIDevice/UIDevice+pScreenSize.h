@@ -21,6 +21,8 @@
 /** iphoneX 底部安全距离 */
 + (CGFloat)safeBottomMargin;
 
++ (UIEdgeInsets)safeAreaInsets;
+
 @end
 
 #pragma mark - macOX

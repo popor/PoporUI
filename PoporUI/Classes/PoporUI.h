@@ -42,6 +42,7 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 #import "UIImage+pRead.h"
 #import "UIImage+pSave.h"
 #import "UIImage+pTool.h"
+#import "UIImage+pEffects.h"
 
 // UILabel
 #import "UILabel+pFormat.h"
