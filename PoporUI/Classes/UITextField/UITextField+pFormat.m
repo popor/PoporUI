@@ -50,8 +50,19 @@
 - (void)formatMoneyUnit:(NSInteger)unit gapWitdh:(NSInteger)gapWidth {
     UITextRange *selectedTextRange = self.selectedTextRange;
     
+    NSString * originText = self.text;
     NSMutableAttributedString * att = [NSMutableAttributedString separateMoneyText:self.text bigGap:gapWidth smallGap:0 separateNumber:unit];
     self.attributedText = att;
+    
+    if ([originText hasPrefix:@"."]) { // 假如原文是.开头的, 那么会变为0. 那么此时主动修改selectedTextRange
+        if (selectedTextRange.isEmpty) {
+            UITextPosition *beginning = self.beginningOfDocument;
+            UITextPosition *start     = [self positionFromPosition:beginning offset:2];
+            selectedTextRange    = [self textRangeFromPosition:start toPosition:start];
+        } else {
+            
+        }
+    }
     
     self.selectedTextRange = selectedTextRange;
 }
