@@ -30,7 +30,20 @@
     self.titleLabel.numberOfLines = 0;
     CGFloat imageWith   = self.imageView.image.size.width;
     CGFloat imageHeight = self.imageView.image.size.height;
-    //NSLog(@"imageWith: %f, imageHeight: %f", imageWith, imageHeight);
+    
+    //    {   // 测试数据
+    //        NSLog(@"spaceGap: %f", spaceGap);
+    //        NSLog(@"imageWith: %f, imageHeight: %f", imageWith, imageHeight);
+    //        self.titleLabel.backgroundColor = [UIColor colorWithRed:0.3 green:0.3 blue:0 alpha:0.2];
+    //        self.imageView.backgroundColor  = [UIColor redColor];
+    //        self.backgroundColor            = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.2];
+    //        
+    //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //            NSLog(@"0.5秒后");
+    //            NSLog(@"self.imageView.frame: %@", NSStringFromCGRect(self.imageView.frame));
+    //            NSLog(@"UIButton.frame: %@", NSStringFromCGRect(self.frame));
+    //        });
+    //    }
     
     if (titleWidth <= 0) {
         titleWidth = self.frame.size.width;
@@ -159,8 +172,10 @@
                 imageMove = (self.frame.size.height - imageHeight)/2;
             }
             
-            imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap, -imageMove, 0);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith, 0, imageWith + spaceGap);
+            imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap/2, -imageMove, -spaceGap/2);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith -spaceGap/2, 0, imageWith + spaceGap/2);
+            self.contentEdgeInsets = UIEdgeInsetsMake(0, spaceGap/2, 0, spaceGap/2);
+            
             break;
         }
         case PEdgeInsetType_Center: {
