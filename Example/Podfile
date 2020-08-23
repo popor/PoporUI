@@ -6,11 +6,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 
 # 推荐继续使用 传统的 pod
-source 'https://github.com/CocoaPods/Specs.git'
+#source 'https://github.com/CocoaPods/Specs.git'
 #source 'https://cdn.cocoapods.org/'
 
 target 'PoporUI_Example' do
-  #pod 'PoporFoundation', '1.15'
+  #pod 'PoporFoundation', '1.21'
   
   pod 'PoporUI', :path => '../'
   pod 'Masonry'

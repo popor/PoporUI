@@ -9,7 +9,7 @@
 #import "UILabel+pFormat.h"
 #import <CoreText/CoreText.h>
 #import <PoporFoundation/NSString+pTool.h>
-#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporFoundation/NSMutableAttributedString+pAtt.h>
 
 @implementation UILabel (pFormat)
 

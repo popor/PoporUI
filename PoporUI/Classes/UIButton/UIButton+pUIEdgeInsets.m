@@ -7,7 +7,7 @@
 //
 #import "UIButton+pUIEdgeInsets.h"
 #import <PoporFoundation/NSString+pSize.h>
-#import <PoporFoundation/NSString+pAtt.h>
+#import <PoporFoundation/NSAttributedString+pAtt.h>
 #import "UIView+pExtension.h"
 
 @implementation UIButton (pUIEdgeInsets)

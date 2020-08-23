@@ -25,9 +25,10 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSLog(@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+    //NSLog(@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
     //[self addBt1];
-    [self addBt2];
+    //[self addBt2];
+    [self addBt3];
 }
 
 - (void)addBt1 {
@@ -137,4 +138,38 @@
     };
 }
 
+- (void)addBt3 {
+    UIButton * arrowBT = ({
+        UIButton * oneBT = [UIButton buttonWithType:UIButtonTypeCustom];
+        [oneBT setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        oneBT.titleLabel.font = [UIFont systemFontOfSize:20];
+        
+        [oneBT setTitle:@"TEST" forState:UIControlStateNormal];
+        
+        [oneBT setImage:[UIImage imageNamed:@"arrowRightGray"] forState:UIControlStateNormal];
+        //[oneBT setImage:[UIImage imageNamed:@"q切换"] forState:UIControlStateNormal];
+        
+        [oneBT addTarget:self action:@selector(btAction) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:oneBT];
+        oneBT;
+    });
+    
+    arrowBT.frame = CGRectMake(10, 200, 300, 20);
+    
+    [arrowBT setImageInset:PEdgeInsetType_Right spaceGap:10 titleWidth:100 attTitle:NO];
+    
+//        [arrowBT mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.mas_equalTo(10);
+//            make.top.mas_equalTo(200);
+//            //make.size.mas_equalTo(CGSizeMake(100, 60));
+//        }];
+    
+    [arrowBT updateSize:CGSizeMake(arrowBT.width, 80) type:PEdgeInsetType_Center];
+    [arrowBT updateSize:CGSizeMake(100, 0) type:PEdgeInsetType_Left];
+    [arrowBT updateSize:CGSizeMake(300, 0) type:PEdgeInsetType_Right];
+}
+
+- (void)btAction {
+    NSLog(@"点击");
+}
 @end

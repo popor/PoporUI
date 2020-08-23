@@ -45,6 +45,12 @@ NSDictionary+pSwizzling setSafeObject: forKey: 增加对key的判断
 1.16
 NSAssistant 增加 paraNameOf: equal:, 可以获得某个参数的名称, 避免一部分硬代码.
 
+1.20
+整理NSMutableAttributedString+pAtt 和 NSMutableParagraphStyle+pAtt, 增加了链式编程代码.
+
+1.21
+NSAttributedString (pAtt) 整理
+
 ## Author
 
 popor, 908891024@qq.com

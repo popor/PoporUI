@@ -11,8 +11,8 @@
 
 #import <Masonry/Masonry.h>
 #import "UITextField+pFormat.h"
-#import "UINavigationController+pSize.h"
 #import "UIViewController+pTapEndEdit.h"
+#import <UIDevice+pScreenSize.h>
 
 @interface TfVC ()
 
@@ -110,7 +110,7 @@
             case 0: {
                 phoneTF = oneTF;
                 [oneTF mas_makeConstraints:^(MASConstraintMaker *make) {
-                    make.top.mas_equalTo(self.navigationController.barHeight + 15);
+                    make.top.mas_equalTo([UIDevice statusBarHeight] + 15);
                     make.left.mas_equalTo(16);
                     make.height.mas_equalTo(40);
                     make.right.mas_equalTo(-16);
