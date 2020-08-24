@@ -31,21 +31,26 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
 
 @interface UIButton (pUIEdgeInsets)
 
+// 只包含title的
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title titleWidth:(CGFloat)titleWidth;
+
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
+
+// 只包含att的
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth;
+
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
+
 /**
  *  设置 bt 的image的相对位置, 默认为title是居中的. 后期增加左右对齐的方式
  *
  *  @param edgeInsetType image 的位置
  *  @param spaceGap title 和 image 间距
+ *  @param att attributedText
  *  @param titleWidth 允许的最大宽度
- *  @param attTitle 是否使用 setAttributedTitle 方法, 目前发现不同的方法计算的titlt.size数据不一致
+ *  @param titleSize 允许的预设titleSize, 当titleSize为0的话, 需要依赖titleWidth.
  */
-- (void)setImageInset:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle;
-
-/**
- 允许自定义textSize.
- */
-- (void)setImageInset:(PEdgeInsetType)edgeInsetType spaceGap:(CGFloat)spaceGap titleWidth:(CGFloat)titleWidth attTitle:(BOOL)attTitle textSize:(CGSize)textSize;
-
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
 
 /**
  edgeInsetType  此时 只针对PEdgeInsetType_Top,PEdgeInsetType_Left,PEdgeInsetType_Bottom,PEdgeInsetType_Right

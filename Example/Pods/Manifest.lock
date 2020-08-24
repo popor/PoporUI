@@ -1,45 +1,10 @@
 PODS:
   - Masonry (1.1.0)
-  - PoporFoundation (1.21):
-    - PoporFoundation/KVO (= 1.21)
-    - PoporFoundation/NSArray (= 1.21)
-    - PoporFoundation/NSAssistant (= 1.21)
-    - PoporFoundation/NSData (= 1.21)
-    - PoporFoundation/NSDate (= 1.21)
-    - PoporFoundation/NSDecimalNumber (= 1.21)
-    - PoporFoundation/NSDictionary (= 1.21)
-    - PoporFoundation/NSFileManager (= 1.21)
-    - PoporFoundation/NSObject (= 1.21)
-    - PoporFoundation/NSString (= 1.21)
-    - PoporFoundation/NSTimer (= 1.21)
-    - PoporFoundation/NSURL (= 1.21)
-    - PoporFoundation/Os (= 1.21)
-    - PoporFoundation/Prefix (= 1.21)
-  - PoporFoundation/KVO (1.21)
-  - PoporFoundation/NSArray (1.21):
-    - PoporFoundation/NSObject
-    - PoporFoundation/Prefix
-  - PoporFoundation/NSAssistant (1.21):
-    - PoporFoundation/Os
-    - PoporFoundation/Prefix
-  - PoporFoundation/NSData (1.21)
-  - PoporFoundation/NSDate (1.21):
-    - PoporFoundation/NSString
-  - PoporFoundation/NSDecimalNumber (1.21):
-    - PoporFoundation/NSObject
-  - PoporFoundation/NSDictionary (1.21):
-    - PoporFoundation/NSObject
-    - PoporFoundation/Prefix
-  - PoporFoundation/NSFileManager (1.21)
   - PoporFoundation/NSObject (1.21)
   - PoporFoundation/NSString (1.21):
     - PoporFoundation/NSObject
     - PoporFoundation/Os
     - PoporFoundation/Prefix
-  - PoporFoundation/NSTimer (1.21)
-  - PoporFoundation/NSURL (1.21):
-    - PoporFoundation/NSObject
-    - PoporFoundation/NSString
   - PoporFoundation/Os (1.21)
   - PoporFoundation/Prefix (1.21):
     - PoporFoundation/Os
@@ -93,7 +58,6 @@ PODS:
 
 DEPENDENCIES:
   - Masonry
-  - PoporFoundation (= 1.21)
   - PoporUI (from `../`)
 
 SPEC REPOS:
@@ -110,6 +74,6 @@ SPEC CHECKSUMS:
   PoporFoundation: dc0999db26642dd31bde8629dd641da498713d36
   PoporUI: 6e2d89bbf7c6251f796a6ef8734bbfb22342122b
 
-PODFILE CHECKSUM: 837a09d89648ead168d2a3bf83dd2fce10b5d37d
+PODFILE CHECKSUM: 39f2dd688a81332ebf6c44893fd230d1223699f5
 
 COCOAPODS: 1.10.0.beta.2
