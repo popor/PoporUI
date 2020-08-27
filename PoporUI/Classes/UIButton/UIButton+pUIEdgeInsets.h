@@ -49,6 +49,7 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
  *  @param att attributedText
  *  @param titleWidth 允许的最大宽度
  *  @param titleSize 允许的预设titleSize, 当titleSize为0的话, 需要依赖titleWidth.
+ *  self.titleLabel.numberOfLines 参数需要用户自己设定
  */
 - (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
 

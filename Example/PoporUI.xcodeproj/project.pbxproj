@@ -30,6 +30,8 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		996DDB081DBAB23775312153 /* Pods_PoporUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47759FDEC074483E23CF9D40 /* Pods_PoporUI_Example.framework */; };
+		C3192A9324F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m in Sources */ = {isa = PBXBuildFile; fileRef = C3192A9124F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m */; };
+		C3192A9424F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m in Sources */ = {isa = PBXBuildFile; fileRef = C3192A9224F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m */; };
 		C35E276124824A6C00C7F50D /* ACVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E276024824A6C00C7F50D /* ACVC.m */; };
 		C3DF864524F0BE8000A2F5E7 /* arrowRightGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DF864324F0BE8000A2F5E7 /* arrowRightGray@3x.png */; };
 		C3DF864624F0BE8000A2F5E7 /* arrowRightGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DF864424F0BE8000A2F5E7 /* arrowRightGray@2x.png */; };
@@ -97,6 +99,10 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A60C82044BA79F5C36E301C8 /* Pods-PoporUI_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporUI_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoporUI_Example/Pods-PoporUI_Example.release.xcconfig"; sourceTree = "<group>"; };
 		BED3AEAA95A14B86CA4988CD /* Pods-PoporUI_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoporUI_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PoporUI_Tests/Pods-PoporUI_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C3192A8F24F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionViewCell+simulatorBT.h"; sourceTree = "<group>"; };
+		C3192A9024F7B2C700CECAC3 /* UITableViewCell+simulatorBT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+simulatorBT.h"; sourceTree = "<group>"; };
+		C3192A9124F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionViewCell+simulatorBT.m"; sourceTree = "<group>"; };
+		C3192A9224F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+simulatorBT.m"; sourceTree = "<group>"; };
 		C35E275F24824A6C00C7F50D /* ACVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACVC.h; sourceTree = "<group>"; };
 		C35E276024824A6C00C7F50D /* ACVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACVC.m; sourceTree = "<group>"; };
 		C3DF864324F0BE8000A2F5E7 /* arrowRightGray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRightGray@3x.png"; sourceTree = "<group>"; };
@@ -295,6 +301,7 @@
 		6003F593195388D20070C39A /* Example for PoporUI */ = {
 			isa = PBXGroup;
 			children = (
+				C3192A8D24F7B2C700CECAC3 /* public */,
 				18D2BDF620D8D8E000C91F09 /* other */,
 				18050BD723349F0500BC6A65 /* App */,
 				1828EA45232F2D6400396DDA /* PoporUIVC */,
@@ -342,6 +349,25 @@
 				DBD8EF0880D504CF05FCE213 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		C3192A8D24F7B2C700CECAC3 /* public */ = {
+			isa = PBXGroup;
+			children = (
+				C3192A8E24F7B2C700CECAC3 /* simulatorBT */,
+			);
+			path = public;
+			sourceTree = "<group>";
+		};
+		C3192A8E24F7B2C700CECAC3 /* simulatorBT */ = {
+			isa = PBXGroup;
+			children = (
+				C3192A8F24F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.h */,
+				C3192A9124F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m */,
+				C3192A9024F7B2C700CECAC3 /* UITableViewCell+simulatorBT.h */,
+				C3192A9224F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m */,
+			);
+			path = simulatorBT;
 			sourceTree = "<group>";
 		};
 		C35E275E24824A5100C7F50D /* ACVC */ = {
@@ -621,8 +647,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3192A9424F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m in Sources */,
 				187D30DF23346C8C00045911 /* BTVC.m in Sources */,
 				1828EA5D232F2F8700396DDA /* VC_UITextField+pPlaceholder.m in Sources */,
+				C3192A9324F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m in Sources */,
 				E42831042417CE4D00DDD344 /* LabelVCInteractor.m in Sources */,
 				1828EA58232F2D9100396DDA /* PoporUIVCInteractor.m in Sources */,
 				6003F59E195388D20070C39A /* PoporUIAppDelegate.m in Sources */,

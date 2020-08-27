@@ -47,7 +47,6 @@
 #import "UITextView_pPasteImage.h"
 #import "UITextView_pPlaceHolder.h"
 #import "UIView+pExtension.h"
-#import "UIView+pTool.h"
 #import "UIViewController+pAC.h"
 #import "UIViewController+pLeeBase.h"
 #import "UIViewController+pNcBar.h"

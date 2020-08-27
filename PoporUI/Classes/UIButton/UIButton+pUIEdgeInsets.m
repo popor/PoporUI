@@ -41,7 +41,6 @@
  */
 - (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize
 {
-    self.titleLabel.numberOfLines = 0;
     CGFloat imageWith   = image.size.width;
     CGFloat imageHeight = image.size.height;
     
@@ -139,9 +138,11 @@
             }
             
             // 现更改image的位移.
-            imageEdgeInsets = UIEdgeInsetsMake(imageMove, 0, -imageMove, spaceGap + labelWidth);
+            imageEdgeInsets = UIEdgeInsetsMake(imageMove, spaceGap/2, -imageMove, spaceGap +labelWidth -spaceGap/2);
             // 此时title会跟随image移动到左侧, 然后再让lable右移spaceGap即可
+            // labelEdgeInsets = UIEdgeInsetsMake(0, spaceGap/2, 0, spaceGap/2); // 曾经一度以为需要这样编写
             labelEdgeInsets = UIEdgeInsetsMake(0, spaceGap, 0, 0);
+            
             break;
         }
             
@@ -198,7 +199,8 @@
             }
             
             imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap/2, -imageMove, -spaceGap/2);
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith -spaceGap/2, 0, imageWith + spaceGap/2);
+            //labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith -spaceGap/2, 0, imageWith + spaceGap/2); // 曾经一度以为需要这样编写, 但是在自定义textSize的时候, 发现布局不合适
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith -spaceGap, 0, imageWith);
             self.contentEdgeInsets = UIEdgeInsetsMake(0, spaceGap/2, 0, spaceGap/2);
             
             break;
