@@ -33,6 +33,7 @@
 		C3192A9324F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m in Sources */ = {isa = PBXBuildFile; fileRef = C3192A9124F7B2C700CECAC3 /* UICollectionViewCell+simulatorBT.m */; };
 		C3192A9424F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m in Sources */ = {isa = PBXBuildFile; fileRef = C3192A9224F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m */; };
 		C35E276124824A6C00C7F50D /* ACVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C35E276024824A6C00C7F50D /* ACVC.m */; };
+		C3B3CD4A250F0F42000836B3 /* NcBarLineVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B3CD49250F0F42000836B3 /* NcBarLineVC.m */; };
 		C3DF864524F0BE8000A2F5E7 /* arrowRightGray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DF864324F0BE8000A2F5E7 /* arrowRightGray@3x.png */; };
 		C3DF864624F0BE8000A2F5E7 /* arrowRightGray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DF864424F0BE8000A2F5E7 /* arrowRightGray@2x.png */; };
 		C3F06DC424A5D2D4002BBB28 /* q切换@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3F06DC224A5D2D4002BBB28 /* q切换@3x.png */; };
@@ -105,6 +106,8 @@
 		C3192A9224F7B2C700CECAC3 /* UITableViewCell+simulatorBT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+simulatorBT.m"; sourceTree = "<group>"; };
 		C35E275F24824A6C00C7F50D /* ACVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACVC.h; sourceTree = "<group>"; };
 		C35E276024824A6C00C7F50D /* ACVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACVC.m; sourceTree = "<group>"; };
+		C3B3CD48250F0F42000836B3 /* NcBarLineVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NcBarLineVC.h; sourceTree = "<group>"; };
+		C3B3CD49250F0F42000836B3 /* NcBarLineVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NcBarLineVC.m; sourceTree = "<group>"; };
 		C3DF864324F0BE8000A2F5E7 /* arrowRightGray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRightGray@3x.png"; sourceTree = "<group>"; };
 		C3DF864424F0BE8000A2F5E7 /* arrowRightGray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowRightGray@2x.png"; sourceTree = "<group>"; };
 		C3F06DC224A5D2D4002BBB28 /* q切换@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "q切换@3x.png"; sourceTree = "<group>"; };
@@ -379,6 +382,15 @@
 			path = ACVC;
 			sourceTree = "<group>";
 		};
+		C3B3CD47250F0F2A000836B3 /* NcBarLineVC */ = {
+			isa = PBXGroup;
+			children = (
+				C3B3CD48250F0F42000836B3 /* NcBarLineVC.h */,
+				C3B3CD49250F0F42000836B3 /* NcBarLineVC.m */,
+			);
+			path = NcBarLineVC;
+			sourceTree = "<group>";
+		};
 		E42830F22417CE1B00DDD344 /* LabelVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +438,7 @@
 				187D30DC23346C6F00045911 /* BTVC */,
 				E42830F22417CE1B00DDD344 /* LabelVC */,
 				E42831072418739900DDD344 /* TfVC */,
+				C3B3CD47250F0F2A000836B3 /* NcBarLineVC */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -661,6 +674,7 @@
 				E45FA6C223F8E2AF00C5CC45 /* CBT.m in Sources */,
 				E4283119241873B900DDD344 /* TfVC.m in Sources */,
 				E42831032417CE4D00DDD344 /* LabelVC.m in Sources */,
+				C3B3CD4A250F0F42000836B3 /* NcBarLineVC.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 				E428311A241873B900DDD344 /* TfVCInteractor.m in Sources */,
 				C35E276124824A6C00C7F50D /* ACVC.m in Sources */,

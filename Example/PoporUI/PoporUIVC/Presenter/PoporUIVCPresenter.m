@@ -13,6 +13,8 @@
 #import "LabelVC.h"
 #import "TfVC.h"
 #import "ACVC.h"
+#import "NcBarLineVC.h"
+
 
 @interface PoporUIVCPresenter ()
 
@@ -53,7 +55,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    return 6;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -99,6 +101,10 @@
             cell.textLabel.text = [NSString stringWithFormat:@"%li : UIAlertControler", indexPath.row];
             break;
         }
+        case 5: {
+            cell.textLabel.text = [NSString stringWithFormat:@"%li : NC 导航栏底部线条", indexPath.row];
+            break;
+        }
             
         default:
             break;
@@ -133,6 +139,10 @@
         }
         case 4: {
             [self.view.vc.navigationController pushViewController:[ACVC new] animated:YES];
+            break;
+        }
+        case 5: {
+            [self.view.vc.navigationController pushViewController:[NcBarLineVC new] animated:YES];
             break;
         }
             

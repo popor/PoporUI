@@ -37,6 +37,7 @@
 #import "UIScrollView_pPanGR.h"
 #import "UITableView+pTransitionCoordinator.h"
 #import "UITableViewCell+pSetSeparatorType.h"
+#import "TextField_pInput.h"
 #import "UITextField+pFormat.h"
 #import "UITextField+pInsets.h"
 #import "UITextField+pMaxLength.h"
@@ -50,6 +51,7 @@
 #import "UIViewController+pAC.h"
 #import "UIViewController+pLeeBase.h"
 #import "UIViewController+pNcBar.h"
+#import "UIViewController+pNcBarBottomLine.h"
 #import "UIViewController+pTapEndEdit.h"
 
 FOUNDATION_EXPORT double PoporUIVersionNumber;
