@@ -8,7 +8,6 @@
 
 #import "UIDevice+pPermission.h"
 
-#import <AssetsLibrary/AssetsLibrary.h>
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
 

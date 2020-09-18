@@ -72,6 +72,9 @@ UIButton+pLayoutCustom: 取消该class方法.
 1.19
 UIButton+pUIEdgeInsets 可以处理NSAttributedString.
 
+1.22
+适配xcode12, ios和macOS兼容的问题.
+
 ## Author
 
 wangkq, 908891024@qq.com

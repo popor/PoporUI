@@ -7,10 +7,19 @@
 //
 #import "UIDevice+pSaveImage.h"
 
-#import <AssetsLibrary/AssetsLibrary.h>
+//#import <AssetsLibrary/AssetsLibrary.h>
+
+// UI系列
 #import <Photos/Photos.h>
 #import "UIDevice+pTool.h"
 #import "IToastPTool.h"
+
+#if !TARGET_OS_MACCATALYST
+#import <AssetsLibrary/AssetsLibrary.h>
+
+#else
+
+#endif
 
 @implementation UIDevice (pSaveImage)
 
@@ -19,6 +28,8 @@
         AlertToastTitle(@"图片为空");
         return;
     }
+    
+#if !TARGET_OS_MACCATALYST
     ALAssetsLibrary *assetLib = [[ALAssetsLibrary alloc] init];
     [assetLib writeImageDataToSavedPhotosAlbum:imageData metadata:nil completionBlock:^(NSURL *assetURL, NSError *error) {
         if (isShowAlert) {
@@ -31,6 +42,10 @@
             });
         }
     }];
+#else
+    AlertToastTitle(@"无法为macOS保存图片");
+#endif
+    
 }
 
 + (void)saveImageToPhotos:(UIImage *)image showAlert:(BOOL)isShowAlert {
