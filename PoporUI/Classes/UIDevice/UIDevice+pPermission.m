@@ -161,27 +161,33 @@ static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私
     if (!permissionBlock) {
         return;
     }
-    
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_10_0
-    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings) {
+    /**
+     pod 警告 需要 @available 和 __IPHONE_OS_VERSION_MAX_ALLOWED 混合使用.
+     pod sdk最低使用版本低于某个版本需要用 @available, 高于某个版本, 需要用宏.
+     pod 代码能识别@available, 系统能识别宏, 能通过编译即可.
+     */
+    if (@available(iOS 10, *)) {
+        [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings *settings) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                permissionBlock(NO, settings.authorizationStatus == UNAuthorizationStatusAuthorized);
+            });
+        }];
+    } else {
+        
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
         dispatch_async(dispatch_get_main_queue(), ^{
-            permissionBlock(NO, settings.authorizationStatus == UNAuthorizationStatusAuthorized);
+            permissionBlock(NO, [[UIApplication sharedApplication] isRegisteredForRemoteNotifications]);
         });
-    }];
-    
-#elif __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
-    dispatch_async(dispatch_get_main_queue(), ^{
-        permissionBlock(NO, [[UIApplication sharedApplication] isRegisteredForRemoteNotifications]);
-    });
-    
+        
 #else
-    dispatch_async(dispatch_get_main_queue(), ^{
-        UIRemoteNotificationType type = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
-        permissionBlock(NO, type != UIRemoteNotificationTypeNone);
-    });
-    
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIRemoteNotificationType type = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+            permissionBlock(NO, type != UIRemoteNotificationTypeNone);
+        });
+        
 #endif
-    
+        
+    }
 }
 
 @end

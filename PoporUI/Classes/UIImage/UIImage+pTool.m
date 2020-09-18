@@ -33,7 +33,7 @@
       @"414x736" : @"LaunchImage-800-Portrait-736h"
       };
     
-    NSString * key = [NSString stringWithFormat:@"%lix%li", (NSInteger)[UIScreen mainScreen].bounds.size.width, (NSInteger)[UIScreen mainScreen].bounds.size.height];
+    NSString * key = [NSString stringWithFormat:@"%lix%li", (long)[UIScreen mainScreen].bounds.size.width, (long)[UIScreen mainScreen].bounds.size.height];
     return [dic objectForKey:key];
 }
 

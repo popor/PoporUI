@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 typedef NS_ENUM(NSInteger, NetStatusType)
 {
     NetStatusType_nil,
@@ -69,3 +71,5 @@ typedef NS_ENUM(NSInteger, NetStatusType)
 + (void)fileSize:(NSInteger)fileSize complete:(void (^ __nullable)(CGFloat sizeFloat, NSString * sizeUnit))complete ;
 
 @end
+
+NS_ASSUME_NONNULL_END
