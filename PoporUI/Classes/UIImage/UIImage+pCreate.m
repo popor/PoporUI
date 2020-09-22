@@ -135,12 +135,15 @@
     UIGraphicsBeginImageContextWithOptions(size, NO, scale);
     
     UIBezierPath * path;
-    if (corner>0 && borderWidth>0) {
+    if (corner>0 || borderWidth>0) {
         // 添加圆到path
         CGRect pathRect = CGRectMake(0, 0, size.width, size.height);
         path = [UIBezierPath bezierPathWithRoundedRect:pathRect cornerRadius:corner-borderWidth];
         [path addClip]; // 超出边界的,都会被忽略掉
-        [path setLineWidth:borderWidth];
+        
+        if (borderColor > 0) {
+            [path setLineWidth:borderWidth];
+        }
     }
     
     if (path) {
