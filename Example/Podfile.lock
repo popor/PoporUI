@@ -8,50 +8,50 @@ PODS:
   - PoporFoundation/Os (1.21)
   - PoporFoundation/Prefix (1.21):
     - PoporFoundation/Os
-  - PoporUI (1.23):
-    - PoporUI/IToast (= 1.23)
-    - PoporUI/ProgressView (= 1.23)
-    - PoporUI/Response (= 1.23)
-    - PoporUI/UIAlertController (= 1.23)
-    - PoporUI/UIButton (= 1.23)
-    - PoporUI/UIDevice (= 1.23)
-    - PoporUI/UIImage (= 1.23)
-    - PoporUI/UILabel (= 1.23)
-    - PoporUI/UINavigationController (= 1.23)
-    - PoporUI/UIScrollView (= 1.23)
-    - PoporUI/UITableView (= 1.23)
-    - PoporUI/UITextField (= 1.23)
-    - PoporUI/UITextView (= 1.23)
-    - PoporUI/UIView (= 1.23)
-    - PoporUI/UIViewController (= 1.23)
-  - PoporUI/IToast (1.23):
+  - PoporUI (1.24):
+    - PoporUI/IToast (= 1.24)
+    - PoporUI/ProgressView (= 1.24)
+    - PoporUI/Response (= 1.24)
+    - PoporUI/UIAlertController (= 1.24)
+    - PoporUI/UIButton (= 1.24)
+    - PoporUI/UIDevice (= 1.24)
+    - PoporUI/UIImage (= 1.24)
+    - PoporUI/UILabel (= 1.24)
+    - PoporUI/UINavigationController (= 1.24)
+    - PoporUI/UIScrollView (= 1.24)
+    - PoporUI/UITableView (= 1.24)
+    - PoporUI/UITextField (= 1.24)
+    - PoporUI/UITextView (= 1.24)
+    - PoporUI/UIView (= 1.24)
+    - PoporUI/UIViewController (= 1.24)
+  - PoporUI/IToast (1.24):
     - PoporFoundation/NSString
-  - PoporUI/ProgressView (1.23)
-  - PoporUI/Response (1.23)
-  - PoporUI/UIAlertController (1.23)
-  - PoporUI/UIButton (1.23):
+  - PoporUI/ProgressView (1.24)
+  - PoporUI/Response (1.24)
+  - PoporUI/UIAlertController (1.24)
+  - PoporUI/UIButton (1.24):
     - PoporFoundation/NSObject
     - PoporFoundation/NSString
     - PoporFoundation/Prefix
     - PoporUI/UIImage
     - PoporUI/UIView
-  - PoporUI/UIDevice (1.23):
+  - PoporUI/UIDevice (1.24):
     - PoporFoundation/NSString
     - PoporUI/IToast
-  - PoporUI/UIImage (1.23)
-  - PoporUI/UILabel (1.23):
+  - PoporUI/UIImage (1.24)
+  - PoporUI/UILabel (1.24):
     - PoporFoundation/NSObject
     - PoporFoundation/NSString
     - PoporUI/UIView
-  - PoporUI/UINavigationController (1.23)
-  - PoporUI/UIScrollView (1.23)
-  - PoporUI/UITableView (1.23)
-  - PoporUI/UITextField (1.23):
+  - PoporUI/UINavigationController (1.24)
+  - PoporUI/UIScrollView (1.24)
+  - PoporUI/UITableView (1.24)
+  - PoporUI/UITextField (1.24):
     - PoporFoundation/NSObject
     - PoporFoundation/NSString
-  - PoporUI/UITextView (1.23)
-  - PoporUI/UIView (1.23)
-  - PoporUI/UIViewController (1.23):
+  - PoporUI/UITextView (1.24)
+  - PoporUI/UIView (1.24)
+  - PoporUI/UIViewController (1.24):
     - PoporFoundation/NSObject
     - PoporFoundation/NSString
     - PoporFoundation/Prefix
@@ -72,7 +72,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: dc0999db26642dd31bde8629dd641da498713d36
-  PoporUI: b0c9a280b3a88e1aa67cc3cac5aa1a7207234150
+  PoporUI: 877cf96ca10679d29094df5e91aa9a41442a3744
 
 PODFILE CHECKSUM: 39f2dd688a81332ebf6c44893fd230d1223699f5
 
