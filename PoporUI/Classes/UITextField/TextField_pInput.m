@@ -171,7 +171,7 @@ static NSString * PicIdcardNumbers = @"0123456789Xx";
             // 使用延迟事件会在切换TF的时候 出现异常
             dispatch_async(dispatch_get_main_queue(), ^{
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [textField formatChinaPhone];
+                    [textField formatChinaPhoneGapWidth:self.textGapUnit];
                 });
             });
             break;
