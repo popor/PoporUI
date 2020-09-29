@@ -52,10 +52,10 @@
     CGRect rect;
     
     // UIEdgeInsetsZero的情况
-    rect = CGRectMake( borderWidth*0.5 + borderInset.left, // 加上左边的set
-                      borderWidth*0.5 + borderInset.top,  // 加上上面的set
-                      w - borderWidth - borderInset.left - borderInset.right,   // 减去左边右边的set
-                      h - borderWidth - borderInset.top  - borderInset.bottom);// 减去上边下边的set
+    rect = CGRectMake(borderWidth*scale/2.0 + borderInset.left, // 加上左边的set
+                      borderWidth*scale/2.0 + borderInset.top,  // 加上上面的set
+                      w - borderWidth*scale - borderInset.left - borderInset.right,   // 减去左边右边的set
+                      h - borderWidth*scale - borderInset.top  - borderInset.bottom);// 减去上边下边的set
     
     CGFloat radii = corner-borderWidth;
     path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
@@ -137,8 +137,8 @@
     UIBezierPath * path;
     if (corner>0 || borderWidth>0) {
         // 添加圆到path
-        CGRect pathRect = CGRectMake(0, 0, size.width, size.height);
-        path = [UIBezierPath bezierPathWithRoundedRect:pathRect cornerRadius:corner-borderWidth];
+        CGRect pathRect = CGRectMake(borderWidth*scale/2.0, borderWidth*scale/2.0, size.width - borderWidth*scale, size.height - borderWidth*scale);
+        path = [UIBezierPath bezierPathWithRoundedRect:pathRect cornerRadius:corner-borderWidth*scale];
         [path addClip]; // 超出边界的,都会被忽略掉
         
         if (borderColor > 0) {
