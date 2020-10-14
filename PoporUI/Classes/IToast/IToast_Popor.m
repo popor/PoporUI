@@ -136,7 +136,7 @@ static iToastSettingsPopor *sharedSettings = nil;
                 point = CGPointMake(window.frame.size.width / 2, window.frame.size.height - 45);
             } else if (theSettings.gravity == iToastGravityPoporCenter) {
 #pragma mark - 王凯庆更改,假如键盘弹开了,那么在键盘上面.
-                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - self.itool.keyboardH)/2);
+                point = CGPointMake(window.frame.size.width/2, (window.frame.size.height - MAX(self.itool.keyboardH, self.itool.bottom))/2);
             } else {
                 point = theSettings.postition;
             }
