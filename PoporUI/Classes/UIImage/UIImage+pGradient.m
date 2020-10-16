@@ -40,7 +40,7 @@
     for(UIColor *c in colors) {
         [ar addObject:(id)c.CGColor];
     }
-    UIGraphicsBeginImageContextWithOptions(bounds.size, YES, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(bounds.size, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
     CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors lastObject] CGColor]);
