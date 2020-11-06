@@ -41,7 +41,7 @@
  */
 - (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize
 {
-    CGFloat imageWith   = image.size.width;
+    CGFloat imageWidth  = image.size.width;
     CGFloat imageHeight = image.size.height;
     
     
@@ -79,7 +79,7 @@
     if (CGSizeEqualToSize(CGSizeZero, titleSize) || CGSizeEqualToSize(CGSizeZero, image.size) ) {
         spaceGap = 0;
     }
-    
+    titleSize = CGSizeMake(ceil(titleSize.width), ceil(titleSize.height));
     CGFloat labelWidth  = titleSize.width;
     CGFloat labelHeight = titleSize.height;
     
@@ -90,19 +90,19 @@
         case PEdgeInsetType_Top:
         case PEdgeInsetType_TopLeft:
         case PEdgeInsetType_TopRight:{
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWidth), imageHeight + labelHeight + spaceGap);
             //NSLog(@"self.bounds: %@", NSStringFromCGRect(self.bounds));
             
             CGFloat imageBottom = self.bounds.size.height - imageHeight;
             CGFloat imageLeft;
-            if (imageWith > labelWidth) { // 图片宽度大于文字, 为零即可.
+            if (imageWidth > labelWidth) { // 图片宽度大于文字, 为零即可.
                 imageLeft =  0;
             } else {
-                imageLeft =  (labelWidth - imageWith)/2.0;
+                imageLeft =  (labelWidth - imageWidth)/2.0;
             }
             CGFloat textTop = self.bounds.size.height - labelHeight;
             
-            CGFloat imageMove = (self.frame.size.width - imageWith)/2;
+            CGFloat imageMove = (self.frame.size.width - imageWidth)/2;
             
             if (edgeInsetType == PEdgeInsetType_Top) {
                 imageMove = 0;
@@ -115,17 +115,17 @@
             imageEdgeInsets = UIEdgeInsetsMake(0, imageLeft +imageMove, imageBottom , -imageMove);
             
             CGFloat labelMove = 0;
-            if (imageWith > labelWidth) {
-                labelMove = (imageWith - labelWidth)/2;
+            if (imageWidth > labelWidth) {
+                labelMove = (imageWidth - labelWidth)/2;
             }
             
-            labelEdgeInsets = UIEdgeInsetsMake(textTop, -imageWith +labelMove, 0, labelMove);
+            labelEdgeInsets = UIEdgeInsetsMake(textTop, -imageWidth +labelMove, 0, labelMove);
             break;
         }
         case PEdgeInsetType_Left:
         case PEdgeInsetType_LeftTop:
         case PEdgeInsetType_LeftBottom: {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWidth +spaceGap, MAX(imageHeight, labelHeight));
             
             CGFloat imageMove = 0;
             // 特别矮的图片, 不太好操作, 高图 不需要修改, 可以自适应
@@ -149,20 +149,20 @@
         case PEdgeInsetType_Bottom:
         case PEdgeInsetType_BottomLeft:
         case PEdgeInsetType_BottomRight: {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWith), imageHeight + labelHeight + spaceGap);
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, MAX(labelWidth, imageWidth), imageHeight + labelHeight + spaceGap);
             //NSLog(@"self.bounds: %@", NSStringFromCGRect(self.bounds));
             //NSLog(@"lable.size: %@", NSStringFromCGSize(testSize));
             
             CGFloat imageLeft;
-            if (imageWith > labelWidth) { // 图片宽度大于文字, 为零即可.
+            if (imageWidth > labelWidth) { // 图片宽度大于文字, 为零即可.
                 imageLeft =  0;
             } else {
-                imageLeft =  (labelWidth - imageWith)/2.0;
+                imageLeft =  (labelWidth - imageWidth)/2.0;
             }
             CGFloat textBottom = self.bounds.size.height - labelHeight;
             CGFloat imageTop   = self.bounds.size.height - imageHeight;
             
-            CGFloat imageMove = (self.frame.size.width - imageWith)/2;
+            CGFloat imageMove = (self.frame.size.width - imageWidth)/2;
             if (edgeInsetType == PEdgeInsetType_Bottom) {
                 imageMove = 0;
             } else if (edgeInsetType == PEdgeInsetType_BottomLeft) {
@@ -174,18 +174,18 @@
             imageEdgeInsets = UIEdgeInsetsMake(imageTop, imageLeft+imageMove, 0 , -imageMove);
             
             CGFloat labelMove = 0;
-            if (imageWith > labelWidth) {
-                labelMove = (imageWith - labelWidth)/2;
+            if (imageWidth > labelWidth) {
+                labelMove = (imageWidth - labelWidth)/2;
             }
             
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith +labelMove, textBottom, labelMove);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWidth +labelMove, textBottom, labelMove);
             break;
         }
             
         case PEdgeInsetType_Right:
         case PEdgeInsetType_RightTop:
         case PEdgeInsetType_RightBottom: {
-            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWith +spaceGap, MAX(imageHeight, labelHeight));
+            self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, labelWidth +imageWidth +spaceGap, MAX(imageHeight, labelHeight));
             //NSLog(@"self.frame: %@", NSStringFromCGRect(self.frame));
             
             CGFloat imageMove = 0;
@@ -200,7 +200,7 @@
             
             imageEdgeInsets = UIEdgeInsetsMake(imageMove, labelWidth +spaceGap/2, -imageMove, -spaceGap/2);
             //labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith -spaceGap/2, 0, imageWith + spaceGap/2); // 曾经一度以为需要这样编写, 但是在自定义textSize的时候, 发现布局不合适
-            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWith -spaceGap, 0, imageWith);
+            labelEdgeInsets = UIEdgeInsetsMake(0, -imageWidth -spaceGap, 0, imageWidth);
             self.contentEdgeInsets = UIEdgeInsetsMake(0, spaceGap/2, 0, spaceGap/2);
             
             break;
