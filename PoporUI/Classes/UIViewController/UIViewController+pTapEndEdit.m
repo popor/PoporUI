@@ -49,6 +49,10 @@
     [self.view endEditing:YES];
     [self.view becomeFirstResponder];
     self.tapEndEditGR.enabled = NO;
+    
+    if ([self respondsToSelector:@selector(tapEndEditGRActionExtra)]) {
+        [self tapEndEditGRActionExtra];
+    }
 }
 
 #pragma mark - 键盘通知

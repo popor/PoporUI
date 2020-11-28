@@ -19,4 +19,7 @@
 // 回调
 - (void)keyboardFrameChanged:(CGRect)rect duration:(CGFloat)duration show:(BOOL)show;
 
+// 点击view的额外接口, 因为输入框有时候不属于vc, 而属于nc.bar
+- (void)tapEndEditGRActionExtra;
+
 @end
