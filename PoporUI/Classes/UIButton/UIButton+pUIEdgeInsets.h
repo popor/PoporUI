@@ -31,15 +31,18 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
 
 @interface UIButton (pUIEdgeInsets)
 
+// !!!: 多次修改的话, 需要重置contentEdgeInsets, 不然会造成第二次以后显示异常.
+// button.contentEdgeInsets = UIEdgeInsetsZero;
+
 // 只包含title的
 - (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title titleWidth:(CGFloat)titleWidth;
 
 - (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
 
 // 只包含att的
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth;
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth;
 
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
 
 /**
  *  设置 bt 的image的相对位置, 默认为title是居中的. 后期增加左右对齐的方式
@@ -51,7 +54,9 @@ typedef NS_ENUM(NSInteger, PEdgeInsetType) {
  *  @param titleSize 允许的预设titleSize, 当titleSize为0的话, 需要依赖titleWidth.
  *  self.titleLabel.numberOfLines 参数需要用户自己设定
  */
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize;
+
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize editTitleSize:(CGSize (^ __nullable)(CGSize titleSize))editTitleSizeBlock;
 
 /**
  edgeInsetType  此时 只针对PEdgeInsetType_Top,PEdgeInsetType_Left,PEdgeInsetType_Bottom,PEdgeInsetType_Right

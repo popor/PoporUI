@@ -22,11 +22,11 @@
 }
 
 // 只包含att的
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:nil att:att titleWidth:titleWidth titleSize:CGSizeZero];
 }
 
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:nil att:att titleWidth:titleWidth titleSize:titleSize];
 }
 
@@ -39,7 +39,13 @@
  *  @param titleWidth 允许的最大宽度
  *  @param titleSize 允许的预设titleSize, 当titleSize为0的话, 需要依赖titleWidth.
  */
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize
+
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
+    [self setEdgeType:edgeInsetType gap:spaceGap image:image title:title att:att titleWidth:titleWidth titleSize:titleSize editTitleSize:nil];
+}
+
+
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize editTitleSize:(CGSize (^ __nullable)(CGSize titleSize))editTitleSizeBlock
 {
     CGFloat imageWidth  = image.size.width;
     CGFloat imageHeight = image.size.height;
@@ -80,6 +86,11 @@
         spaceGap = 0;
     }
     titleSize = CGSizeMake(ceil(titleSize.width), ceil(titleSize.height));
+    
+    if (editTitleSizeBlock) {
+        titleSize = editTitleSizeBlock(titleSize);
+    }
+    
     CGFloat labelWidth  = titleSize.width;
     CGFloat labelHeight = titleSize.height;
     
