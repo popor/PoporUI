@@ -46,6 +46,17 @@
 }
 
 - (void)tapEndEditGRAction {
+    if ([self respondsToSelector:@selector(tapEndEditGRActionEnable:)]) {
+        __weak typeof(self) weakSelf = self;
+        [self tapEndEditGRActionEnable:^{
+            [weakSelf tapEndEditGREvent];
+        }];
+    } else {
+        [self tapEndEditGREvent];
+    }
+}
+
+- (void)tapEndEditGREvent {
     [self.view endEditing:YES];
     [self.view becomeFirstResponder];
     self.tapEndEditGR.enabled = NO;
@@ -54,6 +65,7 @@
         [self tapEndEditGRActionExtra];
     }
 }
+
 
 #pragma mark - 键盘通知
 - (void)tapEndEditGR_keyboardWillShow:(NSNotification *)notification {

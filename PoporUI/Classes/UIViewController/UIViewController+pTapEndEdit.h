@@ -22,4 +22,8 @@
 // 点击view的额外接口, 因为输入框有时候不属于vc, 而属于nc.bar
 - (void)tapEndEditGRActionExtra;
 
+// 识别到点击事件之后, 询问是否允许生效
+- (void)tapEndEditGRActionEnable:(void (^)(void))endBlock;
+
+
 @end
