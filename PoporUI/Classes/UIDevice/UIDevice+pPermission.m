@@ -17,10 +17,6 @@
 #import <UserNotifications/UserNotifications.h>
 //#import <UserNotificationsUI/UserNotificationsUI.h>
 
-static NSString * AlertSysPermissionAlbum__  = @"请在iPhone的“设置-隐私-照片”选项中，允许__访问您的照片。";
-static NSString * AlertSysPermissionCamera__ = @"请在iPhone的“设置-隐私-相机”选项中，允许__访问您的相机。";
-static NSString * AlertSysPermissionAudio__  = @"请在iPhone的“设置-隐私-麦克风”选项中，允许__访问您的麦克风。";
-
 @implementation UIDevice (pPermission)
 
 + (void)isHaveSysPermissionCameraBlock:(UIDevicePermissionBlock)permissionBlock
