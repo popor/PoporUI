@@ -20,14 +20,14 @@
     [[NSNotificationCenter defaultCenter] removeObserver:target name:UITextViewTextDidChangeNotification object:nil];
 }
 
-- (void)textViewMaxLength:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
+- (void)textViewMaxLength:(NSInteger)maxLength block:(void(^)(UITextView * tv, BOOL isEditing, BOOL isOutRange))textFieldBlock;
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self delayML:maxLength block:textFieldBlock];
     });
 }
 
-- (void)delayML:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock
+- (void)delayML:(NSInteger)maxLength block:(void(^)(UITextView * tv, BOOL isEditing, BOOL isOutRange))textFieldBlock
 {
     NSString *toBeString = self.text;
     
@@ -41,7 +41,7 @@
     // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
     if (position) {
         // NSLog(@"输入中");
-        textFieldBlock(YES, NO);
+        textFieldBlock(self, YES, NO);
     }else{
         if (toBeString.length > maxLength) {
             NSRange rangeIndex = [toBeString rangeOfComposedCharacterSequenceAtIndex:maxLength];
@@ -55,10 +55,10 @@
                 NSRange rangeRange = [toBeString rangeOfComposedCharacterSequencesForRange:NSMakeRange(0, maxLength)];
                 self.text = [toBeString substringWithRange:rangeRange];
             }
-            textFieldBlock(NO, YES);
+            textFieldBlock(self, NO, YES);
         }else{
             // NSLog(@"正常");
-            textFieldBlock(NO, NO);
+            textFieldBlock(self, NO, NO);
         }
     }
 }

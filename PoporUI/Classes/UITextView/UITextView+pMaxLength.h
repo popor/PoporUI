@@ -30,6 +30,6 @@
 //    }];
 //}
 
-- (void)textViewMaxLength:(NSInteger)maxLength block:(void(^)(BOOL isEditing, BOOL isOutRange))textFieldBlock;
+- (void)textViewMaxLength:(NSInteger)maxLength block:(void(^)(UITextView * tv, BOOL isEditing, BOOL isOutRange))textFieldBlock;
 
 @end

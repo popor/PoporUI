@@ -58,7 +58,7 @@ typedef void(^TextField_pInput_BlockString) (TextField_pInput * tf, NSString * s
 - (void)setTfTypeIdcard;
 
 // 最大输入数字限制
-- (void)setMaxLength:(int)maxLength maxBlock:(TextField_pInput_BlockInt)maxBlock;
+- (void)setMaxLength:(NSInteger)maxLength maxBlock:(TextField_pInput_BlockInt)maxBlock;
 
 @end
 

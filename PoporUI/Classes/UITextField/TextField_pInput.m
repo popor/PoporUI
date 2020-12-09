@@ -18,7 +18,7 @@ static NSString * PicIdcardNumbers = @"0123456789Xx";
 
 @interface TextField_pInput () <UITextFieldDelegate>
 
-@property (nonatomic        ) int maxLength;
+@property (nonatomic        ) NSInteger maxLength;
 @property (nonatomic, copy  ) TextField_pInput_BlockInt maxBlock;
 
 @end
@@ -280,7 +280,7 @@ static NSString * PicIdcardNumbers = @"0123456789Xx";
 }
 
 // 最大输入数字限制
-- (void)setMaxLength:(int)maxLength maxBlock:(TextField_pInput_BlockInt)maxBlock {
+- (void)setMaxLength:(NSInteger)maxLength maxBlock:(TextField_pInput_BlockInt)maxBlock {
     self.maxLength = maxLength;
     self.maxBlock  = maxBlock;
 }
