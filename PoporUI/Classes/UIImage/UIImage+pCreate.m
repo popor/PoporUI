@@ -52,14 +52,20 @@
     CGRect rect;
     
     // UIEdgeInsetsZero的情况
-    rect = CGRectMake(borderWidth*scale/2.0 + borderInset.left, // 加上左边的set
-                      borderWidth*scale/2.0 + borderInset.top,  // 加上上面的set
-                      w - borderWidth*scale - borderInset.left - borderInset.right,   // 减去左边右边的set
-                      h - borderWidth*scale - borderInset.top  - borderInset.bottom);// 减去上边下边的set
-    
+    if (UIEdgeInsetsEqualToEdgeInsets(borderInset, UIEdgeInsetsZero)) {
+        rect = CGRectMake(0, 0, w, h);
+    } else {
+        rect = CGRectMake(borderWidth*scale/2.0 + borderInset.left, // 加上左边的set
+                          borderWidth*scale/2.0 + borderInset.top,  // 加上上面的set
+                          w - borderWidth*scale - borderInset.left - borderInset.right,   // 减去左边右边的set
+                          h - borderWidth*scale - borderInset.top  - borderInset.bottom);// 减去上边下边的set
+    }
     CGFloat radii = corner-borderWidth;
-    path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
-    
+    if (radii > 0) {
+        path = [UIBezierPath bezierPathWithRoundedRect:rect byRoundingCorners:corners cornerRadii:CGSizeMake(radii, radii)];
+    } else {
+        path = [UIBezierPath bezierPathWithRect:rect];
+    }
     
     // 设置描边宽度（为了让描边看上去更清楚）
     [path setLineWidth:borderWidth];
