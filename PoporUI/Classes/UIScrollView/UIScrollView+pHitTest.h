@@ -42,19 +42,9 @@ typedef BOOL (^UIScrollView_pSimultaneouslyBlock) (UIScrollView * sv, UIGestureR
 
 /*
  1. 假如想区分滑动和屏幕侧滑区分开, 需要设置:
- 
- sv.directionalLockEnabled = YES;
- sv.simultaneouslyBlock = ^BOOL(UIScrollView *sv, UIGestureRecognizer *gestureRecognizer, UIGestureRecognizer *otherGestureRecognizer) {
- 	if ([otherGestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]] ) {
-    	return YES;
- 	}else{
-    	return NO;
- 	}
- };
+ [sv.panGestureRecognizer requireGestureRecognizerToFail: nc.interactivePopGestureRecognizer];
  
  */
-
-@property (nonatomic, copy  ) UIScrollView_pSimultaneouslyBlock simultaneouslyBlock;
 
 
 #pragma mark - 模拟sv惯性滑动

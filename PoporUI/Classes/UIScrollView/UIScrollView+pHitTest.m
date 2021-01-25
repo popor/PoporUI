@@ -33,15 +33,6 @@
     return [self pHitTest:point withEvent:event];
 }
 
-#pragma mark - 自定义Simultaneously
-- (BOOL)pGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
-    if (self.simultaneouslyBlock) {
-        return self.simultaneouslyBlock(self, gestureRecognizer, otherGestureRecognizer);
-    } else {
-        return [self pGestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
-    }
-}
-
 
 #pragma mark - 模拟sv惯性滑动
 - (void)scrollWithVelocity:(CGPoint)velocity horizon:(BOOL)horizon {
