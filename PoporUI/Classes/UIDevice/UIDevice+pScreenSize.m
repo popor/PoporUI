@@ -51,6 +51,24 @@
     }
 }
 
++ (CGFloat)portainWidth {
+    static CGFloat width;
+    if (width == 0) {
+        CGSize size = [[UIScreen mainScreen] bounds].size;
+        width = MIN(size.width, size.height);
+    }
+    return width;
+}
+
++ (CGFloat)portainHeight {
+    static CGFloat height;
+    if (height == 0) {
+        CGSize size = [[UIScreen mainScreen] bounds].size;
+        height = MAX(size.width, size.height);
+    }
+    return height;
+}
+
 @end
 
 #pragma mark - macOX

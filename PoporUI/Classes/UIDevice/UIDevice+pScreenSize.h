@@ -10,6 +10,9 @@
 #pragma mark - iOS
 #if TARGET_OS_IOS || TARGET_OS_WATCH
 
+#define PDeviceWidth  [UIDevice portainWidth]
+#define PDeviceHeight [UIDevice portainHeight]
+
 @interface UIDevice (pScreenSize)
 
 // 是否是刘海屏幕,通过安全区域取值
@@ -22,6 +25,9 @@
 + (CGFloat)safeBottomMargin;
 
 + (UIEdgeInsets)safeAreaInsets;
+
++ (CGFloat)portainWidth;
++ (CGFloat)portainHeight;
 
 @end
 

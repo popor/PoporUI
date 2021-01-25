@@ -10,15 +10,20 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (pNcBarBottomLine)
-
+#pragma mark - NC 部分
+@interface UINavigationController (pNcBarBottomLine)
 @property (strong, nonatomic) UIImage * ncbarShadowImageDefault;
-@property (strong, nonatomic) UIImage * ncbarBgImageDefault;
+//@property (strong, nonatomic) UIImage * ncbarBgImageDefault;
 
 @property (strong, nonatomic) UIImage * ncbarShadowImageCustom;
-@property (strong, nonatomic) UIImage * ncbarBgImageCustom;
+//@property (strong, nonatomic) UIImage * ncbarBgImageCustom;
 
 - (void)getSystemDefaultImage;
+
+@end
+
+#pragma mark - VC 部分
+@interface UIViewController (pNcBarBottomLine)
 
 // 隐藏ncBar下面的一条线 - (void)viewWillAppear:(BOOL)animated
 - (void)hiddenSystemBottomLine;

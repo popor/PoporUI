@@ -97,6 +97,8 @@ Pod::Spec.new do |s|
     ss.ios.dependency 'PoporFoundation/NSObject'
     ss.ios.dependency 'PoporFoundation/NSString'
     
+    ss.ios.dependency 'PoporUI/UIImage'
+    
     ss.source_files = 'PoporUI/Classes/UIViewController/*.{h,m}'
   end
   
