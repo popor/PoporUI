@@ -18,18 +18,18 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self hiddenSystemBottomLine];
+    //[self hiddenSystemBottomLine];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    [self showSystemBottomLine];
+    //[self showSystemBottomLine];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getSystemDefaultImage];
+    //[self getSystemDefaultImage];
     
     self.title = @"隐藏导航栏底部线条";
     self.view.backgroundColor = [UIColor whiteColor];

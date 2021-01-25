@@ -7,11 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+/**
+ 包含hitTest, Simultaneously(近似手势), 模拟惯性滑动.
+ */
 
 typedef UIView * (^UIScrollView_pHitTestBlock) (UIScrollView * sv, CGPoint point, UIEvent * event);
 
+typedef BOOL (^UIScrollView_pSimultaneouslyBlock) (UIScrollView * sv, UIGestureRecognizer * gestureRecognizer, UIGestureRecognizer * otherGestureRecognizer);
+
 @interface UIScrollView (pHitTest)
 
+#pragma mark - 自定义hitTest
 // https://blog.csdn.net/zhaotao0617/article/details/86672383
 // 可用于排查和其他class冲突, 例如sv 上面的 tv.cell 侧滑事件
 // 具体方法
@@ -32,6 +38,26 @@ typedef UIView * (^UIScrollView_pHitTestBlock) (UIScrollView * sv, CGPoint point
 - (UIView *)inner_hitTest:(CGPoint)point withEvent:(UIEvent *)event;
 
 
+#pragma mark - 自定义Simultaneously
+
+/*
+ 1. 假如想区分滑动和屏幕侧滑区分开, 需要设置:
+ 
+ sv.directionalLockEnabled = YES;
+ sv.simultaneouslyBlock = ^BOOL(UIScrollView *sv, UIGestureRecognizer *gestureRecognizer, UIGestureRecognizer *otherGestureRecognizer) {
+ 	if ([otherGestureRecognizer isKindOfClass:[UIScreenEdgePanGestureRecognizer class]] ) {
+    	return YES;
+ 	}else{
+    	return NO;
+ 	}
+ };
+ 
+ */
+
+@property (nonatomic, copy  ) UIScrollView_pSimultaneouslyBlock simultaneouslyBlock;
+
+
+#pragma mark - 模拟sv惯性滑动
 /**
  *  @brief 这个可以模拟SV的滑动事件. 通常用于:
  - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset

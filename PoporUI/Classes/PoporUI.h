@@ -56,7 +56,6 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 // UIScrollView
 #import "UIScrollView+pHitTest.h"
 #import "UIScrollView+pTool.h"
-#import "UIScrollView_pPanGR.h"
 
 // UITableView
 #import "UITableView+pTransitionCoordinator.h"

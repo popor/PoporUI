@@ -16,10 +16,11 @@
     dispatch_once(&onceToken, ^{
         
         [objc_getClass("UIScrollView") methodSwizzlingWithOriginalSelector:@selector(hitTest:withEvent:) bySwizzledSelector:@selector(pHitTest:withEvent:)];
+        [objc_getClass("UIScrollView") methodSwizzlingWithOriginalSelector:@selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:) bySwizzledSelector:@selector(pGestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)];
     });
 }
 
-
+#pragma mark - 自定义hitTest
 - (UIView *)pHitTest:(CGPoint)point withEvent:(UIEvent *)event {
     if (self.hitTestBlock) {
         return self.hitTestBlock(self, point, event);
@@ -32,7 +33,17 @@
     return [self pHitTest:point withEvent:event];
 }
 
-// 衔接 sv 继续滑动
+#pragma mark - 自定义Simultaneously
+- (BOOL)pGestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    if (self.simultaneouslyBlock) {
+        return self.simultaneouslyBlock(self, gestureRecognizer, otherGestureRecognizer);
+    } else {
+        return [self pGestureRecognizer:gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:otherGestureRecognizer];
+    }
+}
+
+
+#pragma mark - 模拟sv惯性滑动
 - (void)scrollWithVelocity:(CGPoint)velocity horizon:(BOOL)horizon {
     [self scrollWithVelocity:velocity horizon:horizon duration:0 velocityScale:0 springVelocity:0];
 }
