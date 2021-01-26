@@ -13,20 +13,20 @@
 @implementation UIButton (pUIEdgeInsets)
 
 // 只包含title的
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title titleWidth:(CGFloat)titleWidth {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage * _Nullable)image title:(NSString * _Nullable)title titleWidth:(CGFloat)titleWidth {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:title att:nil titleWidth:titleWidth titleSize:CGSizeZero];
 }
 
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage * _Nullable)image title:(NSString * _Nullable)title titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:title att:nil titleWidth:titleWidth titleSize:titleSize];
 }
 
 // 只包含att的
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage * _Nullable)image att:(NSMutableAttributedString * _Nullable)att titleWidth:(CGFloat)titleWidth {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:nil att:att titleWidth:titleWidth titleSize:CGSizeZero];
 }
 
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage * _Nullable)image att:(NSMutableAttributedString * _Nullable)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:nil att:att titleWidth:titleWidth titleSize:titleSize];
 }
 
@@ -40,12 +40,12 @@
  *  @param titleSize 允许的预设titleSize, 当titleSize为0的话, 需要依赖titleWidth.
  */
 
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage * _Nullable)image title:(NSString * _Nullable)title att:(NSMutableAttributedString * _Nullable)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize {
     [self setEdgeType:edgeInsetType gap:spaceGap image:image title:title att:att titleWidth:titleWidth titleSize:titleSize editTitleSize:nil];
 }
 
 
-- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage *)image title:(NSString *)title att:(NSMutableAttributedString *)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize editTitleSize:(CGSize (^ __nullable)(CGSize titleSize))editTitleSizeBlock
+- (void)setEdgeType:(PEdgeInsetType)edgeInsetType gap:(CGFloat)spaceGap image:(UIImage * _Nullable)image title:(NSString * _Nullable)title att:(NSMutableAttributedString * _Nullable)att titleWidth:(CGFloat)titleWidth titleSize:(CGSize)titleSize editTitleSize:(CGSize (^ __nullable)(CGSize titleSize))editTitleSizeBlock
 {
     CGFloat imageWidth  = image.size.width;
     CGFloat imageHeight = image.size.height;
