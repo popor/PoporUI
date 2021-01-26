@@ -61,8 +61,8 @@
     [self.view becomeFirstResponder];
     self.tapEndEditGR.enabled = NO;
     
-    if ([self respondsToSelector:@selector(tapEndEditGRActionExtra)]) {
-        [self tapEndEditGRActionExtra];
+    if (self.tapEndEditGRActionExtraBlock) {
+        self.tapEndEditGRActionExtraBlock();
     }
 }
 
@@ -104,6 +104,14 @@
 
 - (UITapGestureRecognizer *)tapEndEditGR {
     return objc_getAssociatedObject(self, @"tapEndEditGR");
+}
+
+- (void)setTapEndEditGRActionExtraBlock:(BlockPVoid)tapEndEditGRActionExtraBlock {
+    objc_setAssociatedObject(self, @"tapEndEditGRActionExtraBlock", tapEndEditGRActionExtraBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (BlockPVoid)tapEndEditGRActionExtraBlock {
+    return objc_getAssociatedObject(self, @"tapEndEditGRActionExtraBlock");
 }
 
 @end
