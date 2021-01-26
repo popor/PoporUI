@@ -16,7 +16,7 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
 //AnimationShake
 #import "CcAnimationShake.h"
-#import "CellAnimationShake.h";
+#import "CellAnimationShake.h"
 
 // IToast
 #import "IToastPTool.h"

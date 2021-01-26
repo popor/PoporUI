@@ -46,11 +46,10 @@
 }
 
 - (void)tapEndEditGRAction {
-    if ([self respondsToSelector:@selector(tapEndEditGRActionEnable:)]) {
-        __weak typeof(self) weakSelf = self;
-        [self tapEndEditGRActionEnable:^{
-            [weakSelf tapEndEditGREvent];
-        }];
+    if (self.tapEndEditGRActionEnableBlock) {
+        if (self.tapEndEditGRActionEnableBlock()) {
+            [self tapEndEditGREvent];
+        }
     } else {
         [self tapEndEditGREvent];
     }
@@ -113,5 +112,16 @@
 - (BlockPVoid)tapEndEditGRActionExtraBlock {
     return objc_getAssociatedObject(self, @"tapEndEditGRActionExtraBlock");
 }
+
+
+
+- (void)setTapEndEditGRActionEnableBlock:(UIViewController_pTapEndEdit_BlockRBoolPVoid)tapEndEditGRActionEnableBlock {
+    objc_setAssociatedObject(self, @"tapEndEditGRActionEnableBlock", tapEndEditGRActionEnableBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (UIViewController_pTapEndEdit_BlockRBoolPVoid)tapEndEditGRActionEnableBlock {
+    return objc_getAssociatedObject(self, @"tapEndEditGRActionEnableBlock");
+}
+
 
 @end
