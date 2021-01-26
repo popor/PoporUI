@@ -24,6 +24,7 @@
 #import "NSString+pSwizzling.h"
 #import "NSString+pTool.h"
 #import "Os+pPrefix.h"
+#import "PFeedbackGenerator.h"
 #import "Block+pPrefix.h"
 #import "Color+pPrefix.h"
 #import "Font+pPrefix.h"

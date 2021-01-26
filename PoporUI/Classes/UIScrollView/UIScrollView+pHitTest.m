@@ -16,7 +16,6 @@
     dispatch_once(&onceToken, ^{
         
         [objc_getClass("UIScrollView") methodSwizzlingWithOriginalSelector:@selector(hitTest:withEvent:) bySwizzledSelector:@selector(pHitTest:withEvent:)];
-        [objc_getClass("UIScrollView") methodSwizzlingWithOriginalSelector:@selector(gestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:) bySwizzledSelector:@selector(pGestureRecognizer:shouldRecognizeSimultaneouslyWithGestureRecognizer:)];
     });
 }
 

@@ -44,26 +44,28 @@ dispatch_async(dispatch_get_main_queue(), block);\
 //#define NSLog2(format, ...) printf("func:%s:\n%s\n---------------------\n\n", __PRETTY_FUNCTION__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
 
 // fun 0
-#define NSLogRect(rect)         NSLog(@"CGRect : %s = %@"   , #rect,   NSStringFromCGRect(rect));
-#define NSLogSize(size)         NSLog(@"CGSize : %s = %@"   , #size,   NSStringFromCGSize(size));
-#define NSLogPoint(point)       NSLog(@"CGPoint : %s = %@"  , #point,  NSStringFromCGPoint(point));
-#define NSLogRange(range)       NSLog(@"NSRange : %s = %@"  , #range,  NSStringFromRange(range));
+#define NSLogRect(rect)         NSLog(@"‼️ CGRect : %s = %@"   , #rect,   NSStringFromCGRect(rect));
+#define NSLogSize(size)         NSLog(@"‼️ CGSize : %s = %@"   , #size,   NSStringFromCGSize(size));
+#define NSLogPoint(point)       NSLog(@"‼️ CGPoint : %s = %@"  , #point,  NSStringFromCGPoint(point));
+#define NSLogRange(range)       NSLog(@"‼️ NSRange : %s = %@"  , #range,  NSStringFromRange(range));
+#define NSLogInset(inset)       NSLog(@"‼️ Inset : %s = %@"    , #inset,  NSStringFromUIEdgeInsets(inset));
 
-#define NSLogString(string)     NSLog(@"String : %s = %@"   , #string, string);
-#define NSLogFloat(value)       NSLog(@"Float : %s = %f"    , #value,  value);
-#define NSLogInt(value)         NSLog(@"Int : %s = %i"      , #value,  value);
-#define NSLogInteger(value)     NSLog(@"Integer : %s = %li" , #value,  value);
+#define NSLogString(string)     NSLog(@"‼️ String : %s = %@"   , #string, string);
+#define NSLogFloat(value)       NSLog(@"‼️ Float : %s = %f"    , #value,  value);
+#define NSLogInt(value)         NSLog(@"‼️ Int : %s = %i"      , #value,  value);
+#define NSLogInteger(value)     NSLog(@"‼️ Integer : %s = %li" , #value,  value);
 
 // fun 1
-#define NSLogRectTitle(rect, title)         NSLog(@"CGRect  %@ : %s = %@"   , title, #rect,   NSStringFromCGRect(rect));
-#define NSLogSizeTitle(size, title)         NSLog(@"CGSize  %@ : %s = %@"   , title, #size,   NSStringFromCGSize(size));
-#define NSLogPointTitle(point, title)       NSLog(@"CGPoint %@ : %s = %@"  , title, #point,  NSStringFromCGPoint(point));
-#define NSLogRangeTitle(range, title)       NSLog(@"NSRange %@ : %s = %@"  , title, #range,  NSStringFromRange(range));
+#define NSLogRectTitle(rect, title)         NSLog(@"‼️ CGRect  %@ : %s = %@"   , title, #rect,   NSStringFromCGRect(rect));
+#define NSLogSizeTitle(size, title)         NSLog(@"‼️ CGSize  %@ : %s = %@"   , title, #size,   NSStringFromCGSize(size));
+#define NSLogPointTitle(point, title)       NSLog(@"‼️ CGPoint %@ : %s = %@"   , title, #point,  NSStringFromCGPoint(point));
+#define NSLogRangeTitle(range, title)       NSLog(@"‼️ NSRange %@ : %s = %@"   , title, #range,  NSStringFromRange(range));
+#define NSLogInsetTitle(inset, title)       NSLog(@"‼️ Inset %@ : %s = %@"     , title, #inset,  NSStringFromUIEdgeInsets(inset));
 
-#define NSLogStringTitle(string, title)     NSLog(@"String  %@ : %s = %@"   , title, #string, string);
-#define NSLogFloatTitle(value, title)       NSLog(@"Float   %@ : %s = %f"    , title, #value,  value);
-#define NSLogIntTitle(value, title)         NSLog(@"Int     %@ : %s = %i"      , title, #value,  value);
-#define NSLogIntegerTitle(value, title)     NSLog(@"Integer %@ : %s = %li" , title, #value,  value);
+#define NSLogStringTitle(string, title)     NSLog(@"‼️ String  %@ : %s = %@"   , title, #string, string);
+#define NSLogFloatTitle(value, title)       NSLog(@"‼️ Float   %@ : %s = %f"   , title, #value,  value);
+#define NSLogIntTitle(value, title)         NSLog(@"‼️ Int     %@ : %s = %i"   , title, #value,  value);
+#define NSLogIntegerTitle(value, title)     NSLog(@"‼️ Integer %@ : %s = %li"  , title, #value,  value);
 
 
 #else
@@ -82,6 +84,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define NSLogSize(size)     {}
 #define NSLogPoint(point)   {}
 #define NSLogRange(range)   {}
+#define NSLogInset(inset)   {}
 
 #define NSLogString(string) {}
 #define NSLogFloat(value)   {}
@@ -93,6 +96,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define NSLogSizeTitle(size, title)         {}
 #define NSLogPointTitle(point, title)       {}
 #define NSLogRangeTitle(range, title)       {}
+#define NSLogInsetTitle(inset, title)       {}
 
 #define NSLogStringTitle(string, title)     {}
 #define NSLogFloatTitle(value, title)       {}

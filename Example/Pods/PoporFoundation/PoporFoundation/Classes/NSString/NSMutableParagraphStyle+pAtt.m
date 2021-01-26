@@ -23,6 +23,10 @@
     };
 }
 
+- (NSMutableParagraphStyle *)pLineBreakModeDefault {
+    return self.pLineBreakMode(NSLineBreakByTruncatingTail);
+}
+
 - (NSMutableParagraphStyle *(^)(NSLineBreakMode))pLineBreakMode {
     return ^NSMutableParagraphStyle *(NSLineBreakMode lineBreakMode) {
         [self setLineBreakMode:lineBreakMode];

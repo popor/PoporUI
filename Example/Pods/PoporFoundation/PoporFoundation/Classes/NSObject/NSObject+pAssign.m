@@ -117,9 +117,9 @@
         NSLog(@"propNameString: %@, propAttributesString:%@", propNameString, propAttributesString);
         // 根据各个情况处理.
         if ([propAttributesString hasPrefix:@"T@\"NSString\""]){
-            [entity setValue:[NSString stringWithFormat:@"%li", index] forKey:propNameString];
+            [entity setValue:[NSString stringWithFormat:@"%li", (long)index] forKey:propNameString];
         }else if ([propAttributesString hasPrefix:@"T@\"NSMutableString\""]){
-            [entity setValue:[[NSMutableString alloc] initWithFormat:@"%li", index] forKey:propNameString];
+            [entity setValue:[[NSMutableString alloc] initWithFormat:@"%li", (long)index] forKey:propNameString];
         }
         else if ([propAttributesString hasPrefix:@"Tc"]){ //BOOL
             [entity setValue:[NSNumber numberWithBool:YES] forKey:propNameString];

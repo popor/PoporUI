@@ -69,6 +69,8 @@ Pod::Spec.new do |s|
   end
   
   s.subspec 'UIScrollView' do |ss|
+    ss.ios.dependency 'PoporFoundation/NSObject'
+    
     ss.source_files = 'PoporUI/Classes/UIScrollView/*.{h,m}'
   end
   
@@ -109,6 +111,15 @@ Pod::Spec.new do |s|
   s.subspec 'ProgressView' do |ss|
     ss.source_files = 'PoporUI/Classes/ProgressView/*.{h,m}'
   end
+  
+  s.subspec 'AnimationShake' do |ss|
+    ss.ios.dependency 'PoporFoundation/PFeedbackGenerator'
+    
+    ss.source_files = 'PoporUI/Classes/AnimationShake/*.{h,m}'
+    
+  end
+  
+  
   
   #-----------------------
   s.platform     = :ios, "8.0"

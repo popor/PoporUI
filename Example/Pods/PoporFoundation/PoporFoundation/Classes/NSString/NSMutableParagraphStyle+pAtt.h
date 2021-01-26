@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSMutableParagraphStyle *(^)(NSTextAlignment))pTextAlignment;
 
+- (NSMutableParagraphStyle *)pLineBreakModeDefault;
 - (NSMutableParagraphStyle *(^)(NSLineBreakMode))pLineBreakMode;
 
 - (NSMutableParagraphStyle *(^)(CGFloat))pFirstLineHeadIndent;

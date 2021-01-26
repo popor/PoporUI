@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)addString:(NSString * _Nullable)string font:(FONT_CLASS * _Nullable)font color:(COLOR_CLASS * _Nullable)color bgColor:(COLOR_CLASS * _Nullable)bgColor underline:(BOOL)isUnderLine lineSpacing:(CGFloat)lineSpacing textAlignment:(NSTextAlignment)textAlignment lineBreakMode:(NSLineBreakMode)lineBreakMode;
 
+- (void)addImage:(IMAGE_CLASS * _Nullable)image bounds:(CGRect)bounds;
+
 // 用于纠正不同字体之间的文字,不会行居中的问题
 - (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range;
 - (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range scale:(CGFloat)scale;

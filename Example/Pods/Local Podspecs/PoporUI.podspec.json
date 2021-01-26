@@ -153,6 +153,17 @@
     {
       "name": "ProgressView",
       "source_files": "PoporUI/Classes/ProgressView/*.{h,m}"
+    },
+    {
+      "name": "AnimationShake",
+      "ios": {
+        "dependencies": {
+          "PoporFoundation/PFeedbackGenerator": [
+
+          ]
+        }
+      },
+      "source_files": "PoporUI/Classes/AnimationShake/*.{h,m}"
     }
   ]
 }

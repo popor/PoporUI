@@ -11,6 +11,8 @@
 #endif
 
 #import "PoporUI.h"
+#import "CcAnimationShake.h"
+#import "CellAnimationShake.h"
 #import "IToastPTool.h"
 #import "IToast_Popor.h"
 #import "ProgressView_Popor.h"

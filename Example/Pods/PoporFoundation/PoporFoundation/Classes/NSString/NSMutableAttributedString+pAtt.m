@@ -84,6 +84,29 @@
     [self appendAttributedString:attString];
 }
 
+- (void)addImage:(IMAGE_CLASS * _Nullable)image bounds:(CGRect)bounds {
+    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+    
+    // UI系列
+#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_WATCH
+    attach.image  = image; //设置图片
+    attach.bounds = bounds; //设置图片大小、位置
+    NSAttributedString * imageAtt = [NSAttributedString attributedStringWithAttachment:attach];
+    [self appendAttributedString:imageAtt];
+    // NS系列
+#elif TARGET_OS_MAC
+    if (@available(macOS 10.11, *)) {
+        attach.image  = image; //设置图片
+        attach.bounds = bounds; //设置图片大小、位置
+        NSAttributedString * imageAtt = [NSAttributedString attributedStringWithAttachment:attach];
+        
+        [self appendAttributedString:imageAtt];
+    } else {
+        NSLog(@"PoporFoundation :%s , error: system version", __func__);
+    }
+#endif
+}
+
 // 用于纠正不同字体之间的文字,不会行居中的问题,用于•
 - (void)setBaselineOffsetMaxFont:(CGFloat)maxFont miniFont:(CGFloat)miniFont range:(NSRange)range
 {
@@ -192,8 +215,8 @@
     if (text.length <= 0) {
         return [NSMutableAttributedString new];
     }
-    if (bigGap <= 0) {
-        bigGap = 6;
+    if (bigGap < 0) {
+        bigGap = 0;
     }
     if (smallGap < 0) {
         smallGap = 0;

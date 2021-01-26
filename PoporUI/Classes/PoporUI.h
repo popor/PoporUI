@@ -14,6 +14,10 @@ FOUNDATION_EXPORT double UIExtensionVersionNumber;
 //! Project version string for UIExtension.
 FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
+//AnimationShake
+#import "CcAnimationShake.h"
+#import "CellAnimationShake.h";
+
 // IToast
 #import "IToastPTool.h"
 

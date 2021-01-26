@@ -1,14 +1,16 @@
 PODS:
   - Masonry (1.1.0)
-  - PoporFoundation/NSObject (1.21)
-  - PoporFoundation/NSString (1.21):
+  - PoporFoundation/NSObject (1.24)
+  - PoporFoundation/NSString (1.24):
     - PoporFoundation/NSObject
     - PoporFoundation/Os
     - PoporFoundation/Prefix
-  - PoporFoundation/Os (1.21)
-  - PoporFoundation/Prefix (1.21):
+  - PoporFoundation/Os (1.24)
+  - PoporFoundation/PFeedbackGenerator (1.24)
+  - PoporFoundation/Prefix (1.24):
     - PoporFoundation/Os
   - PoporUI (1.25):
+    - PoporUI/AnimationShake (= 1.25)
     - PoporUI/IToast (= 1.25)
     - PoporUI/ProgressView (= 1.25)
     - PoporUI/Response (= 1.25)
@@ -24,6 +26,8 @@ PODS:
     - PoporUI/UITextView (= 1.25)
     - PoporUI/UIView (= 1.25)
     - PoporUI/UIViewController (= 1.25)
+  - PoporUI/AnimationShake (1.25):
+    - PoporFoundation/PFeedbackGenerator
   - PoporUI/IToast (1.25):
     - PoporFoundation/NSString
   - PoporUI/ProgressView (1.25)
@@ -72,8 +76,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  PoporFoundation: dc0999db26642dd31bde8629dd641da498713d36
-  PoporUI: 343f36047e87738b40e91c4f137aba7391ce5bad
+  PoporFoundation: 0861e1064f0afb658c1254537e0447123f135ac3
+  PoporUI: f02eb9b66b0ca97468165222bb2a58fd4f6014f4
 
 PODFILE CHECKSUM: 39f2dd688a81332ebf6c44893fd230d1223699f5
 
