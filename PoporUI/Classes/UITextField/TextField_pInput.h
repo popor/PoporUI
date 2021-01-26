@@ -25,7 +25,7 @@ typedef NS_ENUM(int, TextField_pInputType) {
 
 typedef void(^TextField_pInput_Block)       (TextField_pInput * tf);
 typedef BOOL(^TextField_pInput_BlockRBool)  (TextField_pInput * tf); // 需要返回BOOL
-typedef void(^TextField_pInput_BlockInt)    (TextField_pInput * tf, int textMaxLength);
+typedef void(^TextField_pInput_BlockInt)    (TextField_pInput * tf, NSInteger textMaxLength);
 typedef void(^TextField_pInput_BlockString) (TextField_pInput * tf, NSString * string);
 
 @interface TextField_pInput : UITextField
