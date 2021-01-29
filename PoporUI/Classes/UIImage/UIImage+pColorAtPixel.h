@@ -39,4 +39,14 @@
 
 - (UIColor *)colorAtPixel:(CGPoint)point;
 
+/**
+ *  @brief 获取图片平均值
+ *
+ *  @discussion iPhone XR 1秒取值2550次.
+ *
+ *  @param xGap 默认为20
+ *  @param yGap 默认为20
+ */
+- (UIColor *)averageColorXGap:(NSInteger)xGap yGap:(NSInteger)yGap;
+
 @end
