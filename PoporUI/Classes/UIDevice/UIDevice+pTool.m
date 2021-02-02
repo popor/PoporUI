@@ -274,33 +274,4 @@
     return freeSpace;
 }
 
-
-+ (NSString *)getHumanSize:(CGFloat)fileSizeFloat {
-    __block NSString * humanSize;
-    [self fileSize:fileSizeFloat complete:^(CGFloat size, NSString *unit) {
-        humanSize = [NSString stringWithFormat:@"%.02f%@", size, unit];
-    }];
-    return humanSize;;
-}
-
-+ (void)fileSize:(NSInteger)fileSize complete:(void (^ __nullable)(CGFloat sizeFloat, NSString * sizeUnit))complete {
-    if (!complete) {
-        return;
-    }
-    CGFloat KbMax = 1024.0;
-    CGFloat MbMax = 1048576.0;
-    CGFloat GbMax = 1073741824.0;
-    CGFloat TbMax = 1099511627776.0;
-    
-    if (fileSize < MbMax) {
-        complete(fileSize/KbMax, @"KB");
-    } else if (fileSize < GbMax) {
-        complete(fileSize/MbMax, @"MB");
-    } else if (fileSize < TbMax) {
-        complete(fileSize/GbMax, @"GB");
-    } else {
-        complete(fileSize/TbMax, @"TB");
-    }
-}
-
 @end
