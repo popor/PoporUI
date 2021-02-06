@@ -65,7 +65,13 @@
 }
 
 + (void)alertTitle:(NSString *)title duration:(NSInteger)duration copy:(BOOL)copy bottom:(CGFloat)bottom {
-    if ([title isEqualToString:@""] || !title) {
+    if (!title) {
+        return;
+    }
+    if (![title isKindOfClass:[NSString class]]) {
+        title = title.description;
+    }
+    if (title.length == 0) {
         NSLog(@"提示语为空");
         return;
     }
