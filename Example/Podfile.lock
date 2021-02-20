@@ -48,7 +48,8 @@ PODS:
     - PoporFoundation/NSString
     - PoporUI/UIView
   - PoporUI/UINavigationController (1.25)
-  - PoporUI/UIScrollView (1.25)
+  - PoporUI/UIScrollView (1.25):
+    - PoporFoundation/NSObject
   - PoporUI/UITableView (1.25)
   - PoporUI/UITextField (1.25):
     - PoporFoundation/NSObject
@@ -77,7 +78,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   PoporFoundation: 0861e1064f0afb658c1254537e0447123f135ac3
-  PoporUI: f02eb9b66b0ca97468165222bb2a58fd4f6014f4
+  PoporUI: cdbf0e5f0123099eec0966aa9a052fa41a319881
 
 PODFILE CHECKSUM: 39f2dd688a81332ebf6c44893fd230d1223699f5
 

@@ -81,6 +81,7 @@ FOUNDATION_EXPORT const unsigned char UIExtensionVersionString[];
 
 // UIView
 #import "UIView+pExtension.h"
+#import "UIView+pTool.h"
 
 // UIViewController
 #import "UIViewController+pLeeBase.h"

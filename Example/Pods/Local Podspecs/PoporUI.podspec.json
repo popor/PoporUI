@@ -98,6 +98,13 @@
     },
     {
       "name": "UIScrollView",
+      "ios": {
+        "dependencies": {
+          "PoporFoundation/NSObject": [
+
+          ]
+        }
+      },
       "source_files": "PoporUI/Classes/UIScrollView/*.{h,m}"
     },
     {
