@@ -13,4 +13,12 @@
 - (void)cleanSelf;
 - (void)cleanSelfDelay:(CGFloat)delay;
 
+// 增加UI检查Views
+- (void)addCheckerViewsVertical:(NSArray *)heightArray;
+- (void)addCheckerViewsVertical:(NSArray *)heightArray colorArray:(NSArray * _Nullable)colorArray;
+
+- (void)addCheckerViewsHorizon:(NSArray *)widthArray;
+- (void)addCheckerViewsHorizon:(NSArray *)widthArray colorArray:(NSArray * _Nullable)colorArray;
+
+
 @end
