@@ -9,41 +9,32 @@
 
 @implementation UIImage (pGradient)
 
-/**
- *  获取矩形的渐变色的UIImage(此函数还不够完善)
- *
- *  @param bounds          UIImage的bounds
- *  @param colors          渐变色数组，可以设置两种颜色
- *  @param gradientHorizon 渐变的方式：0--->从上到下   1--->从左到右
- *
- *  @return 渐变色的UIImage
- */
-+ (UIImage*)gradientImageWithBounds:(CGRect)bounds andColors:(NSArray*)colors gradientHorizon:(BOOL)gradientHorizon {
-    CGPoint start;
-    CGPoint end;
++ (UIImage*)gradientImageRect:(CGRect)rect colorArray:(NSArray*)colorArray horizon:(BOOL)horizon {
+    CGPoint startPoint;
+    CGPoint endPoint;
     
-    if (gradientHorizon) {
-        start = CGPointMake(0.0, 0.0);
-        end = CGPointMake(bounds.size.width, 0.0);
+    if (horizon) {
+        startPoint = CGPointMake(0.0, 0.0);
+        endPoint = CGPointMake(rect.size.width, 0.0);
     }else{
-        start = CGPointMake(0.0, 0.0);
-        end = CGPointMake(0.0, bounds.size.height);
+        startPoint = CGPointMake(0.0, 0.0);
+        endPoint = CGPointMake(0.0, rect.size.height);
     }
     
-    UIImage *image = [self gradientImageWithBounds:bounds andColors:colors addStartPoint:start addEndPoint:end];
+    UIImage *image = [self gradientImageRect:rect colorArray:colorArray startPoint:startPoint endPoint:endPoint];
     return image;
 }
 
-+ (UIImage*)gradientImageWithBounds:(CGRect)bounds andColors:(NSArray*)colors addStartPoint:(CGPoint)startPoint addEndPoint:(CGPoint)endPoint {
++ (UIImage*)gradientImageRect:(CGRect)rect colorArray:(NSArray*)colorArray startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint {
     NSMutableArray *ar = [NSMutableArray array];
     
-    for(UIColor *c in colors) {
+    for(UIColor *c in colorArray) {
         [ar addObject:(id)c.CGColor];
     }
-    UIGraphicsBeginImageContextWithOptions(bounds.size, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, [UIScreen mainScreen].scale);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSaveGState(context);
-    CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colors lastObject] CGColor]);
+    CGColorSpaceRef colorSpace = CGColorGetColorSpace([[colorArray lastObject] CGColor]);
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, (CFArrayRef)ar, NULL);
     
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, kCGGradientDrawsBeforeStartLocation | kCGGradientDrawsAfterEndLocation);
@@ -62,23 +53,23 @@
  1  [UIImage imageFromLayer:gradientLayer];
  2  [view.layer addSublayer:gradientLayer];
  */
-+ (CAGradientLayer *)gradientLayer:(CGRect)bounds colors:(NSArray<UIColor *> *)colors locations:(NSArray<NSNumber *> *)locations start:(CGPoint)start end:(CGPoint)end {
-    if (colors.count != locations.count) {
++ (CAGradientLayer *)gradientLayerRect:(CGRect)rect colorArray:(NSArray<UIColor *> *)colorArray locationArray:(NSArray<NSNumber *> *)locationArray startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint {
+    if (colorArray.count != locationArray.count) {
         return nil;
     }
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = bounds;
+    gradientLayer.frame = rect;
     
     NSMutableArray * cgColors = [NSMutableArray new];
-    for (UIColor * color in colors) {
+    for (UIColor * color in colorArray) {
         [cgColors addObject:(id)color.CGColor];
     }
     
     gradientLayer.colors    = cgColors;
-    gradientLayer.locations = locations;
+    gradientLayer.locations = locationArray;
     
-    gradientLayer.startPoint = start;
-    gradientLayer.endPoint   = end;
+    gradientLayer.startPoint = startPoint;
+    gradientLayer.endPoint   = endPoint;
     
     return gradientLayer;
 }

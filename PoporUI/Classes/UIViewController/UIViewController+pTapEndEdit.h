@@ -9,14 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <PoporFoundation/Block+pPrefix.h>
 
-typedef BOOL(^UIViewController_pTapEndEdit_BlockRBoolPVoid) (void);
+typedef void(^UIViewController_pTapEndEdit_BlockRVoidPVoid) (BlockPVoid endEditBlock);
 
 @interface UIViewController (pTapEndEdit)
 
 @property (nonatomic, strong) UITapGestureRecognizer  * tapEndEditGR;
 
 // 询问是否终止输入状态
-@property (nonatomic, copy  ) UIViewController_pTapEndEdit_BlockRBoolPVoid tapEndEditGRActionEnableBlock;
+@property (nonatomic, copy  ) UIViewController_pTapEndEdit_BlockRVoidPVoid tapEndEditGRActionEnableBlock;
 
 // 点击view的额外接口, 因为输入框有时候不属于vc, 而属于nc.bar
 @property (nonatomic, copy  ) BlockPVoid                                   tapEndEditGRActionExtraBlock;

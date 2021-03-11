@@ -37,6 +37,16 @@ NS_ASSUME_NONNULL_BEGIN
 // 文字在图片中间
 + (UIImage *)imageFromImage:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic scale:(CGFloat)scale;
 
+/*
+ if drawOrigin == CGPointZero. 则忽略 else 文字定点位于drawOrigin
+ */
++ (UIImage *)imageFromImage:(UIImage *)image
+                        str:(NSString *)str
+                        dic:(NSDictionary *)dic
+                      scale:(CGFloat)scale
+                 drawOrigin:(CGPoint)drawOrigin;
+
+
 #pragma mark - 生成:根据图片
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size;
 + (UIImage *)imageFromImage:(UIImage *)image size:(CGSize)size corner:(CGFloat)corner;
@@ -68,6 +78,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIImage *)scaleWidth:(CGFloat)width;
 - (UIImage *)scaleWidth:(CGFloat)width scale:(CGFloat)scale;
 - (UIImage *)scaleWidthScale:(CGFloat)wScale scale:(CGFloat)scale;
+
+#pragma mark - 设置灰色蒙层
+- (UIImage *)grayImage;
 
 @end
 

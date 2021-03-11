@@ -11,9 +11,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIImage (pGradient)
 
-// 渐变色
-+ (UIImage*)gradientImageWithBounds:(CGRect)bounds andColors:(NSArray*)colors gradientHorizon:(BOOL)gradientHorizon;
-+ (UIImage*)gradientImageWithBounds:(CGRect)bounds andColors:(NSArray*)colors addStartPoint:(CGPoint)startPoint addEndPoint:(CGPoint)endPoint;
+/**
+ *  获取矩形的渐变色的UIImage(此函数还不够完善)
+ *
+ *  @param rect     UIImage的bounds
+ *  @param colorArray 渐变色数组，可以设置两种颜色
+ *  @param horizon    渐变的方式：0--->从上到下   1--->从左到右
+ *
+ *  @return 渐变色的UIImage
+ */
++ (UIImage*)gradientImageRect:(CGRect)rect colorArray:(NSArray *)colorArray horizon:(BOOL)horizon;
++ (UIImage*)gradientImageRect:(CGRect)rect colorArray:(NSArray *)colorArray startPoint:(CGPoint)startPoint endPoint:(CGPoint)endPoint;
 
 /**
  CGPointMake(0, 0);// 开始点
@@ -47,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
  1  [UIImage imageFromLayer:gradientLayer];
  2  [view.layer addSublayer:gradientLayer];
  */
-+ (CAGradientLayer *)gradientLayer:(CGRect)bounds colors:(NSArray<UIColor *> *)colors locations:(NSArray<NSNumber *> *)locations start:(CGPoint)start end:(CGPoint)end;
++ (CAGradientLayer *)gradientLayerRect:(CGRect)rect colorArray:(NSArray<UIColor *> *)colors locationArray:(NSArray<NSNumber *> *)locations startPoint:(CGPoint)start endPoint:(CGPoint)end;
 
 @end
 

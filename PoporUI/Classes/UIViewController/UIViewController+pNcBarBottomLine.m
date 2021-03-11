@@ -70,10 +70,9 @@
         //NSLog(@"shadowImageDefault. size: %f-%f", image.size.width, image.size.height);
         
         if (!image) {
-            image = [UIImage gradientImageWithBounds:CGRectMake(0, 0, 1, 1)
-                                           andColors:@[[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.2],
-                                                       [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.0]]
-                                     gradientHorizon:NO];
+            image = [UIImage gradientImageRect:CGRectMake(0, 0, 1, 1)
+                                    colorArray:@[[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.2], [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.0]]
+                                       horizon:NO];
             
             self.ncbarShadowImageDefault = image;
         } else {

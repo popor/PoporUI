@@ -47,9 +47,10 @@
 
 - (void)tapEndEditGRAction {
     if (self.tapEndEditGRActionEnableBlock) {
-        if (self.tapEndEditGRActionEnableBlock()) {
-            [self tapEndEditGREvent];
-        }
+        __weak typeof(self) weakSelf = self;
+        self.tapEndEditGRActionEnableBlock(^{
+            [weakSelf tapEndEditGREvent];
+        });
     } else {
         [self tapEndEditGREvent];
     }
@@ -115,11 +116,11 @@
 
 
 
-- (void)setTapEndEditGRActionEnableBlock:(UIViewController_pTapEndEdit_BlockRBoolPVoid)tapEndEditGRActionEnableBlock {
+- (void)setTapEndEditGRActionEnableBlock:(UIViewController_pTapEndEdit_BlockRVoidPVoid)tapEndEditGRActionEnableBlock {
     objc_setAssociatedObject(self, @"tapEndEditGRActionEnableBlock", tapEndEditGRActionEnableBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
 }
 
-- (UIViewController_pTapEndEdit_BlockRBoolPVoid)tapEndEditGRActionEnableBlock {
+- (UIViewController_pTapEndEdit_BlockRVoidPVoid)tapEndEditGRActionEnableBlock {
     return objc_getAssociatedObject(self, @"tapEndEditGRActionEnableBlock");
 }
 

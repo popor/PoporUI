@@ -86,7 +86,20 @@
 #pragma mark - 生成:根据图片文字
 //@{ NSFontAttributeName :[ UIFont fontWithName : @"Arial-BoldMT" size : 30 ], NSForegroundColorAttributeName :[ UIColor whiteColor ] }
 + (UIImage *)imageFromImage:(UIImage *)image str:(NSString *)str dic:(NSDictionary *)dic scale:(CGFloat)scale {
-    
+    return [self imageFromImage:image str:str dic:dic scale:scale drawOrigin:CGPointZero];
+}
+
+/*
+ if drawOrigin == CGPointZero. 则忽略 else 文字定点位于drawOrigin
+ */
++ (UIImage *)imageFromImage:(UIImage *)image
+                        str:(NSString *)str
+                        dic:(NSDictionary *)dic
+                      scale:(CGFloat)scale
+                 drawOrigin:(CGPoint)drawOrigin
+                 //drawCenter:(CGPoint)drawCenter
+               
+{
     if (scale <= 0) {
         scale = [UIScreen mainScreen].scale;
     }
@@ -102,7 +115,12 @@
     CGContextDrawPath (context, kCGPathStroke);
     
     CGSize strSize = [str sizeWithAttributes:dic];
-    [str drawAtPoint:CGPointMake((size.width - strSize.width)/2, (size.height - strSize.height)/2) withAttributes:dic];
+    
+    if (!CGPointEqualToPoint(CGPointZero, drawOrigin)) {
+        [str drawAtPoint:drawOrigin withAttributes:dic];
+    } else {
+        [str drawAtPoint:CGPointMake((size.width - strSize.width)/2, (size.height - strSize.height)/2) withAttributes:dic];
+    }
     UIImage *newImage= UIGraphicsGetImageFromCurrentImageContext ();
     UIGraphicsEndImageContext ();
     
@@ -335,6 +353,31 @@
     UIImage *scaledImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return scaledImage;
+}
+
+#pragma mark - 设置灰色蒙层 https://blog.csdn.net/a787188834/article/details/80737013
+- (UIImage *)grayImage {
+    UIImage * sourceImage = self;
+    int bitmapInfo = kCGImageAlphaPremultipliedLast; //kCGImageAlphaNone; 这个决定是否将透明区域也设置灰色
+    int width = sourceImage.size.width;
+    int height = sourceImage.size.height;
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceGray();
+    CGContextRef context = CGBitmapContextCreate (nil,
+                                                  width,
+                                                  height,
+                                                  8,      // bits per component
+                                                  0,
+                                                  colorSpace,
+                                                  bitmapInfo);
+    CGColorSpaceRelease(colorSpace);
+    if (context == NULL) {
+        return nil;
+    }
+    CGContextDrawImage(context,
+                       CGRectMake(0, 0, width, height), sourceImage.CGImage);
+    UIImage *grayImage = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+    CGContextRelease(context);
+    return grayImage;
 }
 
 @end
